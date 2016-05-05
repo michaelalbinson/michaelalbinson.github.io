@@ -1,7 +1,251 @@
 <!DOCTYPE html>
+
 <head>
-<title>michael's landing page</title>
-</head>
-<body>
-<h1> Website coming soon! </h1>
-</body>
+    <style>
+        div{
+            text-align: center;
+        }
+        div.header{
+            display: block;
+            background: rgba(174, 174, 108, .75);
+            color: white;
+            padding: 10px;
+            border: 0;
+            right: 10px;
+            border-radius: 10px;
+            position: fixed;
+        }
+        div.secondHeader{
+            display: none;
+            background: rgba(174, 174, 108, .75);
+            color: white;
+            padding: 10px;
+            border: 0;
+            right: 10px;
+            border-radius: 10px;
+            position: fixed;
+        }
+        body{
+            text-align: center;
+            background: url("http://i.imgur.com/gqNbBZu.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            font-family: Times;
+        }
+        p{
+            font-size: 24px;
+            text-align: left;
+        }
+        h1.FileTitle{
+            font-size: 50px;
+            font-family: sans-serif;
+            padding: 10px;
+        }
+        h1{
+            font-size: 32px;
+            font-family: sans-serif;
+        }
+        h3{
+            text-align: left;
+        }
+        input{
+            border: 0;
+            padding: 12px;
+            font-size: 18px;
+        }
+        input[type="submit"]{
+            background: green;
+            color: black;
+        }
+        div.experiences{
+            padding: 30px;
+            background: rgba(250, 240, 230, .75);
+            color: black;
+            border-radius: 10px;
+
+        }
+        div.bottom{
+            padding: 30px;
+            background-color: rgba(250, 240, 230, .75);
+            color: black;
+            border-radius: 10px;
+        }
+        div.education{
+            padding: 30px;
+            background-color: rgba(250, 240, 230, .75);
+            color: black;
+            border-radius: 10px;
+        }
+        div.footer{
+            background-color: rgba(135, 99, 64, .75);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+        ul{
+            text-align: left;
+        }
+        img{
+            border-radius: 10px;
+        }
+        a{
+            color: black;
+        }
+
+    </style>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/wayke/wayke.github.io/master/images/favicon%20(1).ico"/>
+    <title>Michael Albinson</title>
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+        $("#secondHeader").hide(); //hide your div initially
+        var topOfOthDiv = $("#jump1").offset().top;
+        $(window).scroll(function() {
+        if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
+            document.getElementById('header').style.display = 'none';
+            document.getElementById('secondHeader').style.display = 'block';
+        }
+        else {
+            document.getElementById('secondHeader').style.display = 'none'; 
+            document.getElementById('header').style.display = 'block';
+        }
+    }
+}
+        </script>
+
+    </head>
+    <body id = "top">
+        <div class="header">
+            <a href="mailto:mikealbinson@gmail.com"><img alt="Email" src="https://cdn1.iconfinder.com/data/icons/simple-icons/4096/email-4096-black.png" style="width:50px;height:50px;"></a>
+            <a href="https://www.linkedin.com/in/michaelalbinson"><img alt="Linkedin" src="http://vectorlogofree.com/wp-content/uploads/2014/01/53907-linkedin-social-outline-logotype-icon-vector-icon-vector-eps.png" style="width:50px;height:50px;border-radius: 0;"></a>
+            <a href="https://github.com/mikealbinson"><img alt="Github" src="https://wasin.io/wp-content/uploads/2015/05/showimage.png" style="width:50px;height:50px;"></a>
+        </div>
+
+        <div class="secondHeader">
+            <h4 style="color: black;">Jump to:</h4>
+            <a href="#top"><img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glossy-black-icons-media/003363-glossy-black-icon-media-media2-arrow-up.png" style="width:50px;height:50px;"></a>
+            <a href="#jump1"><img src="http://simpleicon.com/wp-content/uploads/computer-5.png" style="width:50px;height:50px;"></a>
+            <a href="#jump2"> <img src="https://www.svgimages.com/svg-image/s3/graduation-cap-clipart-256x256.png" style="width:60px;height:60px;"></a>
+            <a href="#jump3"><img src="http://freevector.co/wp-content/uploads/2011/12/64899-shooting-star.png" style="width:50px;height:50px;"></a>
+        </div>
+
+        <h1 class="FileTitle">Michael Albinson</h1>
+        <br>
+        <img src="https://raw.githubusercontent.com/wayke/wayke.github.io/master/IMG_8632.JPG" border="5" height="250" width="250" style="border-color: rgba(250, 240, 230, .75);">
+        <br><br>
+        <h2>Hi! I'm Michael, welcome to my website! </h2>
+        <br><br>
+        <div class="experiences" id="jump1">
+            <div>
+                <img src="http://simpleicon.com/wp-content/uploads/computer-5.png" style="width:50px;height:50px;">
+            </div>
+            <h1>Past Experiences and Projects</h1>
+            <hr>
+            <div>
+                <a href="http://www.servicenow.com/"><img src="http://www.caskllc.com/wp-content/uploads/2014/07/service-now-logo.png" style="width:200px;height:90px; background-color: linen;"></a>
+            </div>
+            <h3>
+                ServiceNow - Engineering Intern
+            </h3>
+            <p>
+                <ul>
+                    <li> thing one</li>
+                    <li> thing two </li>
+                </ul>
+            </p>
+            <div>
+                <a href="http://wayke.github.io"><img src="https://raw.githubusercontent.com/wayke/wayke.github.io/master/images/wayke-logo.png" style="width:200px;height:100px; background-color: linen;"></a>
+            </div>
+            <h3> 
+                Wayke - Backend and Hardware Developer
+            </h3>
+            <p>
+                <ul>
+                    <li> thing one</li>
+                    <li> thing two </li>
+                </ul>
+            </p>
+            <div>
+                <a href="http://www.pandora.com"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Pandora_logo_blue.png" style="width:200px;height:40px;background-color: linen; padding: 15px;"></a>
+            </div>
+            <h3> 
+                Pandora [Formerly Ticketfly] - Engineering Intern
+            </h3>
+            <p>
+                <ul>
+                    <li> thing one</li>
+                    <li> thing two </li>
+                </ul>
+            </p>
+            <div>
+                <a href="http://queensu.ca/"><img src="http://cou.on.ca/wp-content/uploads/2015/04/Queens-University.png" style="width:200px;height:140px;background-color: linen;"></a>
+            </div>
+            <h3> 
+                Queen's University - Intro to Computing (APSC 142) Teaching Assistant
+            </h3>
+            <p>
+                <ul>
+                    <li> thing one</li>
+                    <li> thing two </li>
+                </ul>
+            </p>
+        </div>
+        <br>
+        <div class="education" id="jump2">
+            <div>
+                <img src="https://www.svgimages.com/svg-image/s3/graduation-cap-clipart-256x256.png" style="width:75px;height:75px;">
+            </div>
+            <h1>
+                Education
+            </h1>
+            <hr>
+            <div>
+                <a href="http://queensu.ca/"><img src="http://cou.on.ca/wp-content/uploads/2015/04/Queens-University.png" style="width:200px;height:140px;background-color: linen;"></a>
+            </div>
+            <h3> 
+                Queen's University - Bachelor of Science, Mecahnical Engineering [2014 - 2018] - Specialty Biomechanical Engineering
+            </h3>
+            <p>
+                <ul>
+                    <li> thing one</li>
+                    <li> thing two </li>
+                </ul>
+            </p>
+            <div>
+                <a href="http://www.branson.org/"><img src="https://upload.wikimedia.org/wikipedia/en/a/a5/The_Branson_School_logo.png" style="width:125px;height:140px;background-color: linen; padding:10px;"></a>
+            </div>
+            <h3> 
+                The Branson School [2010 - 2014]
+            </h3>
+            <p>
+                <ul>
+                    <li> thing one</li>
+                    <li> thing two </li>
+                </ul>
+            </p>
+        </div>
+        <br>
+        <div class="bottom" id="jump3">
+            <div>
+                <img src="http://freevector.co/wp-content/uploads/2011/12/64899-shooting-star.png" style="width:50px;height:50px;">
+            </div>
+            <h1>
+                Other Interests
+            </h1>
+            <hr>
+            <p>
+                Apart from all the awesome projects I have worked on and places I have worked, I love music, playing the guitar, the outdoors, photography and education.
+            </p>
+        </div>
+        <br>
+        <div class="footer">
+            <a href="mailto:mikealbinson@gmail.com"><img alt="Email" src="https://cdn1.iconfinder.com/data/icons/simple-icons/4096/email-4096-black.png" style="width:50px;height:50px;"></a>
+            <a href="https://www.linkedin.com/in/michaelalbinson"><img alt="Linkedin" src="http://vectorlogofree.com/wp-content/uploads/2014/01/53907-linkedin-social-outline-logotype-icon-vector-icon-vector-eps.png" style="width:50px;height:50px;border-radius: 0;"></a>
+            <a href="https://github.com/mikealbinson"><img alt="Github" src="https://wasin.io/wp-content/uploads/2015/05/showimage.png" style="width:50px;height:50px;"></a>
+            <br>
+            <a href="wikipedia.com"><h3 style="text-align: center;">More About Me</h3"></a>
+        </div>
+    </body>
