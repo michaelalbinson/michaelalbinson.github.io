@@ -1,0 +1,96 @@
+div{
+    text-align: center;
+}
+#header1{
+    display: block;
+    background: rgba(174, 174, 108, .75);
+    color: white;
+    padding: 10px;
+    border: 0;
+    left: 10px;
+    top: 10px;
+    border-radius: 10px;
+    position: fixed;
+    opacity: 1;
+}
+div.secondHeader{
+    display: block;
+    background: rgba(174, 174, 108, .75);
+    color: white;
+    padding: 10px;
+    border: 0;
+    right: 10px;
+    top: 10px;
+    border-radius: 10px;
+    position: fixed;
+}
+body{
+    text-align: center;
+    background: url("http://i.imgur.com/gqNbBZu.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+p{
+    font-size: 24px;
+    text-align: left;
+}
+h1.FileTitle{
+    font-size: 50px;
+    font-family: sans-serif;
+    padding: 10px;
+}
+h1{
+    font-size: 32px;
+    font-family: sans-serif;
+}
+h3{
+    text-align: left;
+}
+input{
+    border: 0;
+    padding: 0px;
+    font-size: 18px;
+}
+input[type="submit"]{
+    background: green;
+    color: black;
+}
+div.experiences{
+    padding: 30px;
+    background: rgba(250, 240, 230, .75);
+    color: black;
+    border-radius: 10px;
+
+}
+div.bottom{
+    padding: 30px;
+    background-color: rgba(250, 240, 230, .75);
+    color: black;
+    border-radius: 10px;
+}
+div.education{
+    padding: 30px;
+    background-color: rgba(250, 240, 230, .75);
+    color: black;
+    border-radius: 10px;
+}
+div.footer{
+    background-color: rgba(135, 99, 64, .75);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+}
+ul{
+    text-align: left;
+    font-size: 1.5em;
+}
+img{
+    border-radius: 10px;
+}
+a{
+    color: black;
+}
