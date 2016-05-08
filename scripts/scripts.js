@@ -19,7 +19,7 @@ function scrollToSection(toSection){
     var y_loc = startPosition;
     switch(toSection) {
         case 1: //top
-            toPosition = document.getElementById("top").getBoundingClientRect().top;
+            toPosition = document.getElementById("topIndex").getBoundingClientRect().top;
             break;
         case 2: //experiences
             toPosition = document.getElementById("jump1").getBoundingClientRect().top;

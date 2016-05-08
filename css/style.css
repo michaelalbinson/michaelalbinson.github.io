@@ -24,7 +24,7 @@ div.secondHeader{
     border-radius: 0.625em;
     position: fixed;
 }
-body{
+#topIndex{
     text-align: center;
     background: url("http://i.imgur.com/gqNbBZu.jpg");
     background-size: cover;
@@ -32,6 +32,16 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#aboutMeBody{
+    text-align: center;
+    background: url("images/snow.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 p{
