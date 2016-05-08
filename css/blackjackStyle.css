@@ -46,6 +46,7 @@ div.cardUpper{
 	left: .1em;
 	top: 0;
 	font-size: 2em;
+	display: block;
 }
 
 div.cardLower{
@@ -53,6 +54,7 @@ div.cardLower{
 	bottom: 0;
 	right: .1em;
 	font-size: 2em;
+	display: block;
 
 }
 img.centerImage{
