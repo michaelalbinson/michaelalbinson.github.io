@@ -5,11 +5,11 @@ div{
     display: block;
     background: rgba(174, 174, 108, .75);
     color: white;
-    padding: 10px;
+    padding: 0.625em;
     border: 0;
-    left: 10px;
-    top: 10px;
-    border-radius: 10px;
+    left: 0.625em;
+    top: 0.625em;
+    border-radius: 0.625em;
     position: fixed;
     opacity: 1;
 }
@@ -17,11 +17,11 @@ div.secondHeader{
     display: block;
     background: rgba(174, 174, 108, .75);
     color: white;
-    padding: 10px;
+    padding: 0.625em;
     border: 0;
-    right: 10px;
-    top: 10px;
-    border-radius: 10px;
+    right: 0.625em;
+    top: 0.625em;
+    border-radius: 0.625em;
     position: fixed;
 }
 body{
@@ -35,16 +35,16 @@ body{
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 p{
-    font-size: 24px;
+    font-size: 1.5em;
     text-align: left;
 }
 h1.FileTitle{
-    font-size: 50px;
+    font-size: 3.125em;
     font-family: sans-serif;
-    padding: 10px;
+    padding: .625em;
 }
 h1{
-    font-size: 32px;
+    font-size: 2em;
     font-family: sans-serif;
 }
 h3{
@@ -52,36 +52,42 @@ h3{
 }
 input{
     border: 0;
-    padding: 0px;
-    font-size: 18px;
+    padding: 0;
+    font-size: 1.125em;
 }
 input[type="submit"]{
     background: green;
     color: black;
 }
 div.experiences{
-    padding: 30px;
+    padding: 1.875em;
     background: rgba(250, 240, 230, .75);
     color: black;
-    border-radius: 10px;
+    border-radius: .625em;
 
 }
 div.bottom{
-    padding: 30px;
+    padding: 1.875em;
     background-color: rgba(250, 240, 230, .75);
     color: black;
-    border-radius: 10px;
+    border-radius: 0.625em;
 }
 div.education{
-    padding: 30px;
+    padding: 1.875em;
     background-color: rgba(250, 240, 230, .75);
     color: black;
-    border-radius: 10px;
+    border-radius: 0.625em;
+}
+div.volunteering{
+    padding: 1.875em;
+    background-color: rgba(250, 240, 230, .75);
+    color: black;
+    border-radius: 0.625em;
 }
 div.footer{
     background-color: rgba(135, 99, 64, .75);
-    border-radius: 10px;
-    padding: 30px;
+    border-radius: 0.625em;
+    padding: 1.875em;
     text-align: center;
     border-right: 0;
     border-left: 0;
@@ -89,11 +95,15 @@ div.footer{
 }
 ul{
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 img{
-    border-radius: 10px;
+    border-radius: 0.625em;
 }
 a{
     color: black;
+}
+h4{
+    margin-top: 0;
+    margin-bottom: 0;
 }

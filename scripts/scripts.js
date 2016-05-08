@@ -30,6 +30,9 @@ function scrollToSection(toSection){
         case 4: //Other interests
             toPosition = document.getElementById("jump3").getBoundingClientRect().top;
             break;
+        case 5:
+            toPosition = document.getElementById("jump4").getBoundingClientRect().top;
+            break;
         default:
             console.log("uncaught section selector " + toSection);
             break;
