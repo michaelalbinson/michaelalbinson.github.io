@@ -4,9 +4,9 @@ body{
 	border-radius: 5px;
 	background-image: url("images/path.jpg");
 	background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 div.dealerDeck{
@@ -55,12 +55,12 @@ div.cardLower{
 	font-size: 2em;
 
 }
-div.cardCenter{
+img.centerImage{
 	position: relative;
 	text-align: center;
 	top: 27%;
 }
-button{
+input{
 	border: none;
 	display: inline-block;
 	margin: 10px;
@@ -75,11 +75,13 @@ button{
 
 #resultBox{
 	border-radius: 10px;
+	border = 0;
 	background-color: linen;
 	color: black;
 	font-weight: bold;
 	margin: auto;
 	font-size: 1.5em;
+	text-align: center;
 }
 
 h2{
@@ -88,20 +90,28 @@ h2{
 	background-color: rgba(10, 35, 58, .75);
 	border-radius: 10px;
 	width: 100px;
+	font-family: cursive;
 }
 h1{
-
+	margin: auto;
+	float: middle;
 	background-color: rgba(10, 35, 58, .75);
 	border-radius: 10px;
+	font-family: cursive;
 }
 
 div.footer{
-    background-color: rgba(135, 99, 64, .75);
-    border-radius: 0.625em;
-    padding: 1.875em;
-    text-align: center;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 0;
-    padding:5px;
+	background-color: rgba(135, 99, 64, .75);
+	border-radius: 0.625em;
+	padding: 1.875em;
+	text-align: center;
+	border-right: 0;
+	border-left: 0;
+	border-bottom: 0;
+	padding:5px;
 }
+
+a:link {color: black;}      /* unvisited link */
+a:visited {color: black;}   /* visited link */
+a:hover {color: black;}     /* mouse over link */
+a:active {color: black;}    /* selected link */
