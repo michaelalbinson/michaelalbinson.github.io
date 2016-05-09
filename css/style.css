@@ -34,16 +34,6 @@ div.secondHeader{
     color: white;
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
-#aboutMeBody{
-    text-align: center;
-    background: url("images/snow.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: black;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-}
 p{
     font-size: 1.5em;
     text-align: left;

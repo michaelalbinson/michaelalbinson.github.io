@@ -1,0 +1,35 @@
+body{
+	text-align: center;
+    background: url("images/snow.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: black;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+div.footer{
+    background-color: rgba(135, 99, 64, .75);
+    border-radius: 0.625em;
+    padding: 1.875em;
+    text-align: center;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+}
+div.blackjack{
+    background-color: rgba(250, 240, 230, .75);
+    color: black;
+    border-radius: 0.625em;
+}
+img.logo{
+    vertical-align: middle;
+    padding: 0;
+}
+div.logotext{
+    
+}
+a{
+    color: black;
+}

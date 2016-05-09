@@ -61,6 +61,8 @@ img.centerImage{
 	position: relative;
 	text-align: center;
 	top: 27%;
+	height: 75px;
+	width: 75px;
 }
 input{
 	border: none;
@@ -95,8 +97,8 @@ h2{
 	font-family: cursive;
 }
 h1{
-	margin: auto;
-	float: middle;
+	padding-left: 0;
+	padding-right: 0;
 	background-color: rgba(10, 35, 58, .75);
 	border-radius: 10px;
 	font-family: cursive;
