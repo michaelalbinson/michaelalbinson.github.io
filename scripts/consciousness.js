@@ -51,7 +51,7 @@ function stringMaster(textSelector){
 		if (!intervalsSetFlag && textSelector.length >= stringsRun){
 			interval1 = setInterval(function(){
 				buildString(textSelector[i]);
-			}, 250);
+			}, 100);
 				if (textSelector.length-2 != stringsRun){
 				interval2 = setInterval(function(){
 					deleteString(textSelector[i]);
@@ -100,16 +100,30 @@ function deleteString(string){
 
 function handleKeydown(inputElement){
 	if (inputElement.value == "y" || inputElement.value == "yes"){
+		resetTextIntervals();
 		stringMaster(confirmStringBank);
 	}
 	else if (inputElement.value == "n" || inputElement.value == "no"){
+		resetTextIntervals();
 		stringMaster(declineStringBank);
 	}
 	else if (inputElement == "surprise?"){
-
-	}
-	else{
-		inputElement.value = " ";
+		resetTextIntervals();
 		document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "... please enter 'y' or 'n'... User this is pathetic";
 	}
+	else{
+		resetTextIntervals();
+		document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "... please enter 'y' or 'n'... User this is pathetic";
+	}
+}
+
+function resetTextIntervals(){
+	clearInterval(interval1);
+	clearInterval(interval2);
+	clearInterval(masterInterval);
+	completeFlag = true;
+	continueFlag = false;
+	intervalsSetFlag = false;
+	holder = 1;
+	stringsRun = 0;
 }
