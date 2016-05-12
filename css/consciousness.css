@@ -1,0 +1,65 @@
+body{
+	position: absolute;
+	background-color: #1ec503;
+	font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;;
+}
+
+h1{
+	text-align: center;
+	background-color: #1ec503;
+}
+
+div.gameBody{
+	position: fixed;
+	align-self: center;
+	background-color: rgba(0, 0, 0, .85);
+	border: 0;
+	bottom: 0;
+	top: 0;
+	right: 30px;
+	left: 30px;
+	border-radius: 5px;
+}
+
+p.gameText{
+	color: #1ec503;
+	text-align: left;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+input{
+	display: block;
+	position: relative;
+	border: 1px;
+	background-color: rgb(192,192,192);
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	color: #1ec503;
+	font-size: 1em;
+
+}
+
+div.blinkingBox{
+	display: inline-block;;
+	align-self: center;
+	background-color: #1ec503;
+	height: 1em;
+	width: .5em;
+
+}
+
+div.text-container{
+	display: inline-block;
+	align-self: center;
+	padding: 0;
+	margin: 0;
+}
+
+input.middle:focus {
+    outline-width: 0;
+}
+input.continueField{
+	display: block;
+}

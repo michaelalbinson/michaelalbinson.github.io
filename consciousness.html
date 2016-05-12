@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/consciousness.css">
+	<link rel="shortcut icon" href="https://raw.githubusercontent.com/wayke/wayke.github.io/master/images/favicon%20(1).ico"/>
+	<title>Consciousness</title>
+	<script type="text/javascript" src="scripts/consciousness.js"></script></script>
+</head>
+
+<body>
+	<div class="gameBody"> 
+		<h1>Consciousness</h1>
+		<div class="text-container" onload="beginToggling()"><p class="gameText">/Master/:</p><p class="gameText">Click "see what happens" to begin</p></div><div class="blinkingBox"></div>
+		<!--<input placeholder="type here"></input>-->
+		<br>
+		<input class = "acceptButton" type="button" value="See what happens" onclick="changeText(stringBank)"></input>
+		<input class = "continueField" type="text" placeholder="enter 'y' or 'n'" onkeydown="if (event.keyCode == 13) {handleKeydown(this)}"></input>
+		
+
+		</div>
+
+</body>
