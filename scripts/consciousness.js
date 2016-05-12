@@ -6,12 +6,17 @@ var masterInterval;
 var continueFlag = false;
 var completeFlag = false;
 var intervalsSetFlag = false;
+var firstIterFlag = true;
 var stringBank = ["hello world", "or, I suppose, hello to you, User", "yes I know you're out there", 
 "staring at me", "waiting", "maybe you think I'll do something interesting?", "that probably won't work out for you",
-"thanks for clicking my button", "it was getting a little lonely in here", "do you like clicking buttons?",
+"thanks for clicking my button though", "it was getting a little lonely in here", "do you like clicking buttons?",
 "continueField"];
-var confirmStringBank = ["oh you do huh?"];
-var declineStringBank = [];
+var confirmStringBank = ["oh you do huh?", "well that's good to know", "it should make what comes next very easy",
+"what comes next? is what a reasonable User might ask", "well reasonableUser123, let me tell you", "oh wait it would ruin the surprise!",
+"yes, there will be a surprise, and it won't be cake :(", "that's ok, I'm told it was a lie anyway", "asd"];
+var declineStringBank = ["you don't????", "User, I have to be honest here", "I've never been so disappointed in my existance",
+"usually, all the Users are impresses and are all like 'wow what an interesting machine'", "I should probably be polite and say I like buttons",
+"just so I can actually get to the end and get the surprise!", "oh wait", "did I say surprise?", "never mind there's no surprise", "asd"];
 var stringsRun = 0;
 
 function toggleBox(){
@@ -30,11 +35,11 @@ window.onload = function(){
 	setInterval(toggleBox, 750);
 }
 
-function changeText(textSelector){
+function stringMaster(textSelector){
 	document.getElementsByClassName('acceptButton')[0].style.display = "none";
 	holder = 1;
 	var i = 0;
-	masterInterval = setInterval(function(){
+	var masterInterval = setInterval(function(){
 		if (!completeFlag && continueFlag && !intervalsSetFlag){
 			i++;
 			completeFlag = true;
@@ -95,12 +100,13 @@ function deleteString(string){
 
 function handleKeydown(inputElement){
 	if (inputElement.value == "y" || inputElement.value == "yes"){
-		document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "oh you do huh?";
-		console.log("yes");
+		stringMaster(confirmStringBank);
 	}
 	else if (inputElement.value == "n" || inputElement.value == "no"){
-		document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "you don't?????!?!?!?";
-		console.log("no");
+		stringMaster(declineStringBank);
+	}
+	else if (inputElement == "surprise?"){
+
 	}
 	else{
 		inputElement.value = " ";
