@@ -9,6 +9,7 @@ var intervalsSetFlag = false;
 var firstIterFlag = true;
 var stage = 0;
 var endStageDoneFlag = false;
+var cakeFlag = false;
 var stringBank = ["hello world", "or, I suppose, hello to you, User", "yes I know you're out there", 
 "staring at me", "waiting", "maybe you think I'll do something interesting?", "that probably won't work out for you",
 "thanks for clicking my button though", "it was getting a little lonely in here", "do you like clicking buttons?"];
