@@ -54,11 +54,11 @@ function stringMaster(textSelector){
 		if (!intervalsSetFlag && textSelector.length >= stringsRun){
 			interval1 = setInterval(function(){
 				buildString(textSelector[i]);
-			}, 50);
+			}, 100);
 			if (textSelector.length-1 != stringsRun){
 				interval2 = setInterval(function(){
 					deleteString(textSelector[i]);
-				}, 10);
+				}, 50);
 			}
 			intervalsSetFlag = true;
 		}
