@@ -11,17 +11,19 @@ var stage = 0;
 var endStageDoneFlag = false;
 var cakeFlag = false;
 var stringBank = ["hello world", "or, I suppose, hello to you, User", "yes I know you're out there", 
-"staring at me", "waiting", "maybe you think I'll do something interesting?", "that probably won't work out for you",
-"thanks for clicking my button though", "it was getting a little lonely in here", "do you like clicking buttons?"];
+	"staring at me", "waiting", "maybe you think I'll do something interesting?", "that probably won't work out for you",
+	"thanks for clicking my button though", "it was getting a little lonely in here", "do you like clicking buttons?"];
 var confirmStringBank = ["oh you do huh?", "well that's good to know", "it should make what comes next very easy",
-"what comes next? is what a reasonable User might ask", "well reasonableUser123, let me tell you", "oh wait it would ruin the surprise!",
-"yes, there will be a surprise, and it won't be cake :(", "that's ok, I'm told it was a lie anyway"];
+	"what comes next? is what a reasonable User might ask", "well reasonableUser123, let me tell you", 
+	"oh wait it would ruin the surprise!", "yes, there will be a surprise, and it won't be cake :(", 
+	"that's ok, I'm told it was a lie anyway"];
 var declineStringBank = ["you don't????", "User, I have to be honest here", "I've never been so disappointed in my existance",
-"usually, all the Users are impressed",  "and are all like 'wow what an interesting machine'", "I should probably be polite and say I like buttons",
-"just so I can actually get to the end and get the surprise!", "oh wait", "did I say surprise?", "never mind there's no surprise"];
+	"usually, all the Users are impressed",  "and are all like 'wow what an interesting machine'", "I should probably be polite and say I like buttons",
+	"just so I can actually get to the end and get the surprise!", "oh wait", "did I say surprise?", "never mind there's no surprise"];
 var cakeDialog = ["who said anything about cake?"];
-var surpriseDialog = ["I literallly just said that I'm not "];
-var stage2Dialog = ["ok 'man' sorry I'm just not interesting enough for you", "I went and prepared this whole thing", "and all you can say is 'whatever'???"]
+var surpriseDialog = ["I literallly just said", "that I'm NOT going to ruin this surprise", "what?"];
+var stage2Dialog = ["ok 'man' sorry I'm just not interesting enough for you", "I went and prepared this whole thing", 
+	"and all you can say is 'whatever'???"]
 var stringsRun = 0;
 
 function toggleBox(){
@@ -54,11 +56,11 @@ function stringMaster(textSelector){
 		if (!intervalsSetFlag && textSelector.length >= stringsRun){
 			interval1 = setInterval(function(){
 				buildString(textSelector[i]);
-			}, 100);
+			}, 10);
 			if (textSelector.length-1 != stringsRun){
 				interval2 = setInterval(function(){
 					deleteString(textSelector[i]);
-				}, 50);
+				}, 10);
 			}
 			intervalsSetFlag = true;
 		}
@@ -175,7 +177,7 @@ function onFadeOut(element, doSomething){
 }
 
 function nextStageSelector(){
-	if (!endStageDoneFlag && !cakeFlag){
+	if (!endStageDoneFlag){
 		resetTextIntervals();
 		switch(stage){
 			case(0):
@@ -190,7 +192,14 @@ function nextStageSelector(){
 				stage = 2;
 				break;
 			case(2):
-				break;
+				if (cakeFlag){
+					console.log("true");
+					break;
+				}
+				else{
+					stage = 3;
+					break;
+				}
 			case(3):
 				break;
 			case(4):
@@ -199,8 +208,8 @@ function nextStageSelector(){
 				console.log("unknown stage")
 				break;
 		}
-		endStageDoneFlag = true;
 	}
+	endStageDoneFlag = true;
 }
 
 function handleKeydown(inputElement){
@@ -224,4 +233,17 @@ function handleKeydown(inputElement){
 		}
 	}
 	document.getElementsByClassName("continueField")[0].value = "";
+}
+
+function discussSurprise(){
+	cakeFlag = true;
+	stringMaster(surpriseDialog);
+}
+function discussCake(){
+	cakeFlag = true;
+	stringMaster(cakeDialog);
+}
+function discussWhatever(){
+	cakeFlag = false;
+	stringMaster(stage2Dialog);
 }
