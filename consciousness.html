@@ -12,9 +12,19 @@
 		<div class="text-container" onload="beginToggling()"><p class="gameText">/Master/:</p><p class="gameText">Click "see what happens" to begin</p></div><div class="blinkingBox"></div>
 		<!--<input placeholder="type here"></input>-->
 		<br>
-		<input class = "acceptButton" type="button" value="See what happens" onclick="stringMaster(stringBank)"></input>
+		<input class = "acceptButton" type="button" value="See what happens" onclick="handleButtonPush()"></input>
 		<input class = "continueField" type="text" placeholder="enter 'y' or 'n'" onkeydown="if (event.keyCode == 13) {handleKeydown(this)}"></input>
-		
+		<br>
+		<img src="css/images/cake.png" class="cakeImage" title="cake">
+		<div class="stage2">
+			
+			<br>
+			<input type="button" value="surprise?" onclick="discussSurprise()"></input>
+			<br>
+			<input type="button" value="whatever, man, I'm not about this" onclick="stringMaster(stage2Dialog)"></input>
+
+			<input type="button" value="CAKE??" onclick="displayCake()"></input>
+		</div>
 
 		</div>
 

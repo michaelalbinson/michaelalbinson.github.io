@@ -47,7 +47,6 @@ div.blinkingBox{
 	background-color: #1ec503;
 	height: 1em;
 	width: .5em;
-
 }
 
 div.text-container{
@@ -61,5 +60,15 @@ input.middle:focus {
     outline-width: 0;
 }
 input.continueField{
+	display: none;
+}
+img{
+	margin-left: auto;
+	margin-right: auto;
+	height: 75px;
+	width: 75px;
+	display: none;
+}
+div.stage3{
 	display: block;
 }
