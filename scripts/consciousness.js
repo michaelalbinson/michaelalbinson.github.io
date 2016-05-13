@@ -23,8 +23,9 @@ var declineStringBank = ["you don't????", "User, I have to be honest here", "I'v
 var cakeDialog = ["who said anything about cake?"];
 var surpriseDialog = ["I literallly just said", "that I'm NOT going to ruin this surprise", "what?"];
 var stage2Dialog = ["ok 'man' sorry I'm just not interesting enough for you", "I went and prepared this whole thing", 
-	"and all you can say is 'whatever'???"]
+	"and all you can say is 'whatever'???", "fine fine fine"]
 var stringsRun = 0;
+var endString = ["you've reached the END OF DEVELOPMENT", " more to come :)"]
 
 function toggleBox(){
 	var stuffToChange =  document.getElementsByClassName('blinkingBox')[0].style.display;
@@ -56,11 +57,11 @@ function stringMaster(textSelector){
 		if (!intervalsSetFlag && textSelector.length >= stringsRun){
 			interval1 = setInterval(function(){
 				buildString(textSelector[i]);
-			}, 10);
+			}, 100);
 			if (textSelector.length-1 != stringsRun){
 				interval2 = setInterval(function(){
 					deleteString(textSelector[i]);
-				}, 10);
+				}, 50);
 			}
 			intervalsSetFlag = true;
 		}
@@ -192,11 +193,16 @@ function nextStageSelector(){
 				stage = 2;
 				break;
 			case(2):
+				console.log("triggered");
 				if (cakeFlag){
-					console.log("true");
+					console.log("cakeFlag is true");
 					break;
 				}
 				else{
+					onFadeOut("stage2", function(){
+						fadeIn("continueField");
+					});
+					document.getElementsByClassName('gameText')[1].innerHTML = "--END OF CURRENT DEVELOPMENT-- more to come :)";
 					stage = 3;
 					break;
 				}
@@ -227,7 +233,7 @@ function handleKeydown(inputElement){
 			document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "... please enter 'y' or 'n'... User this is pathetic";
 		}
 	}
-	else if (stage == 2){
+	else if (stage == 3){
 		if (inputElement == "surprise?" || inputElement == "s"){
 			document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "you don't get to know the surprise yet ... please enter 'y' or 'n'... User this is pathetic";
 		}
