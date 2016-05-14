@@ -120,9 +120,17 @@ function nextStageSelector(){
 					document.getElementsByClassName('genButton')[i-1].value = "button 0" + i.toString();
 				}
 				fadeIn('stage2');
+				stage = 6;
+				break;
+			case 6:
+				fadeIn("continueField");
+				stage = 7;
 				break;	
+			case 7:
+				document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + endString;
+				break;
 			default:
-				console.log("unknown stage")
+				console.log("unknown stage");
 				break;
 		}
 	}
@@ -183,11 +191,19 @@ function discussSurprise(){
 		cakeFlag = true;
 		stringMaster(surpriseDialog);
 	}
+	if (stage == 6) {
+		fadeOut("continueField");
+		stringMaster(button1Dialog);
+	}
 }
 function discussCake(){
 	if (stage == 2) {
 		cakeFlag = true;
 		stringMaster(cakeDialog);
+	}
+	if (stage == 6) {
+		fadeOut("continueField");
+		stringMaster(button3Dialog);
 	}
 }
 function discussWhatever(){
@@ -195,6 +211,10 @@ function discussWhatever(){
 		cakeFlag = false;
 		stringMaster(stage2Dialog);
 		onFadeOut("stage2");
+	}
+	if (stage == 6) {
+		fadeOut("continueField");
+		stringMaster(button2Dialog);
 	}
 }
 
