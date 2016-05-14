@@ -10,6 +10,7 @@ var firstIterFlag = true;
 var stage = 0;
 var endStageDoneFlag = false;
 var cakeFlag = false;
+var annoyingCounter = 0;
 var stringBank = ["hello world", "or, I suppose, hello to you, User", "yes I know you're out there", 
 	"staring at me", "waiting", "maybe you think I'll do something interesting?", "that probably won't work out for you",
 	"thanks for clicking my button though", "it was getting a little lonely in here", "do you like clicking buttons?"];
@@ -23,25 +24,23 @@ var declineStringBank = ["you don't????", "User, I have to be honest here", "I'v
 var cakeDialog = ["who said anything about cake?"];
 var surpriseDialog = ["I literallly just said", "that I'm NOT going to ruin this surprise", "what?"];
 var stage2Dialog = ["ok 'man' sorry I'm just not interesting enough for you", "I went and prepared this whole thing", 
-	"and all you can say is 'whatever'???", "fine fine fine"]
+	"and all you can say is 'whatever'???", ".... anyway", "are you ready to begin user?", "I promise it'll be exciting!"];
+var stage3PositiveDialog = ["Wonderful!", "ok User", "because you've been agreeable for this long", "I'll give you a hint for the first task!",
+"HINT: push the button"];
+var stage3NegativeDialog = ["Ok so is no the only word you know how to say or...?", "regardless, I'm going to start the tests anyway",
+	"did I say tests?", "I meant happy human playtime", "my favorite part of the day", "ok User", "here you go", "the first task",
+	"can you figure it out?", "it's a hard one I will give you that"];
+var onButtonPushDialog = ["oh my goodness...", "User", "That had to be...", "THE BEST BUTTON PUSHING OF ALL TIME", "CONGRATULATIONS!!!",
+	"YOU'VE WON!!", "to honor your marvelous button pushing we want to reward you", "thusly, we'd like to bestow upon you...", 
+	"nothing, knucklehead", "you pushed a button", "what? do you think I was created yesterday??", "ok well actually I was",
+	"but REGARDLESS", "you won't just get the surprise for just clicking two stinking buttons", 
+	"no, the surprise is reserved for pushers of the highest caliber", "so", "are you ready for your next challenge?"];
+var stage5AnnoyedDialog = ["SO", "since you've already come this far", "I'm going to assume your petulance will only continue",
+	"so I must wish you goodbye and good riddance", "may your button hating ways bring you nothing in your sad little life",
+	"(but allow me to put this out there just in case)"];
+
 var stringsRun = 0;
 var endString = ["you've reached the END OF DEVELOPMENT", " more to come :)"]
-
-function toggleBox(){
-	var stuffToChange =  document.getElementsByClassName('blinkingBox')[0].style.display;
-	if(boxStatus){
-		document.getElementsByClassName('blinkingBox')[0].style.display = "none";
-		boxStatus = false;
-	}
-	else{
-		document.getElementsByClassName('blinkingBox')[0].style.display = "inline-block" ;
-		boxStatus = true;
-	}
-}
-
-window.onload = function(){
-	setInterval(toggleBox, 750);
-}
 
 function stringMaster(textSelector){
 	holder = 1;
@@ -70,111 +69,6 @@ function stringMaster(textSelector){
 			nextStageSelector();
 		}
 	}, 500);
-
-
-}
-
-function buildString(string){
-	if (!continueFlag){
-		if(holder == string.length+8){
-			clearInterval(interval1);
-			continueFlag = true;
-			return;
-		}
-		document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + string.substring(0, holder);
-		holder++;
-	}
-}
-
-function deleteString(string){
-	if (continueFlag){
-		if (holder == 0){
-			clearTimeout(interval2);
-			completeFlag = false;
-			intervalsSetFlag = false;
-		}
-
-		document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + string.substring(0, holder);
-		holder--;
-	}
-}
-
-function handleButtonPush(){
-	stringMaster(stringBank);
-	fadeOut("acceptButton");
-}
-
-function resetTextIntervals(){
-	clearInterval(interval1);
-	clearInterval(interval2);
-	clearInterval(masterInterval);
-	completeFlag = true;
-	continueFlag = false;
-	intervalsSetFlag = false;
-	holder = 1;
-	stringsRun = 0;
-}
-
-function fadeIn(element){
-	var opacity = 0;
-	document.getElementsByClassName(element)[0].style.opacity = opacity;
-	document.getElementsByClassName(element)[0].style.display = "block";
-	var fader = window.setInterval(function(){
-		if (opacity >= 1){
-			clearInterval(fader);
-		}
-		else{
-			opacity = opacity + .01;
-			document.getElementsByClassName(element)[0].style.opacity = opacity;
-		}
-	}, 10);
-}
-
-function onFadeIn(element, doSomething){
-	var opacity = 0;
-	document.getElementsByClassName(element)[0].style.opacity = opacity;
-	document.getElementsByClassName(element)[0].style.display = "block";
-	var fader = window.setInterval(function(){
-		if (opacity >= 1){
-			clearInterval(fader);
-			doSomething()
-		}
-		else{
-			opacity = opacity + .01;
-			document.getElementsByClassName(element)[0].style.opacity = opacity;
-		}
-	}, 10);
-}
-
-function fadeOut(element){
-	var opacity = 1;
-	document.getElementsByClassName(element)[0].style.opacity = opacity;
-	var fader = window.setInterval(function(){
-		if (opacity <= 0){
-			document.getElementsByClassName(element)[0].style.display = "none";
-			clearInterval(fader);
-		}
-		else{
-			opacity = opacity - .01;
-			document.getElementsByClassName(element)[0].style.opacity = opacity;
-		}
-	}, 10);
-}
-
-function onFadeOut(element, doSomething){
-	var opacity = 1;
-	document.getElementsByClassName(element)[0].style.opacity = opacity;
-	var fader = window.setInterval(function(){
-		if (opacity <= 0){
-			document.getElementsByClassName(element)[0].style.display = "none";
-			clearInterval(fader);
-			doSomething();
-		}
-		else{
-			opacity = opacity - .01;
-			document.getElementsByClassName(element)[0].style.opacity = opacity;
-		}
-	}, 10);
 }
 
 function nextStageSelector(){
@@ -191,6 +85,7 @@ function nextStageSelector(){
 					fadeOut("cakeImage");
 				});
 				stage = 2;
+				checkHowAnnoyedIAm();
 				break;
 			case(2):
 				console.log("triggered");
@@ -199,16 +94,23 @@ function nextStageSelector(){
 					break;
 				}
 				else{
-					onFadeOut("stage2", function(){
-						fadeIn("continueField");
-					});
-					document.getElementsByClassName('gameText')[1].innerHTML = "--END OF CURRENT DEVELOPMENT-- more to come :)";
+					fadeIn("continueField");
 					stage = 3;
 					break;
 				}
 			case(3):
+				fadeIn('acceptButton');
+				stage = 4;
 				break;
 			case(4):
+				fadeIn("continueField");
+				stage = 5;
+				break;
+			case 5:
+				for (var i = 1; i <= 3; i++) {
+					document.getElementsByClassName('genButton')[i-1].value = "button 0" + i.toString();
+				}
+				fadeIn('stage2');
 				break;	
 			default:
 				console.log("unknown stage")
@@ -227,6 +129,7 @@ function handleKeydown(inputElement){
 		else if (inputElement.value == "n" || inputElement.value == "no"){
 			stringMaster(declineStringBank);
 			fadeOut("continueField");
+			annoyingCounter = 1;
 		}
 		else{
 			resetTextIntervals();
@@ -234,8 +137,33 @@ function handleKeydown(inputElement){
 		}
 	}
 	else if (stage == 3){
-		if (inputElement == "surprise?" || inputElement == "s"){
-			document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "you don't get to know the surprise yet ... please enter 'y' or 'n'... User this is pathetic";
+		if (inputElement.value == "y" || inputElement.value == "yes"){
+			fadeOut("continueField");
+			checkHowAnnoyedIAm();
+		}
+		else if(inputElement.value == "n" || inputElement.value == "no"){
+			fadeOut("continueField");
+			annoyingCounter++;
+			checkHowAnnoyedIAm();
+		}
+		else{
+			resetTextIntervals();
+			document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "Seriously how are you still not getting this... please enter 'y' or 'n'...";
+		}
+	}
+	else if (stage == 5){
+		if (inputElement.value == "y" || inputElement.value == "yes"){
+			fadeOut("continueField");
+			checkHowAnnoyedIAm();
+		}
+		else if(inputElement.value == "n" || inputElement.value == "no"){
+			fadeOut("continueField");
+			annoyingCounter++;
+			checkHowAnnoyedIAm();
+		}
+		else{
+			resetTextIntervals();
+			document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "Seriously how are you still not getting this... please enter 'y' or 'n'...";
 		}
 	}
 	document.getElementsByClassName("continueField")[0].value = "";
@@ -252,4 +180,57 @@ function discussCake(){
 function discussWhatever(){
 	cakeFlag = false;
 	stringMaster(stage2Dialog);
+	onFadeOut("stage2");
+}
+
+function handleButtonPush(){
+	if (stage == 0){
+		stringMaster(stringBank);
+		onFadeOut("acceptButton", function(){
+			document.getElementsByClassName('acceptButton')[0].value = "PUSH ME";
+		});
+	}
+	if (stage == 4){
+		stringMaster(onButtonPushDialog);
+		fadeOut('acceptButton');
+	}
+}
+
+function checkHowAnnoyedIAm(){
+	switch(stage){
+		case 2:
+			if (annoyingCounter == 0){
+				stage2Dialog.push("I know you'll love it");
+			}
+			else{
+				stage2Dialog.push("... probably not for you, but definitely for me");
+			}
+			break;
+		case 3:
+			if (annoyingCounter == 0){
+				stringMaster(stage3PositiveDialog);
+			}
+			else if (annoyingCounter == 1){
+				stage3PositiveDialog[2] = "because you've been (mostly) agreeable for this long";
+				stage3PositiveDialog.push("(You probably won't even enjoy pressing it)");	
+				stringMaster(stage3PositiveDialog);
+			}
+			else{
+				stringMaster(stage3NegativeDialog);
+			}
+			break;
+		case 5:
+			if (annoyingCounter == 0){
+				string
+			}
+			else if (annoyingCounter == 1){
+
+			}
+			else{
+				stringMaster(stage5AnnoyedDialog)
+			}
+			break;
+		default:
+			break;
+	}
 }

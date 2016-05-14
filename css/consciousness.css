@@ -2,6 +2,7 @@ body{
 	position: absolute;
 	background-color: #1ec503;
 	font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;;
+	font-size: 2.5em;
 }
 
 h1{

@@ -3,6 +3,7 @@
 	<link rel="stylesheet" type="text/css" href="css/consciousness.css">
 	<link rel="shortcut icon" href="https://raw.githubusercontent.com/wayke/wayke.github.io/master/images/favicon%20(1).ico"/>
 	<title>Consciousness</title>
+	<script type="text/javascript" src="scripts/utility.js"></script>
 	<script type="text/javascript" src="scripts/consciousness.js"></script></script>
 </head>
 
@@ -16,11 +17,11 @@
 		<input class = "continueField" type="text" placeholder="enter 'y' or 'n'" onkeydown="if (event.keyCode == 13) {handleKeydown(this)}"></input>
 		<br>
 		<div class="stage2">
-			<input type="button" value="surprise?" onclick="discussSurprise()"></input>
+			<input class = "genButton" type="button" value="surprise?" onclick="discussSurprise()"></input>
 			<br>
-			<input type="button" value="whatever, man, I'm not about this" onclick="discussWhatever()"></input>
+			<input class = "genButton" type="button" value="whatever, man, I'm not about this" onclick="discussWhatever()"></input>
 			<br>
-			<input type="button" value="CAKE??" onclick="discussCake()"></input>
+			<input class = "genButton" type="button" value="CAKE??" onclick="discussCake()"></input>
 		</div>
 		<br>
 		<img src="css/images/cake.png" class="cakeImage" title="cake">
