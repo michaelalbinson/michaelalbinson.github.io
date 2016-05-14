@@ -65,11 +65,11 @@ function stringMaster(textSelector){
 		if (!intervalsSetFlag && textSelector.length >= stringsRun){
 			interval1 = setInterval(function(){
 				buildString(textSelector[i]);
-			}, 1);
+			}, 100);
 			if (textSelector.length-1 != stringsRun){
 				interval2 = setInterval(function(){
 					deleteString(textSelector[i]);
-				}, 1);
+				}, 50);
 			}
 			intervalsSetFlag = true;
 		}
@@ -192,7 +192,7 @@ function discussSurprise(){
 		stringMaster(surpriseDialog);
 	}
 	if (stage == 6) {
-		fadeOut("continueField");
+		fadeOut("stage2");
 		stringMaster(button1Dialog);
 	}
 }
@@ -202,7 +202,7 @@ function discussCake(){
 		stringMaster(cakeDialog);
 	}
 	if (stage == 6) {
-		fadeOut("continueField");
+		fadeOut("stage2");
 		stringMaster(button3Dialog);
 	}
 }
@@ -213,7 +213,7 @@ function discussWhatever(){
 		onFadeOut("stage2");
 	}
 	if (stage == 6) {
-		fadeOut("continueField");
+		fadeOut("stage2");
 		stringMaster(button2Dialog);
 	}
 }
