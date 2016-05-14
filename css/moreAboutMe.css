@@ -16,6 +16,7 @@ div.footer{
     border-right: 0;
     border-left: 0;
     border-bottom: 0;
+    padding: 1em;
 }
 
 div.projects{
@@ -65,7 +66,7 @@ a{
 }
 
 hr{
-width: 75%;
+    width: 75%;
 }
 h6{
 

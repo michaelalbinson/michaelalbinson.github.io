@@ -6,7 +6,7 @@ var masterInterval;
 var continueFlag = false;
 var completeFlag = false;
 var intervalsSetFlag = false;
-var firstIterFlag = true;
+var multiuseFlag = false;
 var stage = 0;
 var endStageDoneFlag = false;
 var cakeFlag = false;
@@ -37,8 +37,17 @@ var onButtonPushDialog = ["oh my goodness...", "User", "That had to be...", "THE
 	"no, the surprise is reserved for pushers of the highest caliber", "so", "are you ready for your next challenge?"];
 var stage5AnnoyedDialog = ["SO", "since you've already come this far", "I'm going to assume your petulance will only continue",
 	"so I must wish you goodbye and good riddance", "may your button hating ways bring you nothing in your sad little life",
-	"(but allow me to put this out there just in case)"];
-
+	"(but allow me to put this out there just in case)", "(there are three buttons)", "(each will lead you down a different path)", 
+	"(the choice is yours user)", "(which do you choose?)"];
+var stage5PositiveDialog = ["ahhh well aren't you developing into quite the test subject!", "did I say text??",
+	"I meant happy human playtime!", "but anyway", "here's a new one", "there are three buttons", 
+	"each will lead you down a different path", "the choice is yours user", "which do you choose?"];
+var button1Dialog = ["ah button 01", "interesting choice user", "the number one, the symbol of superiority",
+	"the symbol of laziness", "User, I'd like to tell you a story", "as it turns out, you're actually in it"];
+var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like to know more", "let me tell you a story, User",
+	""];
+var button3Dialog = ["number 3...", "why'd it have to be number 3...", "User, let me spin you a yarn if you would",
+	""];
 var stringsRun = 0;
 var endString = ["you've reached the END OF DEVELOPMENT", " more to come :)"]
 
@@ -56,11 +65,11 @@ function stringMaster(textSelector){
 		if (!intervalsSetFlag && textSelector.length >= stringsRun){
 			interval1 = setInterval(function(){
 				buildString(textSelector[i]);
-			}, 100);
+			}, 1);
 			if (textSelector.length-1 != stringsRun){
 				interval2 = setInterval(function(){
 					deleteString(textSelector[i]);
-				}, 50);
+				}, 1);
 			}
 			intervalsSetFlag = true;
 		}
@@ -154,12 +163,12 @@ function handleKeydown(inputElement){
 	else if (stage == 5){
 		if (inputElement.value == "y" || inputElement.value == "yes"){
 			fadeOut("continueField");
-			checkHowAnnoyedIAm();
+			stringMaster(stage5PositiveDialog);
 		}
 		else if(inputElement.value == "n" || inputElement.value == "no"){
 			fadeOut("continueField");
 			annoyingCounter++;
-			checkHowAnnoyedIAm();
+			stringMaster(stage5AnnoyedDialog);
 		}
 		else{
 			resetTextIntervals();
@@ -170,17 +179,23 @@ function handleKeydown(inputElement){
 }
 
 function discussSurprise(){
-	cakeFlag = true;
-	stringMaster(surpriseDialog);
+	if (stage == 2) {
+		cakeFlag = true;
+		stringMaster(surpriseDialog);
+	}
 }
 function discussCake(){
-	cakeFlag = true;
-	stringMaster(cakeDialog);
+	if (stage == 2) {
+		cakeFlag = true;
+		stringMaster(cakeDialog);
+	}
 }
 function discussWhatever(){
-	cakeFlag = false;
-	stringMaster(stage2Dialog);
-	onFadeOut("stage2");
+	if (stage == 2) {
+		cakeFlag = false;
+		stringMaster(stage2Dialog);
+		onFadeOut("stage2");
+	}
 }
 
 function handleButtonPush(){
@@ -221,13 +236,12 @@ function checkHowAnnoyedIAm(){
 			break;
 		case 5:
 			if (annoyingCounter == 0){
-				string
+				
 			}
 			else if (annoyingCounter == 1){
 
 			}
 			else{
-				stringMaster(stage5AnnoyedDialog)
 			}
 			break;
 		default:
