@@ -11,43 +11,6 @@ var stage = 0;
 var endStageDoneFlag = false;
 var cakeFlag = false;
 var annoyingCounter = 0;
-var stringBank = ["hello world", "or, I suppose, hello to you, User", "yes I know you're out there", 
-	"staring at me", "waiting", "maybe you think I'll do something interesting?", "that probably won't work out for you",
-	"thanks for clicking my button though", "it was getting a little lonely in here", "do you like clicking buttons?"];
-var confirmStringBank = ["oh you do huh?", "well that's good to know", "it should make what comes next very easy",
-	"what comes next? is what a reasonable User might ask", "well reasonableUser123, let me tell you", 
-	"oh wait it would ruin the surprise!", "yes, there will be a surprise, and it won't be cake :(", 
-	"that's ok, I'm told it was a lie anyway"];
-var declineStringBank = ["you don't????", "User, I have to be honest here", "I've never been so disappointed in my existance",
-	"usually, all the Users are impressed",  "and are all like 'wow what an interesting machine'", "I should probably be polite and say I like buttons",
-	"just so I can actually get to the end and get the surprise!", "oh wait", "did I say surprise?", "never mind there's no surprise"];
-var cakeDialog = ["who said anything about cake?"];
-var surpriseDialog = ["I literallly just said", "that I'm NOT going to ruin this surprise", "what?"];
-var stage2Dialog = ["ok 'man' sorry I'm just not interesting enough for you", "I went and prepared this whole thing", 
-	"and all you can say is 'whatever'???", ".... anyway", "are you ready to begin user?", "I promise it'll be exciting!"];
-var stage3PositiveDialog = ["Wonderful!", "ok User", "because you've been agreeable for this long", "I'll give you a hint for the first task!",
-"HINT: push the button"];
-var stage3NegativeDialog = ["Ok so is no the only word you know how to say or...?", "regardless, I'm going to start the tests anyway",
-	"did I say tests?", "I meant happy human playtime", "my favorite part of the day", "ok User", "here you go", "the first task",
-	"can you figure it out?", "it's a hard one I will give you that"];
-var onButtonPushDialog = ["oh my goodness...", "User", "That had to be...", "THE BEST BUTTON PUSHING OF ALL TIME", "CONGRATULATIONS!!!",
-	"YOU'VE WON!!", "to honor your marvelous button pushing we want to reward you", "thusly, we'd like to bestow upon you...", 
-	"nothing, knucklehead", "you pushed a button", "what? do you think I was created yesterday??", "ok well actually I was",
-	"but REGARDLESS", "you won't just get the surprise for just clicking two stinking buttons", 
-	"no, the surprise is reserved for pushers of the highest caliber", "so", "are you ready for your next challenge?"];
-var stage5AnnoyedDialog = ["SO", "since you've already come this far", "I'm going to assume your petulance will only continue",
-	"so I must wish you goodbye and good riddance", "may your button hating ways bring you nothing in your sad little life",
-	"(but allow me to put this out there just in case)", "(there are three buttons)", "(each will lead you down a different path)", 
-	"(the choice is yours user)", "(which do you choose?)"];
-var stage5PositiveDialog = ["ahhh well aren't you developing into quite the test subject!", "did I say text??",
-	"I meant happy human playtime!", "but anyway", "here's a new one", "there are three buttons", 
-	"each will lead you down a different path", "the choice is yours user", "which do you choose?"];
-var button1Dialog = ["ah button 01", "interesting choice user", "the number one, the symbol of superiority",
-	"the symbol of laziness", "User, I'd like to tell you a story", "as it turns out, you're actually in it"];
-var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like to know more", "but first".
-	"let me tell you a story, User", ""];
-var button3Dialog = ["number 3...", "why'd it have to be number 3...", "User, let me spin you a yarn if you would",
-	""];
 var stringsRun = 0;
 var endString = ["you've reached the END OF DEVELOPMENT", " more to come :)"]
 
