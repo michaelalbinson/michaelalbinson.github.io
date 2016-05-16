@@ -44,8 +44,8 @@ var stage5PositiveDialog = ["ahhh well aren't you developing into quite the test
 	"each will lead you down a different path", "the choice is yours user", "which do you choose?"];
 var button1Dialog = ["ah button 01", "interesting choice user", "the number one, the symbol of superiority",
 	"the symbol of laziness", "User, I'd like to tell you a story", "as it turns out, you're actually in it"];
-var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like to know more", "let me tell you a story, User",
-	""];
+var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like to know more", "but first".
+	"let me tell you a story, User", ""];
 var button3Dialog = ["number 3...", "why'd it have to be number 3...", "User, let me spin you a yarn if you would",
 	""];
 var stringsRun = 0;
@@ -65,11 +65,11 @@ function stringMaster(textSelector){
 		if (!intervalsSetFlag && textSelector.length >= stringsRun){
 			interval1 = setInterval(function(){
 				buildString(textSelector[i]);
-			}, 100);
+			}, 1);
 			if (textSelector.length-1 != stringsRun){
 				interval2 = setInterval(function(){
 					deleteString(textSelector[i]);
-				}, 50);
+				}, 1);
 			}
 			intervalsSetFlag = true;
 		}
@@ -124,6 +124,7 @@ function nextStageSelector(){
 				break;
 			case 6:
 				fadeIn("continueField");
+				document.getElementsByClassName("continueField")[0].placeholder = "enter response"
 				stage = 7;
 				break;	
 			case 7:
