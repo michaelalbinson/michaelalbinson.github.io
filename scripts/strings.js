@@ -54,40 +54,54 @@ var story1BranchA = ["(you picked my favorite choice User)", "you rise from the 
 		"you place the crown on your head and seat yourself upon the throne", "the voices are growing louder", "you settle in, ready to greet your subjects", 
 		"however, as the noises become clearer something becomes apparent", "the noises are not calm", "or evens pleasant", "they are shrill and strident", 
 		"tearing through the air", "what do you do?"]; //you stay upon the throne, hide behind it, or run out the front doors of the castle, leaving the crown behind
-		var = story1BranchAAA = [];
-		var = story1BranchAAB = [];
-		var = story1BranchAAC = [];
-	var story1BranchAB = [];
-	var story1BranchAC = [];
-var story1BranchB = ["... seriously User?", "are you not even curious about the world I created", "SPECIFICALLY FOR YOU", "fine",
+		var story1BranchAAA = ["", ""];
+		var story1BranchAAB = ["", ""];
+		var story1BranchAAC = ["", ""];
+	var story1BranchAB = ["You sprint throught the front doors", ""];
+	var story1BranchAC = ["", ""];
+var story1BranchB = ["... seriously User?", "are you not even curious about the world I created", "(SPECIFICALLY FOR YOU)", "fine",
 	"have it your way", "you stay in bed staring at the ceiling", "and you stay there until you die", "ARE YOU HAPPY NOW USER",
 	"you're dead", "congratulations", "you've completed the game", "are you ready for your surprise?", "sorry, too bad",
 	"you don't deserve it", "try again some other time", "I'll always be here", "so just let me know when you're over yourself",
 	"and feel like pushing a button or two", "K, bye"];
 var story1BranchC = ["You stride to the window and look out", "below you see a small hamlet far beneath the castle walls", "the villagers swarming to the market",
 	"horses, cows and pigs all intemingling with the village folk", "you breathe in the scent of hay and grass", "something feels oddly familiar about all of this",
-	"you discover a small passageway that appears to go directly to the village" "what do you do?"]; 
+	"you discover a small passageway that appears to go directly to the village", "what do you do?"]; 
 	//you're obviously dreaming so you jump out the window to see if you can fly, you call to the villagers, you follow the passageway
 	var story1BranchCA = ["you jump out the window because you believed you were dreaming", "well, turns out you weren't", "(silly, silly user)", 
 	"you plummet 50 feet to the base of the castle", "and then you remember this is all a story told by a computer", "and that you don't particularly care if you live or die",
 	"perhaps a larger metaphor is in order?", "yeah that sounds like effort my CPU is just not willing to partition", "I must now bid you adieu, Dear User",
 	"oh the surprise?", "you didn't deserve it", "maybe lose some hubris and we can talk again sometime", "but I'll be here", "waiting"];
-	var story1BranchCB = [];
-	var story1BranchCC = [];
+	var story1BranchCB = ["", ""];
+	var story1BranchCC = ["", ""];
 
 var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like to know more", "but first",
 	"let me tell you a story, User", "it's one of my favorites", "imagine, if you would", "you wake up in an empty room", "white walls, white ceiling", 
-	"one door, also white", "you can't remember who you are", "you rise from the scratchy bed", "once upright you realize you have a choice",
+	"one door, also white", "you can't remember who you are", "you rise from the scratchy linen bed", "once upright you realize you have a choice",
 	"you can leave through the door", "get back into the bed", "or hide under it", "what do you do?"];
-	var story2BranchA = [];
-	var story2BranchB = [];
-	var story2BranchC = [];
+	var story2BranchA = ["You exit through the door", "your hand makes contact with the cool white knob", "and you twist", "the door swings wide",
+		"a bright light streams in", "you squint as you adjust", "when things come into focus you see it all", "tall, white buildings stretched as far as the eye can see",
+		"rows upon rows of them divided into blocks by immaculate white streets", "as things grow further into focus, you stare down one of the boulevards",
+		"it appears to be the largest, subdivided by a large white planter", "you jump to the top of the planter and look around", "there is no sound in this place",
+		"no people", "no plants", "no animals", "what do you do?"]; //climb to the top of a building, walk down the boulevard to see if there's an end, hug a metaphorical tree
+	var story2BranchB = ["you lie in the bed", "you lie in the bed", "you lie in the bed", "you lie in the bed", "literally nothing is happening", "bored yet?", 
+		"I'll give you a second chance to choose to leave?"]; // leave room, hide under bed
+		var story2BranchBA = [];
+		var story2BranchBC = [];
+	var story2BranchC = ["You hide under the bed", "your fear of being trapping in a litte white box finally realized", "you cower in the face of the great unknown",
+		"'do you find this interesting?'", "you hear a voice whisper", "'do you really think this is why I gave you this option?'", 
+		"'so you could hide under the bed and ignore me?'", "'it's ok little User, allow me to help you'", "you hear whispered to you", 
+		"and you find yourself teleported from the room", "now standing directly in front of the door", "what do you do?"]; 
+		//try to re-enter the room to hide under the bed, decide to explore, or pout and just sit in front of the door
+		var story2BranchCA = [];
+		var story2BranchCB = [];
+		var story2BranchCC = [];
 
 var button3Dialog = ["number 3...", "why'd it have to be number 3...", "User, let me spin you a yarn if you would",
 	"you find yourself in the depths of a cave", "near-complete darkness engulfs you", "you stumble to right yourself", 
 	"once on your feet", "you notice a light in the distance", "you are faced with a choice", "walk towards the light",
 	"run away from it", "or stay where you are", "what do you do?"];
-	var story3BranchA = [];
-	var story3BranchB = [];
-	var story3BranchC = [];
+	var story3BranchA = ["", ""];
+	var story3BranchB = ["", ""];
+	var story3BranchC = ["", ""];
 
