@@ -114,48 +114,55 @@ function nextStageSelector(){
 						document.getElementsByClassName('genButton')[0].value = "take the crown";
 						document.getElementsByClassName('genButton')[1].value = "run out the front doors";
 						document.getElementsByClassName('genButton')[2].value = "wait and see who's coming";
+						fadeIn('stage2');
 						break;
 					case("1B"):
 						document.getElementsByClassName('acceptButton')[0].value = "reset";
-						stage = 0;
+						fadeIn("acceptButton");
 						break;
 					case("1C"):
 						document.getElementsByClassName('genButton')[0].value = "you're obviously dreaming so jump out the window to see if you can fly";
 						document.getElementsByClassName('genButton')[1].value = "call to the villagers";
 						document.getElementsByClassName('genButton')[2].value = "follow the passageway";
+						fadeIn('stage2');
 						break;
 					case("2A"):
 						document.getElementsByClassName('genButton')[0].value = "climb to the top of a building";
 						document.getElementsByClassName('genButton')[1].value = "walk down the boulevard to see if there's an end";
 						document.getElementsByClassName('genButton')[2].value = "hug a metaphorical tree";
+						fadeIn('stage2');
 						break;
 					case("2B"):
 						document.getElementsByClassName('genButton')[0].value = "leave room";
 						document.getElementsByClassName('genButton')[1].value = "-";
 						document.getElementsByClassName('genButton')[2].value = "hide under the bed";
+						fadeIn('stage2');
 						break;
 					case("2C"):
 						document.getElementsByClassName('genButton')[0].value = "re-enter the room and hide under the bed";
 						document.getElementsByClassName('genButton')[1].value = "decide to explore";
 						document.getElementsByClassName('genButton')[2].value = "pout and sit in front of the door";
+						fadeIn('stage2');
 						break;/*
 					case("3A"):
 						document.getElementsByClassName('genButton')[0].value = ;
 						document.getElementsByClassName('genButton')[1].value = ;
 						document.getElementsByClassName('genButton')[2].value = ;
+						fadeIn('stage2');
 						break;
 					case("3B"):
 						document.getElementsByClassName('genButton')[0].value = ;
 						document.getElementsByClassName('genButton')[1].value = ;
 						document.getElementsByClassName('genButton')[2].value = ;
+						fadeIn('stage2');
 						break;
 					case("3C"):
 						document.getElementsByClassName('genButton')[0].value = ;
 						document.getElementsByClassName('genButton')[1].value = ;
 						document.getElementsByClassName('genButton')[2].value = ;
-						break;*/
+						break;
+						fadeIn('stage2');*/
 				}
-				fadeIn('stage2');
 				break;
 			default:
 				console.log("unknown stage");
@@ -305,6 +312,11 @@ function handleButtonPush(){
 		stringMaster(onButtonPushDialog);
 		fadeOut('acceptButton');
 	}
+	if (stage == 7){
+		stringMaster(stringBank);
+		fadeOut("acceptButton");
+		stage = 0;
+	}
 }
 
 function checkHowAnnoyedIAm(){
@@ -343,4 +355,11 @@ function checkHowAnnoyedIAm(){
 		default:
 			break;
 	}
+}
+
+function skipToStorySelection(){
+	fadeOut('skipButton');
+	fadeOut('acceptButton');
+	stage = 5;
+	stringMaster(onButtonPushDialog);
 }
