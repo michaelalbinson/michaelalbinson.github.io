@@ -49,12 +49,18 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 	var storyBranch1A = ["(you picked my favorite choice User)", "you rise from the bed and out into a large stone hallway", "you graze your fingers along the wall",
 	"it's cool to the touch", "as you progress, the sounds of the village grows louder", "you stride out into what appears to be the throne room", 
 	"the walls are vaulted and covered in banners with your initials", "the throne seemingly glows in the dusk of the room", "upon the throne, you see a crown",
-	"glimmering in the light of a single window shining down on it", "you hear other people coming down the hallway", "what do you do?"]; //take crown, run out front doors, wait and talk to people
+	"glimmering in the light of a single window shining down on it", "you hear other people coming down the hallway", "what do you do?"]; //take crown as you must be king, run out front doors, wait and talk to people
 		var storyBranch1AA = ["you pick up the crown", "the golden light on it slowly fades", "a warmth spreads through your body", "something feels very right about this",
 			"you place the crown on your head and seat yourself upon the throne", "the voices are growing louder", "you settle in, ready to greet your subjects", 
 			"however, as the noises become clearer something becomes apparent", "the noises are not calm", "or evens pleasant", "they are shrill and strident", 
 			"tearing through the air", "what do you do?"]; //you stay upon the throne, hide behind it, or run out the front doors of the castle, leaving the crown behind
-			var storyBranch1AAA = ["", ""];
+			var storyBranch1AAA = ["You sit regally upon the throne", "expecting for your loyal subjects to come", "get down on their knees and worship you",
+				"I'm assuming just because you're just that full of yourself", "the voices draw nearer", "you think you may have heard some of them yell 'kill the king!'", 
+				"finally a stream of people rush out, screaming", "they quickly fill the throne room", "looking angrily at you", "what do you say?"]; 
+				//simply say "what?", reason with them that you're not the king, lie to them and say you killed the king and are their new leader
+				var storyBranch1AAAA = ["", ""]; //reset
+				var storyBranch1AAAB = ["", ""]; 
+				var storyBranch1AAAC = ["", ""]; //reset
 			var storyBranch1AAB = ["", ""];
 			var storyBranch1AAC = ["", ""]; //redirect to branch 1AB
 		var storyBranch1AB = ["You sprint throught the front doors", ""];
@@ -63,7 +69,7 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 		"have it your way", "you stay in bed staring at the ceiling", "and you stay there until you die", "ARE YOU HAPPY NOW USER",
 		"you're dead", "congratulations", "you've completed the game", "are you ready for your surprise?", "sorry, too bad",
 		"you don't deserve it", "try again some other time", "I'll always be here", "so just let me know when you're over yourself",
-		"and feel like pushing a button or two", "K, bye"];
+		"and feel like pushing a button or two", "K, bye"]; //reset
 	var storyBranch1C = ["You stride to the window and look out", "below you see a small hamlet far beneath the castle walls", "the villagers swarming to the market",
 		"horses, cows and pigs all intemingling with the village folk", "you breathe in the scent of hay and grass", "something feels oddly familiar about all of this",
 		"you discover a small passageway that appears to go directly to the village", "what do you do?"]; 
@@ -73,7 +79,7 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 			"perhaps a larger metaphor is in order?", "yeah that sounds like effort my CPU is just not willing to partition", "I must now bid you adieu, Dear User",
 			"oh the surprise?", "you didn't deserve it", "maybe lose some hubris and we can talk again sometime", "but I'll be here", "waiting"]; //reset
 		var storyBranch1CB = ["", ""];
-		var storyBranch1CC = ["", ""];
+		var storyBranch1CC = ["", ""]; //jump to branch 1A
 
 var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like to know more", "but first",
 	"let me tell you a story, User", "it's one of my favorites", "imagine, if you would", "you wake up in an empty room", "white walls, white ceiling", 
@@ -100,7 +106,7 @@ var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like 
 			"and you suddenly find yourself in free fall over the ocean", "what?", "I never said the story would make any sense", "you slam into the water",
 			"and you black out", "next thing you know you wash up on a beach", "(isn't it funny how you always wash up on a beach?)", 
 			"(like, seriously, shouldn't you have drowned out there or something?)", "in the distance you see smoke rising from a forest",
-			"what do you do?"];
+			"what do you do?"]; //go to the smoke, hug a literal tree, hunt for the hidden rum stash
 		var storyBranch2CB = ["ah, I'm so glad you've come to your senses, User", "I was starting to get a little concerned"]; //redirect to branch 2A
 		var storyBranch2CC = [".... are you six, User?", "you can't just sit there and pout!", "there's so much more to explore!",
 			"so much I've built for you!", "there were, like, dinosaurs and lighting and magic carpets!", "...", "or I guess just pout",
@@ -114,11 +120,16 @@ var button3Dialog = ["number 3...", "why'd it have to be number 3...", "User, le
 	"once on your feet", "you notice a light in the distance", "you are faced with a choice", "walk towards the light",
 	"run away from it", "or stay where you are", "what do you do?"];
 	var storyBranch3A = ["You creep towards the light", "it progressively grows brighter", "you shield your eyes as you stride into full sunlight", 
-	"your surroundings begin to come into focus", "you stand "];
-	var storyBranch3B = ["", ""];
+	"your surroundings begin to come into focus", "you stand in a clearing of a forest next to a large mountain", "you see smoke rising in the distance",
+	"you also hear the rumble of waves", "what do you do?"]; //go to the ocean, go towards the smoke, go back in the cave bc you literally just can't
+	var storyBranch3B = ["you stay where you are", "(.. why are you doing this to me user)", "the darkness is dark", "the little bit of light is bright",
+		"yet for some reason you seem perfectly content to just sit here and do nothing", "suddenly you hear a sound", "it starts of quietly", 
+		"but grows progressively louder", "you hear the flapping of wings and decided that it's likely an angry swarm of bats", "what do you do?"];
+		 //run towarads the sound to take up your mantle and become the night.. become fear.. become, batperson, BATS?? get me out of here, stay where you are and sit like a statue
 	var storyBranch3C = ["You run away from the light", "some strange primal thought makes you think that light is the BAD thing in this situation",
 		"not the completely unlit darkness and unknown of the cave", "you run for about 5 feet before you run into a wall", "and then another", "and then another",
 		"wow User, this decision is starting to seem real intelligent", "you continue running and then suddenly there is no ground", "where'd it go?", 
 		"well I'm sure having some LIGHT would be helpful in this situation", "unfortunately you find yourself falling faster and faster",
-		"bet that whole light thing is kinda bumming you out huh?"];
+		"bet that whole light thing is kinda bumming you out huh?", "you splash down into a pool of water", "the water is frigid and the darkness is even worse down here"
+		"you attempt to find a way out but there is none", "so you simply float there", "waiting for your end", "too bad"]; // reset
 
