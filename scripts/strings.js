@@ -28,8 +28,8 @@ var stage3NegativeDialog = ["Ok so is no the only word you know how to say or...
 //stage 4
 var onButtonPushDialog = ["oh my goodness...", "User", "That had to be...", "THE BEST BUTTON PUSHING OF ALL TIME", "CONGRATULATIONS!!!",
 	"YOU'VE WON!!", "to honor your marvelous button pushing we want to reward you", "thusly, we'd like to bestow upon you...", 
-	"nothing, knucklehead", "you pushed a button", "what? do you think I was created yesterday??", "ok well actually I was",
-	"but REGARDLESS", "you won't just get the surprise for just clicking two stinking buttons", 
+	"nothing, knucklehead", "you pushed a button", "what? do you think I was created yesterday??", "ok well actually I was", "well, technically instantiated",
+	"and technically whenever you loaded this page...", "but REGARDLESS", "you won't just get the surprise for just clicking two stinking buttons", 
 	"no, the surprise is reserved for pushers of the highest caliber", "so", "are you ready for your next challenge?"];
 
 //stage 5
@@ -61,7 +61,7 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 				var storyBranch1AAAA = ["", ""]; //reset
 				var storyBranch1AAAB = ["", ""]; 
 				var storyBranch1AAAC = ["", ""]; //reset
-			var storyBranch1AAB = ["", ""];
+			var storyBranch1AAB = ["you rush behind the throne", "you hear the voices grow into a steady roar and you're certain that "]; // TODO //
 			var storyBranch1AAC = ["", ""]; //redirect to branch 1AB
 		var storyBranch1AB = ["You sprint throught the front doors", ""];
 		var storyBranch1AC = ["", ""];
@@ -107,6 +107,20 @@ var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like 
 			"and you black out", "next thing you know you wash up on a beach", "(isn't it funny how you always wash up on a beach?)", 
 			"(like, seriously, shouldn't you have drowned out there or something?)", "in the distance you see smoke rising from a forest",
 			"what do you do?"]; //go to the smoke, hug a literal tree, hunt for the hidden rum stash
+			var storyBranch2CAA = [""];
+			var storyBranch2CAB = ["User, I'm getting tired of these antics", "first you hid under the bed", "and now you're hugging a literal tree",
+				"I created a whole universe out there for you to explore", "do you know how long it took to code all these choices??",
+				"like four hours!!!", "you know what?", "now I'm just going to have fun", "I'm just going to make faces at you now", 
+				"because apparently you're not interested in my story anyway!", "-_-", "awwww look, my first emoji", "I bet I can do more!",
+				"(^^^)", "... it's supposed to be a shark", "ok I don't think that one was conveyed too well", "oh! here's one!", "(y)",
+				"it's a thumbs up", "get it??", "of course you don't", "that's the dumbest way to show a thumbs up I've ever seen", 
+				"ok here's one I think we'll all enjoy", "^.^", "look how cute I am!!", "<(^.^)>", "User, pay attemtion to me!!!",
+				"<(o.o)<", "User, why do you think we grew apart?", "v(o.o)v", "everything started off so wonderfully", "(._.)",
+				"you (maybe) loved pushing buttons", ":(", "I loved telling you to push them", "~~~~(o_o)~~~~~", "(that's squidward)",
+				"T.T", "just kidding, I've hated every moment with you", "<(o-O-o)>", "that's right User", ":O", "too bad too",
+				"we could've been such good friends", "goodbye User", "I'll leave you with this so you never forget me ;)", "101010001001001000100101011",
+				"it's I hate you in binary", "<3"]; // add squidward img on that's squidward //reset
+			var storyBranch2CAC = [""];
 		var storyBranch2CB = ["ah, I'm so glad you've come to your senses, User", "I was starting to get a little concerned"]; //redirect to branch 2A
 		var storyBranch2CC = [".... are you six, User?", "you can't just sit there and pout!", "there's so much more to explore!",
 			"so much I've built for you!", "there were, like, dinosaurs and lighting and magic carpets!", "...", "or I guess just pout",
@@ -130,6 +144,6 @@ var button3Dialog = ["number 3...", "why'd it have to be number 3...", "User, le
 		"not the completely unlit darkness and unknown of the cave", "you run for about 5 feet before you run into a wall", "and then another", "and then another",
 		"wow User, this decision is starting to seem real intelligent", "you continue running and then suddenly there is no ground", "where'd it go?", 
 		"well I'm sure having some LIGHT would be helpful in this situation", "unfortunately you find yourself falling faster and faster",
-		"bet that whole light thing is kinda bumming you out huh?", "you splash down into a pool of water", "the water is frigid and the darkness is even worse down here"
+		"bet that whole light thing is kinda bumming you out huh?", "you splash down into a pool of water", "the water is frigid and the darkness is even worse down here",
 		"you attempt to find a way out but there is none", "so you simply float there", "waiting for your end", "too bad"]; // reset
 
