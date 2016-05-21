@@ -11,7 +11,6 @@
 <body>
 	<div class="gameBody"> 
 		<h1>Consciousness</h1>
-		<button onclick="fadeIn('optionsMenu')"><img src="css/images/preferences.png" class="preferenceImgGameBody"></button>
 		<div class="text-container" onload="beginToggling()"><p class="gameText">/Master/: Click "see what happens" to begin</p></div><div class="text-container"><br><p></p></div><div class="blinkingBox"></div>
 		<br>
 		<input class = "acceptButton" type="button" value="Click to see what happens" onclick="handleButtonPush()"></input>
@@ -19,16 +18,16 @@
 		<br>
 		<div class="stage2">
 			<input class = "genButton" type="button" value="surprise?" onclick="discussSurprise()"></input>
-			<br>
+			<br><br>
 			<input class = "genButton" type="button" value="whatever, man, I'm not about this" onclick="discussWhatever()"></input>
-			<br>
+			<br><br>
 			<input class = "genButton" type="button" value="CAKE??" onclick="discussCake()"></input>
 		</div>
 		<br>
 		<img src="css/images/cake.png" class="cakeImage" title="cake">
 		<input type="button" value="skip to stories" class="skipButton", onclick="skipToStorySelection();">
 		<div class="optionsMenu">
-			<img src="css/images/infinity.png" class="preferenceImg">
+			<img src="css/images/speedometer.png" class="preferenceImg">
 			<input type="button" value="X" class="exitPreferencesButton" onclick="fadeOut('optionsMenu');">
 			<h2>Text Speed Options</h2>
 			<hr>
@@ -38,8 +37,8 @@
   				<label><input type="radio" name="speed" value="fast" onchange="changeTextSpeed('fast');" class="radio"> fast</label><br><br>
   				<label><input type="radio" name="speed" value="dev" onchange="changeTextSpeed('dev');" class="radio"> ludicrous (dev)</label>
 			</form>
-			
 		</div>
+		<button onclick="fadeIn('optionsMenu')"><img src="css/images/switchboard.png" class="preferenceImgGameBody"></button>
 	</div>
 
 	
