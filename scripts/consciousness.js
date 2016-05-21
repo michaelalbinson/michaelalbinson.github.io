@@ -13,7 +13,12 @@ var cakeFlag = false;
 var annoyingCounter = 0;
 var stringsRun = 0;
 var branchTracker = "";
-var endString = ["you've reached the END OF DEVELOPMENT", " more to come :)"]
+var endString = ["you've reached the END OF DEVELOPMENT", " more to come :)"];
+var slowRenderSpeed = 100;
+var medRenderSpeed = 75;
+var fastRenderSpeed = 50;
+var devRenderSpeed = 1;
+var timeBetweenCharRender = slowRenderSpeed;
 
 function stringMaster(textSelector){
 	holder = 1;
@@ -29,11 +34,11 @@ function stringMaster(textSelector){
 		if (!intervalsSetFlag && textSelector.length >= stringsRun){
 			interval1 = setInterval(function(){
 				buildString(textSelector[i]);
-			}, 1);
+			}, timeBetweenCharRender);
 			if (textSelector.length-1 != stringsRun){
 				interval2 = setInterval(function(){
 					deleteString(textSelector[i]);
-				}, 1);
+				}, timeBetweenCharRender);
 			}
 			intervalsSetFlag = true;
 		}
@@ -362,4 +367,24 @@ function skipToStorySelection(){
 	fadeOut('acceptButton');
 	stage = 5;
 	stringMaster(onButtonPushDialog);
+}
+
+function changeTextSpeed(speed){
+	switch(speed){
+		case ("fast"):
+			timeBetweenCharRender = fastRenderSpeed;
+			break;
+		case ("medium"):
+			timeBetweenCharRender = medRenderSpeed;
+			break;
+		case ("slow"):
+			timeBetweenCharRender = slowRenderSpeed;
+			break;
+		case("dev"):
+			timeBetweenCharRender = devRenderSpeed;
+			break;
+		default:
+			console.log("uncaught speeed change");
+			break;
+	}
 }

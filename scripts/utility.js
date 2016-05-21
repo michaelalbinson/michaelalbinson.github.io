@@ -5,7 +5,7 @@ function buildString(string){
 			continueFlag = true;
 			return;
 		}
-		document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + string.substring(0, holder);
+		document.getElementsByClassName('gameText')[0].innerHTML = "/Master/: ~toUser$ " + string.substring(0, holder);
 		holder++;
 	}
 }
@@ -18,7 +18,7 @@ function deleteString(string){
 			intervalsSetFlag = false;
 		}
 
-		document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + string.substring(0, holder);
+		document.getElementsByClassName('gameText')[0].innerHTML = "/Master/: ~toUser$ " + string.substring(0, holder);
 		holder--;
 	}
 }
