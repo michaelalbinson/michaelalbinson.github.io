@@ -113,7 +113,7 @@ function nextStageSelector(){
 				stage = 7;
 				break;	
 			case 7:
-				document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + endString;
+				document.getElementsByClassName('gameText')[0].innerHTML = "~toUser$ " + endString;
 				switch(branchTracker){
 					case("1A"):
 						document.getElementsByClassName('genButton')[0].value = "take the crown";
@@ -190,7 +190,7 @@ function handleKeydown(inputElement){
 		}
 		else{
 			resetTextIntervals();
-			document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "... please enter 'y' or 'n'... User this is pathetic";
+			document.getElementsByClassName('gameText')[0].innerHTML = "/Master/: ~toUser$ " + "... please enter 'y' or 'n'... User this is pathetic";
 		}
 	}
 	else if (stage == 3){
@@ -205,7 +205,7 @@ function handleKeydown(inputElement){
 		}
 		else{
 			resetTextIntervals();
-			document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "Seriously how are you still not getting this... please enter 'y' or 'n'...";
+			document.getElementsByClassName('gameText')[0].innerHTML = "/Master/: ~toUser$ " + "Seriously how are you still not getting this... please enter 'y' or 'n'...";
 		}
 	}
 	else if (stage == 5){
@@ -220,7 +220,7 @@ function handleKeydown(inputElement){
 		}
 		else{
 			resetTextIntervals();
-			document.getElementsByClassName('gameText')[1].innerHTML = "~toUser$ " + "Seriously how are you still not getting this... please enter 'y' or 'n'...";
+			document.getElementsByClassName('gameText')[0].innerHTML = "/Master/: ~toUser$ " + "Seriously how are you still not getting this... please enter 'y' or 'n'...";
 		}
 	}
 	document.getElementsByClassName("continueField")[0].value = "";
