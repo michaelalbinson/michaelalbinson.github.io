@@ -140,7 +140,7 @@ var button3Dialog = ["number 3...", "why'd it have to be number 3...", "User, le
 		"yet for some reason you seem perfectly content to just sit here and do nothing", "suddenly you hear a sound", "it starts of quietly", 
 		"but grows progressively louder", "you hear the flapping of wings and decided that it's likely an angry swarm of bats", "what do you do?"];
 		 //run towarads the sound to take up your mantle and become the night.. become fear.. become, batperson, BATS?? get me out of here, stay where you are and sit like a statue
-	var storyBranch3C = ["You run away from the light", "some strange primal thought makes you think that light is the BAD thing in this situation",
+	var storyBranch3C = ["You run away from the light", "some strange primal instinct makes you think that light is the BAD thing in this situation",
 		"not the completely unlit darkness and unknown of the cave", "you run for about 5 feet before you run into a wall", "and then another", "and then another",
 		"wow User, this decision is starting to seem real intelligent", "you continue running and then suddenly there is no ground", "where'd it go?", 
 		"well I'm sure having some LIGHT would be helpful in this situation", "unfortunately you find yourself falling faster and faster",

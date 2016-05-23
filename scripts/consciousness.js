@@ -55,6 +55,7 @@ function nextStageSelector(){
 		switch(stage){
 			case(0):
 				fadeIn("continueField");
+				document.getElementsByClassName('acceptButton')[0].value = "PUSH ME";
 				stage = 1;
 				break;
 			case(1):
@@ -309,9 +310,8 @@ function discussWhatever(){
 function handleButtonPush(){
 	if (stage == 0){
 		stringMaster(stringBank);
-		onFadeOut("acceptButton", function(){
-			document.getElementsByClassName('acceptButton')[0].value = "PUSH ME";
-		});
+		document.getElementsByClassName('acceptButton')[0].style.display = "block";
+		fadeOut("acceptButton");
 	}
 	if (stage == 4){
 		stringMaster(onButtonPushDialog);

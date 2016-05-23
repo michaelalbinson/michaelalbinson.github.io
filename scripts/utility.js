@@ -39,22 +39,34 @@ window.onload = function(){
 	setInterval(toggleBox, 750);
 }
 
+
 function fadeIn(element){
+	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "true")
+		return;
+
 	var opacity = 0;
+	console.log(document.getElementsByClassName(element)[0].style.display);
+	document.getElementsByClassName(element)[0].setAttribute("fadedIn", "true");
 	document.getElementsByClassName(element)[0].style.opacity = opacity;
 	document.getElementsByClassName(element)[0].style.display = "block";
+	console.log(document.getElementsByClassName(element)[0].style.display);
 	var fader = window.setInterval(function(){
-		if (opacity >= 1){
+		if (opacity >= .99){
 			clearInterval(fader);
 		}
 		else{
 			opacity = opacity + .01;
 			document.getElementsByClassName(element)[0].style.opacity = opacity;
+			fadingIn = true;
 		}
 	}, 10);
 }
 
 function onFadeIn(element, doSomething){
+	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "true")
+		return;
+
+	document.getElementsByClassName(element)[0].setAttribute("fadedIn", "true");
 	var opacity = 0;
 	document.getElementsByClassName(element)[0].style.opacity = opacity;
 	document.getElementsByClassName(element)[0].style.display = "block";
@@ -71,6 +83,10 @@ function onFadeIn(element, doSomething){
 }
 
 function fadeOut(element){
+	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "false")
+		return;
+
+	document.getElementsByClassName(element)[0].setAttribute("fadedIn", "false");
 	var opacity = 1;
 	document.getElementsByClassName(element)[0].style.opacity = opacity;
 	var fader = window.setInterval(function(){
@@ -86,6 +102,11 @@ function fadeOut(element){
 }
 
 function onFadeOut(element, doSomething){
+	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "false")
+		return;
+
+	document.getElementsByClassName(element)[0].setAttribute("fadedIn", "false");
+	fadingOut = true;
 	var opacity = 1;
 	document.getElementsByClassName(element)[0].style.opacity = opacity;
 	var fader = window.setInterval(function(){

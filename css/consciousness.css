@@ -72,6 +72,7 @@ input.middle:focus {
 
 input.continueField{
 	display: none;
+	opacity: 1;
 }
 
 input.acceptButton{
@@ -96,13 +97,6 @@ div.stage2{
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-input.skipButton{
-	position: fixed;
-	right: 5%;
-	bottom: 5%;
-	opacity: .5;
 }
 
 button.optionsButton{

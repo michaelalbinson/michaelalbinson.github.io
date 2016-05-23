@@ -1,5 +1,5 @@
 div.optionsMenu{
-	display: block;
+	display: none;
 	position: fixed;
 	vertical-align: middle;
 	top:50%;
@@ -8,7 +8,7 @@ div.optionsMenu{
 	margin-left: -163px; 
 	z-index: 100;
 	width: 300px;
-	height: 260px;
+	height: 300px;
 	background-color: grey;
 	border-style: solid;
 	border-color: #1ec503;
@@ -38,7 +38,7 @@ button.centerButton{
 	margin-right: 20px;
 	margin-left: 20px;
 	margin-bottom: 10px;
-	padding: 2px;
+	padding: 0;
 	border: inset;
 }
 
@@ -48,7 +48,7 @@ img.centerImg{
 
 button.leftButton{
 	position: relative;
-	padding:2px;
+	padding:3px;
 	margin-bottom: 10px;
 	border-style: none;
 }
@@ -59,7 +59,7 @@ img.leftImg{
 
 button.rightButton{
 	position: relative;
-	padding:2px;
+	padding:3px;
 	margin-bottom: 10px;
 	border-style: none;
 }
@@ -119,7 +119,7 @@ img.rightBracket{
 	position: absolute;
 	display: block;
 	right: 5px;
-	top: 0;
+	top: 1.75em;
 	width:30px;
 	height:85px;
 	margin-right:0;
@@ -129,8 +129,20 @@ img.leftBracket{
 	position: absolute;
 	display: block;
 	left: 5px;
-	top: 0;
+	top: 1.75em;
 	width:30px;
 	height:85px;
 	margin-right:0;
+}
+
+input.skipButton{
+	position: absolute;
+}
+
+form.compassForm{
+	display: none;
+}
+
+form.toxicForm{
+	display: none;
 }

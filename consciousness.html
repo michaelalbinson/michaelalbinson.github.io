@@ -13,7 +13,7 @@
 <body>
 	<div class="gameBody"> 
 		<h1>Consciousness</h1>
-		<div class="text-container" onload="beginToggling()"><p class="gameText">/Master/: Click "see what happens" to begin</p></div><div class="text-container"><br><p></p></div><div class="blinkingBox"></div>
+		<div class="text-container" onload="beginToggling()"><p class="gameText">/Master/: Click "see what happens" to begin</p></div><div class="text-container"><br></div><div class="blinkingBox"></div>
 		<br>
 		<input class = "acceptButton" type="button" value="Click to see what happens" onclick="handleButtonPush()"></input>
 		<input class = "continueField" type="text" placeholder="enter 'y' or 'n'" onkeydown="if (event.keyCode == 13) {handleKeydown(this)}"></input>
@@ -27,15 +27,15 @@
 		</div>
 		<br>
 		<img src="css/images/cake.png" class="cakeImage" title="cake">
-		<input type="button" value="skip to stories" class="skipButton", onclick="skipToStorySelection();">
 		<div class="optionsMenu">
+			<h2>var preferences = </h2>
 			<button class="leftButton" onclick="switchSections('left')"><img src="css/images/compass.png" class="leftImg"></button>
 			<button class="centerButton" onclick="switchSections('center')"><img src="css/images/speedometer.png" class="centerImg"></button>
 			<button class="rightButton" onclick="switchSections('right')"><img src="css/images/toxic.png" class="rightImg"></button>
 			<input type="button" value="X" class="exitPreferencesButton" onclick="fadeOut('optionsMenu');">
 			<img src="css/images/rightSquare.png" class="rightBracket">
 			<img src="css/images/leftSquare.png" class="leftBracket">
-			<h2>Text Speed Options</h2>
+			<h2 class="optionHeader">textSpeedOptions =</h2>
 			<hr>
 			<img src="css/images/curly-right.png" class="rightBrace">
 			<form class="speedForm">
@@ -45,7 +45,10 @@
   				<label><input type="radio" name="speed" value="dev" onchange="changeTextSpeed('dev');" class="radio"> ludicrous (dev)</label>
 			</form>
 			<form class="compassForm">
-  				<p>NEAT</p>
+				<input type="button" value="reset to beginning" class="skipButton", onclick="skipToStorySelection();"> <br><br>
+  				<input type="button" value="skip to stories" class="skipButton", onclick="skipToStorySelection();"> <br><br>
+				<input type="button" value="go back a step" class="skipButton", onclick="skipToStorySelection();">
+				<!--REMINDER: flesh out methods for reset and go back a step methods -->
 			</form>
 			<form class="toxicForm">
 				<p>SUPER NEAT</p>
