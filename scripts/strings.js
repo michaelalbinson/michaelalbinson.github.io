@@ -58,10 +58,30 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 				"I'm assuming just because you're just that full of yourself", "the voices draw nearer", "you think you may have heard some of them yell 'kill the king!'", 
 				"finally a stream of people rush out, screaming", "they quickly fill the throne room", "looking angrily at you", "what do you say?"]; 
 				//simply say "what?", reason with them that you're not the king, lie to them and say you killed the king and are their new leader
-				var storyBranch1AAAA = ["", ""]; //reset
-				var storyBranch1AAAB = ["", ""]; 
+				var storyBranch1AAAA = ["they charge you", "what?", "I mean you were kind of asking for it", "just saying", "who just says 'what' to an angry mob??", 
+					"they restrain you and carry you to the top of the castle", "where they hang you by your arms and legs", "you hang there for three days", 
+					"you wish for it to all be over", "if only you hadn't said that to a clearly frustrated group of stangers", 
+					"maybe they would've understood you better if you'd just got to know them", "and as the darkness creeps in", "you hear one man say",
+					"huh, I don't think that guy was ever in charge", "eh, it was all good fun"]; //reset
+				var storyBranch1AAAB = ["'Hey hey hey now!'", "you cry at them", "as a mob of disheveled villagers fill the throne room", "'THAT'S THEM'",
+					"shrieks one of the villagers", "'GET EM''", "yells another", "they start to encroach on your posistion", "you stand on the throne out of desperation",
+					"'I'M NOT WHO YOU THINK I AM'", "you yell down at the villagers", "and suddenly the room is filled with a bright, warm light",
+					"to you, it is fairly obvious that the early morning sunlight has just come through one of the windows in the room", "however, the villagers are shocked",
+					"they all get down on their knees and bow", "you are fairly amused", "but then you realize you have a choice", "what do you do"];
+					//attempt to explain the complexities of natural phenomena to the villagers, tell them that you aren't a diety, go with it
+					var  storyBranch1AAABA =["you begin by telling them that the golden light is simply a result of the earth spinning into a certain position",
+					"wherein the sun is optimally positioned to shine this early morning light on the room", "you watch as the villager's faces go from confusion",
+					"to frustration at the scientific complexities you are spouting", "'EVERYONE KNOWS THE EARTH IS FLAT, OK'", "one yells at you",
+					"'THEY MUST BE A WITCH'", "yells another"]; //TODO
+					var  storyBranch1AAABB = [""];
+					var  storyBranch1AAABC = [""];
 				var storyBranch1AAAC = ["", ""]; //reset
-			var storyBranch1AAB = ["you rush behind the throne", "you hear the voices grow into a steady roar and you're certain that "]; // TODO //
+			var storyBranch1AAB = ["you rush behind the throne", "you hear the voices grow into a steady roar and you're certain that they're in the room",
+				"the roar gradually grows into a din", "and then that slowly fades to whispers", "you creep out from behind the throne", "what do you do?"]; 
+				//follow the mob, stay where you are, run out the front doors
+				var storyBranch1AABA = [""]; //reset
+				var storyBranch1AABB = [""]; 
+				var storyBranch1AABBC = ["", ""]; //reset
 			var storyBranch1AAC = ["", ""]; //redirect to branch 1AB
 		var storyBranch1AB = ["You sprint throught the front doors", ""];
 		var storyBranch1AC = ["", ""];
@@ -79,7 +99,9 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 			"perhaps a larger metaphor is in order?", "yeah that sounds like effort my CPU is just not willing to partition", "I must now bid you adieu, Dear User",
 			"oh the surprise?", "you didn't deserve it", "maybe lose some hubris and we can talk again sometime", "but I'll be here", "waiting"]; //reset
 		var storyBranch1CB = ["", ""];
-		var storyBranch1CC = ["", ""]; //jump to branch 1A
+		var storyBranch1CC = ["you run down the passageway", "and soon run out into an alcove of sorts overlooking a plaza", "the stench of raw existance reaches you nostrils",
+		"you start to wish you had stayed in the castle", "at last they had nice things", "but nevertheless, you've made your choice, User", 
+		"you continue down the stairs and out onto the plaza", ""];
 
 var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like to know more", "but first",
 	"let me tell you a story, User", "it's one of my favorites", "imagine, if you would", "you wake up in an empty room", "white walls, white ceiling", 

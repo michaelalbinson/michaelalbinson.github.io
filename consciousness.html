@@ -8,6 +8,7 @@
 	<script tyoe="text/javascript" src="scripts/strings.js"></script>
 	<script type="text/javascript" src="scripts/consciousness.js"></script>
 	<script type="text/javascript" src="scripts/preferenceTableFunction.js"></script>
+	<script type="text/javascript" src="scripts/gameButtonChoiceStrings.js"></script>
 </head>
 
 <body>
@@ -45,9 +46,9 @@
   				<label><input type="radio" name="speed" value="dev" onchange="changeTextSpeed('dev');" class="radio"> ludicrous (dev)</label>
 			</form>
 			<form class="compassForm">
-				<input type="button" value="reset to beginning" class="skipButton", onclick="skipToStorySelection();"> <br><br>
-  				<input type="button" value="skip to stories" class="skipButton", onclick="skipToStorySelection();"> <br><br>
-				<input type="button" value="go back a step" class="skipButton", onclick="skipToStorySelection();">
+				<input type="button" value="reset to beginning" class="skipButton", onclick="resetToBeginning();"> <br><br>
+  				<input type="button" value="reset to story selection" class="skipButton", onclick="skipToStorySelection();"> <br><br>
+				<input type="button" value="go back a button press" class="skipButton", onclick="backOneStage();">
 				<!--REMINDER: flesh out methods for reset and go back a step methods -->
 			</form>
 			<form class="toxicForm">
