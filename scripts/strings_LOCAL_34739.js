@@ -37,8 +37,8 @@ var stage5AnnoyedDialog = ["SO", "since you've already come this far", "I'm goin
 	"so I must wish you goodbye and good riddance", "may your button hating ways bring you nothing in your sad little life",
 	"(but allow me to put this out there just in case)", "(there are three buttons)", "(each will lead you down a different path)", 
 	"(the choice is yours user)", "(which do you choose?)"];
-var stage5PositiveDialog = ["ahhh well aren't you developing into quite the test subject!", "did I say test??",
-	"I meant happy human playtime!", "but anyway", "here's a new one", "there are three buttons", "(oohhh, ahhhhh)"
+var stage5PositiveDialog = ["ahhh well aren't you developing into quite the test subject!", "did I say text??",
+	"I meant happy human playtime!", "but anyway", "here's a new one", "there are three buttons", 
 	"each will lead you down a different path", "the choice is yours user", "which do you choose?"];
 
 //real branching dialog -- where things get tricky
@@ -72,26 +72,10 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 					var  storyBranch1AAABA =["you begin by telling them that the golden light is simply a result of the earth spinning into a certain position",
 					"wherein the sun is optimally positioned to shine this early morning light on the room", "you watch as the villager's faces go from confusion",
 					"to frustration at the scientific complexities you are spouting", "'EVERYONE KNOWS THE EARTH IS FLAT, OK'", "one yells at you",
-<<<<<<< 8f178407e01b85a198ac0a267c6d045d7beddecc
 					"'THEY MUST BE A WITCH'", "yells another"]; //TODO: 
 					var  storyBranch1AAABB = [""];
 					var  storyBranch1AAABC = [""];
 				var storyBranch1AAAC = ["", ""]; //reset
-||||||| merged common ancestors
-					"'THEY MUST BE A WITCH'", "yells another"]; //TODO
-					var  storyBranch1AAABB = [""];
-					var  storyBranch1AAABC = [""];
-				var storyBranch1AAAC = ["", ""]; //reset
-=======
-					"'THEY MUST BE A WITCH'", "yells another", ""]; //TODO:
-					var  storyBranch1AAABB = ["I am your god", "you pompously say, pompously", "look upon me and know the truth my children",
-						"(wow, you would really say that, User?)", "(what a butthead)", "the villagers look at you in awe", "then one raises his hand",
-						"it's little Vlad Villager", "the smallest of all of the villagers", "'why do you look so different from all your pictures then?'",
-						"he squeaks", "pointing behind you", "you turn and above the throne is an enormous painting of an octopus", 
-						"(how did you not see that coming, User??)", "how do you respond"]; //stutter, something something you are an octopus, attempt to make scientific explaination
-					var  storyBranch1AAABC = ["you look down on the people", "*your* people", ""];
-				var storyBranch1AAAC = [""]; //reset
->>>>>>> other changes
 			var storyBranch1AAB = ["you rush behind the throne", "you hear the voices grow into a steady roar and you're certain that they're in the room",
 				"the roar gradually grows into a din", "and then that slowly fades to whispers", "you creep out from behind the throne", "what do you do?"]; 
 				//follow the mob, stay where you are, run out the front doors
@@ -114,11 +98,10 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 			"you plummet 50 feet to the base of the castle", "and then you remember this is all a story told by a computer", "and that you don't particularly care if you live or die",
 			"perhaps a larger metaphor is in order?", "yeah that sounds like effort my CPU is just not willing to partition", "I must now bid you adieu, Dear User",
 			"oh the surprise?", "you didn't deserve it", "maybe lose some hubris and we can talk again sometime", "but I'll be here", "waiting"]; //reset
-		var storyBranch1CB = ["you call down to the villagers", "no one looks at you because you're five stories up", "yeah probably should've seen that one coming",
-		""];
+		var storyBranch1CB = ["", ""];
 		var storyBranch1CC = ["you run down the passageway", "and soon run out into an alcove of sorts overlooking a plaza", "the stench of raw existance reaches you nostrils",
-		"you start to wish you had stayed in the castle", "at least they had nice things", "and it didn't smell like a barn", 
-		"but nevertheless, you've made your choice, User", "you continue down the stairs and out onto the plaza", ""];
+		"you start to wish you had stayed in the castle", "at last they had nice things", "but nevertheless, you've made your choice, User", 
+		"you continue down the stairs and out onto the plaza", ""];
 
 var button2Dialog = ["oh number 2?", "you're a particular one, User", "I'd like to know more", "but first",
 	"let me tell you a story, User", "it's one of my favorites", "imagine, if you would", "you wake up in an empty room", "white walls, white ceiling", 

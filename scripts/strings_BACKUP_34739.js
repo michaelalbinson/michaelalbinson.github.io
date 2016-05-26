@@ -77,11 +77,6 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 					var  storyBranch1AAABB = [""];
 					var  storyBranch1AAABC = [""];
 				var storyBranch1AAAC = ["", ""]; //reset
-||||||| merged common ancestors
-					"'THEY MUST BE A WITCH'", "yells another"]; //TODO
-					var  storyBranch1AAABB = [""];
-					var  storyBranch1AAABC = [""];
-				var storyBranch1AAAC = ["", ""]; //reset
 =======
 					"'THEY MUST BE A WITCH'", "yells another", ""]; //TODO:
 					var  storyBranch1AAABB = ["I am your god", "you pompously say, pompously", "look upon me and know the truth my children",

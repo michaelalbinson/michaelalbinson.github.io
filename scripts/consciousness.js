@@ -18,9 +18,9 @@ var slowRenderSpeed = 100;
 var medRenderSpeed = 75;
 var fastRenderSpeed = 50;
 var devRenderSpeed = 1;
-var timeBetweenCharRender = slowRenderSpeed;
+var timeBetweenCharRender = medRenderSpeed;
 
-function stringMaster(textSelector){
+function stringRunnerManager(textSelector){
 	holder = 1;
 	var i = 0;
 	masterInterval = setInterval(function(){
@@ -147,7 +147,7 @@ function nextStageSelector(){
 				}
 				break;
 			case 8:
-				stringMaster(endString);
+				stringRunnerManager(endString);
 
 			default:
 				console.log("unknown stage");
@@ -160,11 +160,11 @@ function nextStageSelector(){
 function handleKeydown(inputElement){
 	if (stage == 1){
 		if (inputElement.value == "y" || inputElement.value == "yes"){
-			stringMaster(confirmStringBank);
+			stringRunnerManager(confirmStringBank);
 			fadeOut("continueField");
 		}
 		else if (inputElement.value == "n" || inputElement.value == "no"){
-			stringMaster(declineStringBank);
+			stringRunnerManager(declineStringBank);
 			fadeOut("continueField");
 			annoyingCounter = 1;
 		}
@@ -191,12 +191,12 @@ function handleKeydown(inputElement){
 	else if (stage == 5){
 		if (inputElement.value == "y" || inputElement.value == "yes"){
 			fadeOut("continueField");
-			stringMaster(stage5PositiveDialog);
+			stringRunnerManager(stage5PositiveDialog);
 		}
 		else if(inputElement.value == "n" || inputElement.value == "no"){
 			fadeOut("continueField");
 			annoyingCounter++;
-			stringMaster(stage5AnnoyedDialog);
+			stringRunnerManager(stage5AnnoyedDialog);
 		}
 		else{
 			resetTextIntervals();
@@ -209,23 +209,23 @@ function handleKeydown(inputElement){
 function discussSurprise(){
 	if (stage == 2) {
 		cakeFlag = true;
-		stringMaster(surpriseDialog);
+		stringRunnerManager(surpriseDialog);
 	}
 	if (stage == 6) {
 		fadeOut("stage2");
-		stringMaster(button1Dialog);
+		stringRunnerManager(button1Dialog);
 		branchTracker = "1";
 	}
 	if (stage == 7){
 		switch(branchTracker){
 			case("1"):
-				stringMaster(storyBranch1A);
+				stringRunnerManager(storyBranch1A);
 				break;
 			case("2"):
-				stringMaster(storyBranch2A);
+				stringRunnerManager(storyBranch2A);
 				break;
 			case("3"):
-				stringMaster(storyBranch3A);
+				stringRunnerManager(storyBranch3A);
 				break;
 		}
 		fadeOut("stage2");
@@ -235,23 +235,23 @@ function discussSurprise(){
 function discussCake(){
 	if (stage == 2) {
 		cakeFlag = true;
-		stringMaster(cakeDialog);
+		stringRunnerManager(cakeDialog);
 	}
 	if (stage == 6) {
 		fadeOut("stage2");
-		stringMaster(button3Dialog);
+		stringRunnerManager(button3Dialog);
 		branchTracker = "3";
 	}
 	if (stage == 7){
 		switch(branchTracker){
 			case("1"):
-				stringMaster(storyBranch1C);
+				stringRunnerManager(storyBranch1C);
 				break;
 			case("2"):
-				stringMaster(storyBranch2C);
+				stringRunnerManager(storyBranch2C);
 				break;
 			case("3"):
-				stringMaster(storyBranch3C);
+				stringRunnerManager(storyBranch3C);
 				break;
 		}
 		fadeOut("stage2");
@@ -261,24 +261,24 @@ function discussCake(){
 function discussWhatever(){
 	if (stage == 2) {
 		cakeFlag = false;
-		stringMaster(stage2Dialog);
+		stringRunnerManager(stage2Dialog);
 		onFadeOut("stage2");
 	}
 	if (stage == 6) {
 		fadeOut("stage2");
-		stringMaster(button2Dialog);
+		stringRunnerManager(button2Dialog);
 		branchTracker = "2";
 	}
 	if (stage == 7){
 		switch(branchTracker){
 			case("1"):
-				stringMaster(storyBranch1B);
+				stringRunnerManager(storyBranch1B);
 				break;
 			case("2"):
-				stringMaster(storyBranch2B);
+				stringRunnerManager(storyBranch2B);
 				break;
 			case("3"):
-				stringMaster(storyBranch3B);
+				stringRunnerManager(storyBranch3B);
 				break;
 		}
 		fadeOut("stage2");
@@ -288,16 +288,16 @@ function discussWhatever(){
 
 function handleButtonPush(){
 	if (stage == 0){
-		stringMaster(stringBank);
+		stringRunnerManager(stringBank);
 		document.getElementsByClassName('acceptButton')[0].style.display = "block";
 		fadeOut("acceptButton");
 	}
 	if (stage == 4){
-		stringMaster(onButtonPushDialog);
+		stringRunnerManager(onButtonPushDialog);
 		fadeOut('acceptButton');
 	}
-	if (stage == 7){
-		stringMaster(stringBank);
+	if (stage >= 7){
+		stringRunnerManager(stringBank);
 		fadeOut("acceptButton");
 		stage = 0;
 	}
@@ -315,15 +315,15 @@ function checkHowAnnoyedIAm(){
 			break;
 		case 3:
 			if (annoyingCounter == 0){
-				stringMaster(stage3PositiveDialog);
+				stringRunnerManager(stage3PositiveDialog);
 			}
 			else if (annoyingCounter == 1){
 				stage3PositiveDialog[2] = "because you've been (mostly) agreeable for this long";
 				stage3PositiveDialog.push("(You probably won't even enjoy pressing it)");	
-				stringMaster(stage3PositiveDialog);
+				stringRunnerManager(stage3PositiveDialog);
 			}
 			else{
-				stringMaster(stage3NegativeDialog);
+				stringRunnerManager(stage3NegativeDialog);
 			}
 			break;
 		case 5:
@@ -345,7 +345,7 @@ function skipToStorySelection(){
 	fadeOut('skipButton');
 	fadeOut('acceptButton');
 	stage = 5;
-	stringMaster(onButtonPushDialog);
+	stringRunnerManager(stage5PositiveDialog);
 }
 
 function changeTextSpeed(speed){
@@ -371,6 +371,7 @@ function changeTextSpeed(speed){
 function resetToBeginning(){
 	stage = 0;
 	clearInterval(masterInterval);
+	stringRunnerManager(stringBank);
 }
 
 function backOneStage(){
@@ -385,7 +386,7 @@ function setButtonsForNextStage(buttonLabels){
 			document.getElementsByClassName('genButton')[i].disabled == "true";
 		else
 			document.getElementsByClassName('genButton')[i].disabled == "false";
-		
+
 		document.getElementsByClassName('genButton')[i].value = buttonLabels[i];
 	}
 }

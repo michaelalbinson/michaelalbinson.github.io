@@ -72,17 +72,6 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 					var  storyBranch1AAABA =["you begin by telling them that the golden light is simply a result of the earth spinning into a certain position",
 					"wherein the sun is optimally positioned to shine this early morning light on the room", "you watch as the villager's faces go from confusion",
 					"to frustration at the scientific complexities you are spouting", "'EVERYONE KNOWS THE EARTH IS FLAT, OK'", "one yells at you",
-<<<<<<< 8f178407e01b85a198ac0a267c6d045d7beddecc
-					"'THEY MUST BE A WITCH'", "yells another"]; //TODO: 
-					var  storyBranch1AAABB = [""];
-					var  storyBranch1AAABC = [""];
-				var storyBranch1AAAC = ["", ""]; //reset
-||||||| merged common ancestors
-					"'THEY MUST BE A WITCH'", "yells another"]; //TODO
-					var  storyBranch1AAABB = [""];
-					var  storyBranch1AAABC = [""];
-				var storyBranch1AAAC = ["", ""]; //reset
-=======
 					"'THEY MUST BE A WITCH'", "yells another", ""]; //TODO:
 					var  storyBranch1AAABB = ["I am your god", "you pompously say, pompously", "look upon me and know the truth my children",
 						"(wow, you would really say that, User?)", "(what a butthead)", "the villagers look at you in awe", "then one raises his hand",
@@ -91,7 +80,6 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 						"(how did you not see that coming, User??)", "how do you respond"]; //stutter, something something you are an octopus, attempt to make scientific explaination
 					var  storyBranch1AAABC = ["you look down on the people", "*your* people", ""];
 				var storyBranch1AAAC = [""]; //reset
->>>>>>> other changes
 			var storyBranch1AAB = ["you rush behind the throne", "you hear the voices grow into a steady roar and you're certain that they're in the room",
 				"the roar gradually grows into a din", "and then that slowly fades to whispers", "you creep out from behind the throne", "what do you do?"]; 
 				//follow the mob, stay where you are, run out the front doors
