@@ -95,13 +95,13 @@ function nextStageSelector(){
 			case 6:
 				switch(branchTracker){
 					case("1"):
-						setButtonsForNextStage(branch1ButtonChoices);
+						setButtonsForNextStage(branch1_ButtonChoices);
 						break;
 					case("2"):
-						setButtonsForNextStage(branch2ButtonChoices);
+						setButtonsForNextStage(branch2_ButtonChoices);
 						break;
 					case("3"):
-						setButtonsForNextStage(branch3ButtonChoices)
+						setButtonsForNextStage(branch3_ButtonChoices)
 						break;
 				}
 				fadeIn('stage2');
@@ -111,35 +111,35 @@ function nextStageSelector(){
 				document.getElementsByClassName('gameText')[0].innerHTML = "~toUser$ " + endString;
 				switch(branchTracker){
 					case("1A"):
-						setButtonsForNextStage(branch1AButtonChoices);
+						setButtonsForNextStage(branch1A_ButtonChoices);
 						fadeIn('stage2');
 						break;
 					case("1B"):
 						setResetButton();
 						break;
 					case("1C"):
-						setButtonsForNextStage(branch1CButtonChoices);
+						setButtonsForNextStage(branch1C_ButtonChoices);
 						fadeIn('stage2');
 						break;
 					case("2A"):
-						setButtonsForNextStage(branch2AButtonChoices);
+						setButtonsForNextStage(branch2A_ButtonChoices);
 						fadeIn('stage2');
 						break;
 					case("2B"):
-						setButtonsForNextStage(branch2BButtonChoices);
+						setButtonsForNextStage(branch2B_ButtonChoices);
 						fadeIn('stage2');
 						break;
 					case("2C"):
 						
-						setButtonsForNextStage(branch2CButtonChoices);
+						setButtonsForNextStage(branch2C_ButtonChoices);
 						fadeIn('stage2');
 						break;
 					case("3A"):
-						setButtonsForNextStage(branch3AButtonChoices);
+						setButtonsForNextStage(branch3A_ButtonChoices);
 						fadeIn('stage2');
 						break;
 					case("3B"):
-						setButtonsForNextStage(branch3BButtonChoices);
+						setButtonsForNextStage(branch3B_ButtonChoices);
 						fadeIn('stage2');
 						break;
 					case("3C"):

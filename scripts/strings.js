@@ -72,7 +72,7 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 					var  storyBranch1AAABA =["you begin by telling them that the golden light is simply a result of the earth spinning into a certain position",
 					"wherein the sun is optimally positioned to shine this early morning light on the room", "you watch as the villager's faces go from confusion",
 					"to frustration at the scientific complexities you are spouting", "'EVERYONE KNOWS THE EARTH IS FLAT, OK'", "one yells at you",
-					"'THEY MUST BE A WITCH'", "yells another"]; //TODO
+					"'THEY MUST BE A WITCH'", "yells another"]; //TODO: 
 					var  storyBranch1AAABB = [""];
 					var  storyBranch1AAABC = [""];
 				var storyBranch1AAAC = ["", ""]; //reset
