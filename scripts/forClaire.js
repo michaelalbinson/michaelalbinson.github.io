@@ -27,10 +27,10 @@ var sassySpeak = ["good choice ;)", "so I heard that it was your birthday", "oh 
 	"definitely don't wish I was there right now to have some birthday fun with you", "who needs celebrations anyway, amirite?", "or amirite?",
 	"sitting on a boat is definitely waaaay more exciting", "(just remember you picked the sassy option here)", "so I got you a balloon", "I hope you like it",
 	"I worked like ridiculously hard on it", "anyway", "enjoy the fruits of being old enough to almost be trusted by the law",
-	"and I'll talk to you soon :)", "promise ~~(*_*)~~~"];
+	"and I'll talk to you soon :)", "promise ~~~(*_*)~~~"];
 var cuteSpeak = ["better choice", "truth be told I ran out of ideas for the other one within 5 minutes", "plus I wanted to do this one more",
 	"so hey", "hope you have (had) a tremendous day", "filled with ridiculous frivolities and spending on alcohol", "I miss you", "I hope things have been going well",
-	"I know we haven't been talking as much as you probably hoped", "and I fell really bad about that", "work has been kinda eating my life a little",
+	"I know we haven't been talking as much as you probably hoped", "and I feel really bad about that", "work has been kinda eating my life a little",
 	"but I just want you to know that you mean an awful lot to me", "and when I say I care about you really mean it", "and when I say I miss you I really mean it",
 	"hopefully soon things will slow down a little", "or bare minimum I'll get my shit together and actually have time to bug you more often", "and I can see it coming soon",
 	"but regardless, soon enough we'll be back together in Kingston", "and get to have all the adventures", "and I honestly am so ready for that",
