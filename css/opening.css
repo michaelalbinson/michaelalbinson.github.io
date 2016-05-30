@@ -1,0 +1,30 @@
+body{
+	position: absolute;
+	background-color: #1ec503;
+	font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+	font-size: 1em;
+}
+
+h1{
+	text-align: center;
+	background-color: #1ec503;
+}
+
+div.gameBody{
+	position: fixed;
+	align-self: center;
+	background-color: rgba(0, 0, 0, .85);
+	border: 0;
+	bottom: 0;
+	top: 0;
+	right: 30px;
+	left: 30px;
+	border-radius: 5px;
+	font-size: 3em;
+}
+
+div.gameTitle{
+	position: relative;
+	background-color: #1ec503;
+	vertical-align: middle;	
+}

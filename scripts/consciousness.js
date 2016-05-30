@@ -395,3 +395,19 @@ function setResetButton(){
 	document.getElementsByClassName('acceptButton')[0].value = "reset";
 	fadeIn("acceptButton");
 }
+
+window.onload = function(){
+	setInterval(toggleBox, 750);
+}
+
+function toggleBox(){
+	var stuffToChange =  document.getElementsByClassName('blinkingBox')[0].style.display;
+	if(boxStatus){
+		document.getElementsByClassName('blinkingBox')[0].style.display = "none";
+		boxStatus = false;
+	}
+	else{
+		document.getElementsByClassName('blinkingBox')[0].style.display = "inline-block" ;
+		boxStatus = true;
+	}
+}

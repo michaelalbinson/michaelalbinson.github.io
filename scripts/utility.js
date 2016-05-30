@@ -23,22 +23,6 @@ function deleteString(string){
 	}
 }
 
-function toggleBox(){
-	var stuffToChange =  document.getElementsByClassName('blinkingBox')[0].style.display;
-	if(boxStatus){
-		document.getElementsByClassName('blinkingBox')[0].style.display = "none";
-		boxStatus = false;
-	}
-	else{
-		document.getElementsByClassName('blinkingBox')[0].style.display = "inline-block" ;
-		boxStatus = true;
-	}
-}
-
-window.onload = function(){
-	setInterval(toggleBox, 750);
-}
-
 
 function fadeIn(element){
 	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "true")
