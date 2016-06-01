@@ -2,12 +2,12 @@ body{
 	position: absolute;
 	background-color: #1ec503;
 	font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
-	font-size: 1em;
 }
 
 h1{
 	text-align: center;
 	background-color: #1ec503;
+	font-size: 1.75em;
 }
 
 div.gameBody{
@@ -20,11 +20,15 @@ div.gameBody{
 	right: 30px;
 	left: 30px;
 	border-radius: 5px;
-	font-size: 3em;
 }
 
 div.gameTitle{
-	position: relative;
+	position: fixed;
 	background-color: #1ec503;
-	vertical-align: middle;	
+	top: 40px;
+	left: 50px;
+}
+div.paragraph{
+	display: none;
+	background-color: #1ec503;
 }

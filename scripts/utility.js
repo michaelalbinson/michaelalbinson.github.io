@@ -67,8 +67,8 @@ function onFadeIn(element, doSomething){
 }
 
 function fadeOut(element){
-	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "false")
-		return;
+	//if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "false")
+		//return;
 
 	document.getElementsByClassName(element)[0].setAttribute("fadedIn", "false");
 	var opacity = 1;
