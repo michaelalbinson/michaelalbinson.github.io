@@ -28,7 +28,10 @@ div.gameTitle{
 	top: 40px;
 	left: 50px;
 }
+
 div.paragraph{
 	display: none;
-	background-color: #1ec503;
+	position: absolute;
+	color: #1ec503;
+	padding: 5%;
 }

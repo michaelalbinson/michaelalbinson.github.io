@@ -13,12 +13,16 @@ var cakeFlag = false;
 var annoyingCounter = 0;
 var stringsRun = 0;
 var branchTracker = "";
-var endString = ["you've reached the END OF DEVELOPMENT", " more to come :)"];
 var slowRenderSpeed = 100;
 var medRenderSpeed = 75;
 var fastRenderSpeed = 50;
 var devRenderSpeed = 1;
 var timeBetweenCharRender = medRenderSpeed;
+var rightForm = "compassForm";
+var centerForm = "speedForm";
+var leftForm = "toxicForm";
+var prefixString = "/Master/"
+var postfixString = "~toUser:"
 
 function stringRunnerManager(textSelector){
 	holder = 1;
@@ -286,23 +290,6 @@ function discussWhatever(){
 	}
 }
 
-function handleButtonPush(){
-	if (stage == 0){
-		stringRunnerManager(stringBank);
-		document.getElementsByClassName('acceptButton')[0].style.display = "block";
-		fadeOut("acceptButton");
-	}
-	if (stage == 4){
-		stringRunnerManager(onButtonPushDialog);
-		fadeOut('acceptButton');
-	}
-	if (stage >= 7){
-		stringRunnerManager(stringBank);
-		fadeOut("acceptButton");
-		stage = 0;
-	}
-}
-
 function checkHowAnnoyedIAm(){
 	switch(stage){
 		case 2:
@@ -341,73 +328,7 @@ function checkHowAnnoyedIAm(){
 	}
 }
 
-function skipToStorySelection(){
-	fadeOut('skipButton');
-	fadeOut('acceptButton');
-	stage = 5;
-	stringRunnerManager(stage5PositiveDialog);
-}
-
-function changeTextSpeed(speed){
-	switch(speed){
-		case ("fast"):
-			timeBetweenCharRender = fastRenderSpeed;
-			break;
-		case ("medium"):
-			timeBetweenCharRender = medRenderSpeed;
-			break;
-		case ("slow"):
-			timeBetweenCharRender = slowRenderSpeed;
-			break;
-		case("dev"):
-			timeBetweenCharRender = devRenderSpeed;
-			break;
-		default:
-			console.log("uncaught speeed change");
-			break;
-	}
-}
-
-function resetToBeginning(){
-	stage = 0;
-	clearInterval(masterInterval);
-	stringRunnerManager(stringBank);
-}
-
-function backOneStage(){
-	stage--;
-	clearInterval(masterInterval);
-	previousDialog
-}
-
-function setButtonsForNextStage(buttonLabels){
-	for (var i = 0; i < 3; i++) {
-		if (buttonLabels[i] == "-")
-			document.getElementsByClassName('genButton')[i].disabled == "true";
-		else
-			document.getElementsByClassName('genButton')[i].disabled == "false";
-
-		document.getElementsByClassName('genButton')[i].value = buttonLabels[i];
-	}
-}
-
-function setResetButton(){
-	document.getElementsByClassName('acceptButton')[0].value = "reset";
-	fadeIn("acceptButton");
-}
-
 window.onload = function(){
 	setInterval(toggleBox, 750);
 }
 
-function toggleBox(){
-	var stuffToChange =  document.getElementsByClassName('blinkingBox')[0].style.display;
-	if(boxStatus){
-		document.getElementsByClassName('blinkingBox')[0].style.display = "none";
-		boxStatus = false;
-	}
-	else{
-		document.getElementsByClassName('blinkingBox')[0].style.display = "inline-block" ;
-		boxStatus = true;
-	}
-}

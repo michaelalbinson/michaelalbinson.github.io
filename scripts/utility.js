@@ -1,39 +1,11 @@
-function buildString(string){
-	if (!continueFlag){
-		if(holder == string.length+8){
-			clearInterval(interval1);
-			continueFlag = true;
-			return;
-		}
-		document.getElementsByClassName('gameText')[0].innerHTML = prefixString + " " + postfixString + " "  + string.substring(0, holder);
-		holder++;
-	}
-}
-
-function deleteString(string){
-	if (continueFlag){
-		if (holder == 0){
-			clearTimeout(interval2);
-			completeFlag = false;
-			intervalsSetFlag = false;
-		}
-
-		document.getElementsByClassName('gameText')[0].innerHTML = prefixString + " " + postfixString + " " + string.substring(0, holder);
-		holder--;
-	}
-}
-
-
 function fadeIn(element){
 	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "true")
 		return;
 
 	var opacity = 0;
-	console.log(document.getElementsByClassName(element)[0].style.display);
 	document.getElementsByClassName(element)[0].setAttribute("fadedIn", "true");
 	document.getElementsByClassName(element)[0].style.opacity = opacity;
 	document.getElementsByClassName(element)[0].style.display = "block";
-	console.log(document.getElementsByClassName(element)[0].style.display);
 	var fader = window.setInterval(function(){
 		if (opacity >= .99){
 			clearInterval(fader);
@@ -67,8 +39,8 @@ function onFadeIn(element, doSomething){
 }
 
 function fadeOut(element){
-	//if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "false")
-		//return;
+	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "false")
+		return;
 
 	document.getElementsByClassName(element)[0].setAttribute("fadedIn", "false");
 	var opacity = 1;
@@ -106,13 +78,30 @@ function onFadeOut(element, doSomething){
 	}, 10);
 }
 
-function resetTextIntervals(){
-	clearInterval(interval1);
-	clearInterval(interval2);
-	clearInterval(masterInterval);
-	completeFlag = true;
-	continueFlag = false;
-	intervalsSetFlag = false;
-	holder = 1;
-	stringsRun = 0;
+//function to fade out text and shrink the text as it fades
+//the font size of the element will be reset after it is hidden,
+//in case it will be displayed again
+//element: any element with text you wish to shrink
+//initFontSize: initial font size in em (should be in em, otherwise weird things will happen)
+function fadeOutWithShrinkingText(element, initFontSize){
+	if (document.getElementsByClassName(element)[0].getAttribute('fadedIn') == "false")
+		return;
+
+	document.getElementsByClassName(element)[0].setAttribute("fadedIn", "false");
+	var opacity = 1;
+	var iFS = initFontSize;
+	document.getElementsByClassName(element)[0].style.opacity = opacity;
+	var fader = window.setInterval(function(){
+		if (opacity <= 0){
+			document.getElementsByClassName(element)[0].style.display = "none";
+			document.getElementsByClassName(element)[0].style.fontSize = initFontSize.toString() + 'em';
+			clearInterval(fader);
+		}
+		else{
+			opacity = opacity - .01;
+			iFS -= .01;
+			document.getElementsByClassName(element)[0].style.opacity = opacity;
+			document.getElementsByClassName(element)[0].style.fontSize = iFS.toString() + 'em';
+		}
+	}, 20);
 }

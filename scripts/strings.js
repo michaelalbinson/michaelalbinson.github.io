@@ -31,16 +31,15 @@ var onButtonPushDialog = ["oh my goodness...", "User", "That had to be...", "THE
 	"nothing, knucklehead", "you pushed a button", "what? do you think I was created yesterday??", "ok well actually I was", "well, technically instantiated",
 	"and technically whenever you loaded this page...", "but REGARDLESS", "you won't just get the surprise for just clicking two stinking buttons", 
 	"no, the surprise is reserved for pushers of the highest caliber", "so", "are you ready for your next challenge?"];
-
 //stage 5
 var stage5AnnoyedDialog = ["SO", "since you've already come this far", "I'm going to assume your petulance will only continue",
 	"so I must wish you goodbye and good riddance", "may your button hating ways bring you nothing in your sad little life",
 	"(but allow me to put this out there just in case)", "(there are three buttons)", "(each will lead you down a different path)", 
 	"(the choice is yours user)", "(which do you choose?)"];
 var stage5PositiveDialog = ["ahhh well aren't you developing into quite the test subject!", "did I say test??",
-	"I meant happy human playtime!", "but anyway", "here's a new one", "there are three buttons", "(oohhh, ahhhhh)"
+	"I meant happy human playtime!", "but anyway", "here's a new one", "there are three buttons", "(oohhh, ahhhhh)",
 	"each will lead you down a different path", "the choice is yours user", "which do you choose?"];
-
+	
 //real branching dialog -- where things get tricky
 var button1Dialog = ["ah button 01", "interesting choice user", "the number one, the symbol of superiority",
 	"the symbol of laziness", "User, I'd like to tell you a story", "as it turns out, you're actually in it", "you wake up in a castle",
@@ -72,17 +71,6 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 					var  storyBranch1AAABA =["you begin by telling them that the golden light is simply a result of the earth spinning into a certain position",
 					"wherein the sun is optimally positioned to shine this early morning light on the room", "you watch as the villager's faces go from confusion",
 					"to frustration at the scientific complexities you are spouting", "'EVERYONE KNOWS THE EARTH IS FLAT, OK'", "one yells at you",
-<<<<<<< 8f178407e01b85a198ac0a267c6d045d7beddecc
-					"'THEY MUST BE A WITCH'", "yells another"]; //TODO: 
-					var  storyBranch1AAABB = [""];
-					var  storyBranch1AAABC = [""];
-				var storyBranch1AAAC = ["", ""]; //reset
-||||||| merged common ancestors
-					"'THEY MUST BE A WITCH'", "yells another"]; //TODO
-					var  storyBranch1AAABB = [""];
-					var  storyBranch1AAABC = [""];
-				var storyBranch1AAAC = ["", ""]; //reset
-=======
 					"'THEY MUST BE A WITCH'", "yells another", ""]; //TODO:
 					var  storyBranch1AAABB = ["I am your god", "you pompously say, pompously", "look upon me and know the truth my children",
 						"(wow, you would really say that, User?)", "(what a butthead)", "the villagers look at you in awe", "then one raises his hand",
@@ -91,7 +79,6 @@ var button1Dialog = ["ah button 01", "interesting choice user", "the number one,
 						"(how did you not see that coming, User??)", "how do you respond"]; //stutter, something something you are an octopus, attempt to make scientific explaination
 					var  storyBranch1AAABC = ["you look down on the people", "*your* people", ""];
 				var storyBranch1AAAC = [""]; //reset
->>>>>>> other changes
 			var storyBranch1AAB = ["you rush behind the throne", "you hear the voices grow into a steady roar and you're certain that they're in the room",
 				"the roar gradually grows into a din", "and then that slowly fades to whispers", "you creep out from behind the throne", "what do you do?"]; 
 				//follow the mob, stay where you are, run out the front doors
