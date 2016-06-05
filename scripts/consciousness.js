@@ -24,6 +24,11 @@ var leftForm = "toxicForm";
 var prefixString = "/Master/"
 var postfixString = "~toUser:"
 
+
+window.onload = function(){
+	setInterval(toggleBox, 750);
+}
+
 function stringRunnerManager(textSelector){
 	holder = 1;
 	var i = 0;
@@ -71,9 +76,7 @@ function nextStageSelector(){
 				checkHowAnnoyedIAm();
 				break;
 			case(2):
-				console.log("triggered");
 				if (cakeFlag){
-					console.log("cakeFlag is true");
 					break;
 				}
 				else{
@@ -326,9 +329,5 @@ function checkHowAnnoyedIAm(){
 		default:
 			break;
 	}
-}
-
-window.onload = function(){
-	setInterval(toggleBox, 750);
 }
 

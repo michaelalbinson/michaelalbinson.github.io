@@ -121,3 +121,13 @@ function resetTextIntervals(){
 	holder = 1;
 	stringsRun = 0;
 }
+
+function fadeInThree(field1, field2, field3){
+	fadeIn(field1);
+	setTimeout(function(){
+		fadeIn(field2);
+	}, 250);
+	setTimeout(function(){
+		fadeIn(field3);
+	}, 500)
+}
