@@ -6,7 +6,7 @@ function begin(){
 	var centers = document.getElementsByClassName('centerImage');
 	document.getElementById('playButton').value = "Reset";
 	for (i=0; i<centers.length; i++){
-		centers[i].src = "http://www.iconsdb.com/icons/preview/black/empty-flag-xxl.png";
+		centers[i].src = "css/images/flag.png";
 	}
 	resetAll();
 	document.getElementById('dealButton').disabled = false;
