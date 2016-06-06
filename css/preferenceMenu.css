@@ -22,8 +22,9 @@ form{
 	margin: auto;
 	text-align: left;
 	margin-left: 13%;
-	width: 100%;
+	width: 74%;
 	height: 75%;
+	margin-right: 13%;
 }
 button{
 	background-color: rgba(0,0,0,0);
@@ -140,10 +141,10 @@ input.skipButton{
 	position: absolute;
 }
 
-form.compassForm{
+form.leftForm{
 	display: none;
 }
 
-form.toxicForm{
+form.rightForm{
 	display: none;
 }

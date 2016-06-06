@@ -16,19 +16,19 @@ function switchSections(toSection){
 			document.getElementsByClassName(rightForm)[0].style.display = 'block';
 			document.getElementsByClassName('leftButton')[0].style.border = 'inset';
 			document.getElementsByClassName('leftButton')[0].style.padding = '0';
-			document.getElementsByClassName('optionHeader')[0].innerHTML = 'currentStage = ';
+			document.getElementsByClassName('optionHeader')[0].innerHTML = leftHeader;
 			break;
 		case 'center':
 			document.getElementsByClassName(centerForm)[0].style.display = 'block';
 			document.getElementsByClassName('centerButton')[0].style.border = 'inset';
 			document.getElementsByClassName('centerButton')[0].style.padding = '0';
-			document.getElementsByClassName('optionHeader')[0].innerHTML = 'textSpeedOptions = ';
+			document.getElementsByClassName('optionHeader')[0].innerHTML = centerHeader;
 			break;
 		case 'right':
 			document.getElementsByClassName(leftForm)[0].style.display = 'block';
 			document.getElementsByClassName('rightButton')[0].style.border = 'inset';
 			document.getElementsByClassName('rightButton')[0].style.padding = '0';
-			document.getElementsByClassName('optionHeader')[0].innerHTML = 'advancedOptions = ';
+			document.getElementsByClassName('optionHeader')[0].innerHTML = rightHeader;
 			break;
 		default:
 			console.log('uncaught exception: unable to switch sections');

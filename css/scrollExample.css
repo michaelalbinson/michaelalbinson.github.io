@@ -2,6 +2,16 @@ body{
 	background-color: grey;
 }
 
+h2{
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: .25em;
+}
+
+hr{
+	width: 75%;
+}
+
 div.scrollBody{
 	position: fixed;
 	width: 250px;
@@ -69,4 +79,19 @@ input{
 
 div.optionsMenu{
 	background-color: white;
+	border-color: black;
+}
+
+img{
+	height: 50px;
+	width: 50px;
+}
+
+form{
+	font-size: .9em;
+}
+
+input.exitPreferencesButton{
+	background-color: black;
+	color: green;
 }

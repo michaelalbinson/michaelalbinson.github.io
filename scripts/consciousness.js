@@ -21,8 +21,11 @@ var timeBetweenCharRender = medRenderSpeed;
 var rightForm = "compassForm";
 var centerForm = "speedForm";
 var leftForm = "toxicForm";
-var prefixString = "/Master/"
-var postfixString = "~toUser:"
+var prefixString = "/Master/";
+var postfixString = "~toUser:";
+var leftHeader = "currentStage = ";
+var centerHeader = 'textSpeedOptions = ';
+var rightHeader = 'advancedOptions = ';
 
 
 window.onload = function(){
