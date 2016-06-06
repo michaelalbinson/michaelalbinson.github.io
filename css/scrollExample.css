@@ -58,10 +58,6 @@ button.optionsButton{
 	border: 0;
 }
 
-div.optionsMenu{
-	border-color: green;
-}
-
 input.exitPreferencesButton{
 	font-color: green;
 }
@@ -78,7 +74,7 @@ input{
 }
 
 div.optionsMenu{
-	background-color: white;
+	background-color: linen;
 	border-color: black;
 }
 
