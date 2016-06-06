@@ -4,8 +4,8 @@ div.optionsMenu{
 	vertical-align: middle;
 	top:50%;
 	left:50%;
-	margin-top: -125px;
-	margin-left: -163px; 
+	margin-top: -164px;
+	margin-left: -164px; 
 	z-index: 100;
 	width: 300px;
 	height: 300px;
@@ -14,6 +14,7 @@ div.optionsMenu{
 	border-color: #1ec503;
 	padding: 10px;
 	border-radius: 5px;
+	border-width: 4px;
 	text-align: center;
 }
 

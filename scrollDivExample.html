@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/preferenceMenu.css">
+<link rel="stylesheet" type="text/css" href="css/scrollExample.css">
+<script type="text/javascript" src="scripts/preferenceTableFunction.js"></script>
+<script type="text/javascript" src="scripts/utility.js"></script>
+<script type="text/javascript" src="scripts/preferenceTableFunction.js"></script>
+	<title>scrolling</title>
+</head>
+<body>
+	<h1>scrolling</h1>
+	<button onclick="fadeIn('optionsMenu')" class="optionsButton"><img src="css/images/gear.png" class="preferenceImgGameBody"></button>
+	<div class="scrollBody">
+	text
+	</div>
+	<div class="infoText">
+		Use the w, a, s, and d keys to move. Further functionality will be discribed as the game goes on.
+	</div>
+
+	<div class="optionsMenu">
+	<h2>var preferences = </h2>
+			<button class="leftButton" onclick="switchSections('left')"><img src="css/images/powerButton.png" class="leftImg"></button>
+			<button class="centerButton" onclick="switchSections('center')"><img src="css/images/gear.png" class="centerImg"></button>
+			<button class="rightButton" onclick="switchSections('right')"><img src="css/images/person_gear.png" class="rightImg"></button>
+			<input type="button" value="X" class="exitPreferencesButton" onclick="fadeOut('optionsMenu');">
+			<img src="css/images/rightSquare.png" class="rightBracket">
+			<img src="css/images/leftSquare.png" class="leftBracket">
+			<h2 class="optionHeader">textSpeedOptions =</h2>
+			<hr>
+			<img src="css/images/curly-right.png" class="rightBrace">
+			<form class="speedForm">
+			</form>
+			<form class="compassForm">
+				<input type="button" value="reset to beginning" class="skipButton", onclick="resetToBeginning();"> <br><br>
+  				<input type="button" value="reset to story selection" class="skipButton", onclick="skipToStorySelection();"> <br><br>
+				<input type="button" value="go back a button press" class="skipButton", onclick="backOneStage();">
+				<!--REMINDER: flesh out methods for reset and go back a step methods -->
+			</form>
+			<form class="toxicForm">
+				<p>SUPER NEAT</p>
+			</form>
+			<img src="css/images/curly-left.png" class="leftBrace">
+			<input type="button" value="X" class="exitPreferencesButton" onclick="fadeOut('optionsMenu');">
+		</div>
+</body>
+</html>
