@@ -1,6 +1,16 @@
 var clickedMainBox = false;
-var timeoutWatcher;
+var intervalWatcher;
 var key;
+
+var relativeTopPos = 75;
+var relativeLeftPos = 25;
+var absoluteTopPos = 75;
+var absoluteLeftPos = 25;
+
+var rectUpperRight = 0;
+var rectUpperLeft = 0;
+var rectLowerRight = 250;
+var rectLowerLeft = 250;
 
 function prepareGame(){
 	if (!clickedMainBox){
@@ -10,26 +20,29 @@ function prepareGame(){
 	}
 }
 
-window.onkeydown = function(keydown){
+window.onkeypress = function(keydown){
 	if (clickedMainBox){
 		switch(keydown.keyCode){
-			case 87:
+			case 119:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "up";
-				setTimeout(moveUp, 100);
+				intervalWatcher = setTimeout(moveUp, 10);
 				break;
-			case 65:
+			case 97:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "left";
+				intervalWatcher = setTimeout(moveLeft, 10);
 				break;
-			case 68: 
+			case 100: 
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "right";
+				intervalWatcher = setTimeout(moveRight, 10);
 				break;
-			case 83: 
+			case 115: 
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "down";
+				intervalWatcher = setTimeout(moveDown, 10);
 				break;
-			case 78:
+			case 110:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "n";
 				break;
-			case 77:
+			case 109:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "m";
 				break;
 			default:
@@ -41,21 +54,36 @@ window.onkeydown = function(keydown){
 window.onkeyup = function(){
 	if (clickedMainBox){
 		document.getElementsByClassName('innerTextP')[0].innerHTML = "nil";
+		clearTimeout(intervalWatcher);
 	}
 }
 
 function moveUp(){
-	document.getElementsByClassName('redDiv')[0].style.top -= 1;
+	if (relativeTopPos>10)
+		relativeTopPos = relativeTopPos - 5;
+	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
 }
 
 function moveDown(){
-	document.getElementsByClassName('redDiv')[0].style.top += 1;
+	if (relativeTopPos < 240)
+		relativeTopPos = relativeTopPos + 5;
+	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
 }
 
 function moveLeft(){
-	document.getElementsByClassName('redDiv')[0].style.left -= 1;
+	if (relativeLeftPos > 10)
+		relativeLeftPos = relativeLeftPos - 5;
+	document.getElementsByClassName('redDiv')[0].style.left = relativeLeftPos.toString() + "px";
+
 }
 
 function moveRight(){
-	document.getElementsByClassName('redDiv')[0].style.left += 1;
+	if (relativeLeftPos<240)
+		relativeLeftPos = relativeLeftPos + 5;
+	document.getElementsByClassName('redDiv')[0].style.left = relativeLeftPos.toString() + "px";
+}
+
+function buildRectForClip(uR, uL, lR, lL){
+	var rect = "rect(" + uR.toString() + "," + lR.toString() + "," + lL.toString() + "," + uL.toString() + ")";
+	return rect;
 }

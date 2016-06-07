@@ -100,10 +100,11 @@ input.exitPreferencesButton{
 img.gameImg{
 	position: absolute;
 	padding: 0;
-	width: 250px;
-	height: 250px;
-	clip-path: fill-box;
+	width: 2000px;
+	height: 2000px;
+	clip: rect(0px, 250px, 250px, 0px);
 	z-index: 15;
+	overflow: hidden;
 }
 
 div.redDiv{
@@ -114,6 +115,6 @@ div.redDiv{
 	z-index: 20;
 	margin-top: -5px;
 	margin-left: -5px;
-	top:12.5px;
-	left: 12.5px;
+	top:75px;
+	left: 25px;
 }
