@@ -13,7 +13,7 @@ hr{
 }
 
 div.scrollBody{
-	position: fixed;
+	position: absolute;
 	width: 250px;
 	height: 250px;
 	margin-left: -135px;
@@ -26,6 +26,11 @@ div.scrollBody{
 	border-width: 10px;
 	border-radius: 10px;
 	z-index: 10;
+}
+
+p.innerTextP{
+	text-align: center;
+	font-size: 2em;
 }
 
 h1{
@@ -90,4 +95,25 @@ form{
 input.exitPreferencesButton{
 	background-color: black;
 	color: green;
+}
+
+img.gameImg{
+	position: absolute;
+	padding: 0;
+	width: 250px;
+	height: 250px;
+	clip-path: fill-box;
+	z-index: 15;
+}
+
+div.redDiv{
+	width:10px;
+	height: 10px;
+	position: absolute;
+	background-color: red;
+	z-index: 20;
+	margin-top: -5px;
+	margin-left: -5px;
+	top:12.5px;
+	left: 12.5px;
 }

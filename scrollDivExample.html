@@ -6,6 +6,7 @@
 <script type="text/javascript" src="scripts/preferenceTableFunction.js"></script>
 <script type="text/javascript" src="scripts/utility.js"></script>
 <script type="text/javascript" src="scripts/preferenceTableFunction.js"></script>
+<script type="text/javascript" src="scripts/scrollingScripts.js"></script>
 <script type="text/javascript">
 	var rightForm = "rightForm";
 	var centerForm = "centerForm";
@@ -18,9 +19,13 @@
 </head>
 <body>
 	<h1>scrolling</h1>
+	<p class="innerTextP">
+		Click to begin
+	<p>
 	<button onclick="fadeIn('optionsMenu')" class="optionsButton"><img src="css/images/swiss_army_knife.png" class="preferenceImgGameBody"></button>
-	<div class="scrollBody">
-	text
+	<div class="scrollBody" onclick="prepareGame()">
+		<img src="css/images/buildingARoad.png" class="gameImg">
+		<div class="redDiv"></div>
 	</div>
 	<div class="infoText">
 		Use the w, a, s, and d keys to move. Further functionality will be discribed as the game goes on.
