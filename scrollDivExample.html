@@ -26,9 +26,11 @@
 	<div class="scrollBody" onclick="prepareGame()">
 		<img src="css/images/buildingARoad.png" class="gameImg">
 		<div class="redDiv"></div>
+		<h2 class="startText">Click here to begin</h2>
+		<div class="messageDiv"><p>ooh a message</p></div>
 	</div>
 	<div class="infoText">
-		Use the w, a, s, and d keys to move. Further functionality will be discribed as the game goes on.
+		Use the w, a, s, and d keys to move. Good luck ;)
 	</div>
 
 	<div class="optionsMenu">
@@ -39,16 +41,26 @@
 			<h2 class="optionHeader">Main Options</h2>
 			<hr>
 			<form class="rightForm">
-			<p><b>Screen Size:</b></p>
-			<p><b>Controls:</b></p>
+			<p style="padding:0; margin:0;"><b>Screen Size:</b></p>
+			<label><input type="radio" name="size" onclick="changeWindowSize('small')" checked> small (250px, default)</label>
+			<br>
+			<label><input type="radio" name="size" onclick="changeWindowSize('medium')"> medium (500px)</label>
+			<br>
+			<label><input type="radio" name="size" onclick="changeWindowSize('large')"> large (600px)</label>
+			<p class=topP><b>Controls:</b></p>
 			</form>
 			<form class="centerForm">
-			<p><b>Text Speed:</b></p>
+			<p style="padding:0; margin:0;"><b>Text Speed:</b></p>
+			<label><input type="radio" name="speed" onclick="changeTextSpeed('fast')"> fast</label>
+			<br>
+			<label><input type="radio" name="speed" onclick="changeTextSpeed('medium')" checked> medium (Default)</label>
+			<br>
+			<label><input type="radio" name="speed" onclick="changeTextSpeed('slow')"> slow</label>
 			<p><b>Other things:</b></p>
 			</form>
 			<form class="leftForm">
 				<p>Hi! I'm Michael. I made this game. It's not perfect, and definitely is always a work in progress. If you have constructive comments or want to check out other things I've done check out <a href="http://michaelalbinson.github.io/moreAboutMe.html">my website</a>!</p>
-				<p>Version: 0.1 (like not even ready)</p>
+				<p>Version: 0.1 (like not even ready)... If you're here, you broke it</p>
 			</form>
 			<input type="button" value="X" class="exitPreferencesButton" onclick="fadeOut('optionsMenu');">
 		</div>

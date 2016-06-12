@@ -20,11 +20,13 @@ div.scrollBody{
 	margin-top: -135px;
 	top: 50%;
 	left: 50%;
-	background-color: green;
+	background-color: black;
 	border-style: solid;
 	border-color: black;
 	border-width: 10px;
 	border-radius: 10px;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	z-index: 10;
 }
 
@@ -100,11 +102,15 @@ input.exitPreferencesButton{
 img.gameImg{
 	position: absolute;
 	padding: 0;
-	width: 2000px;
-	height: 2000px;
-	clip: rect(0px, 250px, 250px, 0px);
+	width: 1000px;
+	height: 1000px;
+	/* top, right, bottom, left  */
+	clip: rect(0px, px, 250px, 100px);
+	margin: -100px;
 	z-index: 15;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	opacity: .5;
 }
 
 div.redDiv{
@@ -112,9 +118,38 @@ div.redDiv{
 	height: 10px;
 	position: absolute;
 	background-color: red;
-	z-index: 20;
+	z-index: 16;
 	margin-top: -5px;
 	margin-left: -5px;
 	top:75px;
 	left: 25px;
+	opacity: .5;
+}
+h2.startText{
+	position: absolute;
+	z-index: 20;
+	color: white;
+	text-align: center;
+}
+
+input.enterSizeBox{
+	margin-top: 0;
+	padding: 0;
+}
+
+p.topP{
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+div.messageDiv{
+	display: none;
+	position: absolute;
+	z-index: 20;
+	text-align: center;
+	background-color: linen;
+	border-style: solid;
+	width: 97%;
+	border-radius: 5px;
+	top: 5%;
 }

@@ -13,14 +13,8 @@ var rectUpperLeft = 0;
 var rectLowerRight = 250;
 var rectLowerLeft = 250;
 
-var slowTextSpeed = 100;
-var medTextSpeed = 75;
-var fastTextSpeed = 50;
-var devTextSpeed = 1;
-var textSpeed = medTextSpeed;
-
-var currentWindowSize = 250; //px
-var limitOfMotion = currentWindowSize - 10;
+var gameWindowSize = 250;
+var mapTotalWidth = 2000;
 
 function prepareGame(){
 	if (!clickedMainBox){
@@ -67,19 +61,24 @@ window.onkeypress = function(keydown){
 window.onkeyup = function(){
 	if (clickedMainBox){
 		document.getElementsByClassName('innerTextP')[0].innerHTML = "nil";
-		clearTimeout(upDownIntervalWatcher);
-		clearTimeout(rightLeftIntervalWatcher);
+		clearTimeout(intervalWatcher);
 	}
 }
 
 function moveUp(){
-	if (relativeTopPos>10)
+	if (relativeTopPos>10 && relativeTopPos<120 && absoluteTopPos < 125){
 		relativeTopPos = relativeTopPos - 5;
+		absoluteTopPos = relativeTopPos;
+	}
+	else if (relativeTopPos >= 120 && relativeTopPos <= 130 && absoluteTopPos >= 120 && absoluteTopPos <= mapTotalWidth - 250){
+		absoluteTopPos = absoluteTopPos - 5;
+		var setRect = buildRectForClip(absoluteTopPos, absoluteLeftPos)
+	}
 	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
 }
 
 function moveDown(){
-	if (relativeTopPos < limitOfMotion)
+	if (relativeTopPos < 240 && relativeTopPos > 125)
 		relativeTopPos = relativeTopPos + 5;
 	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
 }
@@ -92,64 +91,12 @@ function moveLeft(){
 }
 
 function moveRight(){
-	if (relativeLeftPos<limitOfMotion)
+	if (relativeLeftPos<240)
 		relativeLeftPos = relativeLeftPos + 5;
 	document.getElementsByClassName('redDiv')[0].style.left = relativeLeftPos.toString() + "px";
 }
 
-function buildRectForClip(uR, uL, lR, lL){
+function buildRectForClip(top, left){
 	var rect = "rect(" + uR.toString() + "," + lR.toString() + "," + lL.toString() + "," + uL.toString() + ")";
 	return rect;
-}
-
-function changeWindowSize(size){
-	if (size == currentWindowSize)
-		return;
-	switch(size){
-		case ("large"):
-			changeWindowSizeTo(600);
-			break;
-		case ("medium"):
-			changeWindowSizeTo(500);
-			console.log(size);
-			break;
-		case ("small"):
-			changeWindowSizeTo(250);
-			console.log(size);
-			break;
-		default:
-			console.log("uncaught size change");
-			break;
-	}
-}
-
-function changeTextSpeed(speed){
-	switch(speed){
-		case ("fast"):
-			textSpeed = fastTextSpeed;
-			break;
-		case ("medium"):
-			textSpeed = medTextSpeed;
-			break;
-		case ("slow"):
-			textSpeed = slowTextSpeed;
-			break;
-		default:
-			console.log("uncaught speed change");
-			break;
-	}
-}
-
-function changeWindowSizeTo(desiredSize){
-	var px = "px";
-	var margin = desiredSize*(-.5) - 10;
-	var imgSize = desiredSize*8;
-	scrollBody = document.getElementsByClassName('scrollBody')[0];
-	backgroundImg = document.getElementsByClassName('gameImg')[0];
-	scrollBody.style.width = desiredSize.toString() + px;
-	scrollBody.style.height = desiredSize.toString() + px;
-	scrollBody.style.marginTop = margin.toString() + px;
-	scrollBody.style.marginLeft = margin.toString() + px;
-	backgroundImg.style.size = imgSize.toString() + px;
-	limitOfMotion = desiredSize-10;
 }
