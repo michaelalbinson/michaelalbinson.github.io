@@ -21,6 +21,7 @@ var textSpeed = medTextSpeed;
 
 var currentWindowSize = 250; //px
 var limitOfMotion = currentWindowSize - 10;
+var optionsFadedIn = false;
 
 function prepareGame(){
 	if (!clickedMainBox){
@@ -34,12 +35,20 @@ function prepareGame(){
 }
 
 window.onkeypress = function(keydown){
-	if (clickedMainBox){
+	if (clickedMainBox && !optionsFadedIn){
 		switch(keydown.keyCode){
 			case 119:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "up";
 				upDownIntervalWatcher = setTimeout(moveUp, 10);
 				break;
+			case 115: 
+				document.getElementsByClassName('innerTextP')[0].innerHTML = "down";
+				upDownIntervalWatcher = setTimeout(moveDown, 10);
+				break;
+			default:
+				break;
+			}
+		switch(keydown.keyCode){
 			case 97:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "left";
 				rightLeftIntervalWatcher = setTimeout(moveLeft, 10);
@@ -48,15 +57,16 @@ window.onkeypress = function(keydown){
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "right";
 				rightLeftIntervalWatcher = setTimeout(moveRight, 10);
 				break;
-			case 115: 
-				document.getElementsByClassName('innerTextP')[0].innerHTML = "down";
-				upDownIntervalWatcher = setTimeout(moveDown, 10);
+			default:
 				break;
+			}
+		switch(keydown.keyCode){
 			case 110:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "n";
 				break;
 			case 109:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "m";
+				checkForMessageEvent();
 				break;
 			default:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = keydown.keyCode;
@@ -152,4 +162,20 @@ function changeWindowSizeTo(desiredSize){
 	scrollBody.style.marginLeft = margin.toString() + px;
 	backgroundImg.style.size = imgSize.toString() + px;
 	limitOfMotion = desiredSize-10;
+}
+
+function fadeMenuIn(){
+	fadeIn('optionsMenu');
+	optionsFadedIn = true;
+}
+
+function fadeMenuOut(){
+	fadeOut('optionsMenu');
+	optionsFadedIn = false;
+}
+
+function checkForMessageEvent(){
+	scrollBody = document.getElementsByClassName('messageDiv')[0];
+	messageDiv.style.display = "inline-block";
+
 }
