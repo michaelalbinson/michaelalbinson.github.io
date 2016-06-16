@@ -51,6 +51,9 @@ window.onkeypress = function(keydown){
 				break;
 			case 109:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "m";
+				document.getElementsByClassName('messageDiv')[0].style.display = "block";
+				document.getElementsByClassName('messageDiv')[0].innerHTML = "you've found a message";
+				setTimeout(hideMessage, 100);
 				break;
 			default:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = keydown.keyCode;
@@ -97,6 +100,11 @@ function moveRight(){
 }
 
 function buildRectForClip(top, left){
-	var rect = "rect(" + uR.toString() + "," + lR.toString() + "," + lL.toString() + "," + uL.toString() + ")";
+	var right = 
+	var rect = "rect(" + top.toString() + "," + lR.toString() + "," + lL.toString() + "," + left.toString() + ")";
 	return rect;
+}
+
+function hideMessage(){
+	document.getElementsByClassName('messageDiv')[0].style.display = "none";
 }

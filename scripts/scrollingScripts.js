@@ -1,3 +1,7 @@
+/*
+* Overall game manager
+*/
+
 var clickedMainBox = false;
 var upDownIntervalWatcher;
 var rightLeftIntervalWatcher;
@@ -34,8 +38,12 @@ function prepareGame(){
 	}
 }
 
+/* movementManager
+*
+*/
+
 window.onkeypress = function(keydown){
-	if (clickedMainBox && !optionsFadedIn){
+	if (clickedMainBox && !optionsFadedIn && !messageDisplayed){
 		switch(keydown.keyCode){
 			case 119:
 				document.getElementsByClassName('innerTextP')[0].innerHTML = "up";
@@ -60,27 +68,20 @@ window.onkeypress = function(keydown){
 			default:
 				break;
 			}
-		switch(keydown.keyCode){
-			case 110:
-				document.getElementsByClassName('innerTextP')[0].innerHTML = "n";
-				break;
-			case 109:
-				document.getElementsByClassName('innerTextP')[0].innerHTML = "m";
-				checkForMessageEvent();
-				break;
-			default:
-				document.getElementsByClassName('innerTextP')[0].innerHTML = keydown.keyCode;
 		}
-	}
+	switch(keydown.keyCode){
+		case 110:
+			document.getElementsByClassName('innerTextP')[0].innerHTML = "n";
+			break;
+		case 109:
+			document.getElementsByClassName('innerTextP')[0].innerHTML = "m";
+			checkForMessageEvent();
+			break;
+		default:
+			document.getElementsByClassName('innerTextP')[0].innerHTML = keydown.keyCode;
+		}
 }
 
-window.onkeyup = function(){
-	if (clickedMainBox){
-		document.getElementsByClassName('innerTextP')[0].innerHTML = "nil";
-		clearTimeout(upDownIntervalWatcher);
-		clearTimeout(rightLeftIntervalWatcher);
-	}
-}
 
 function moveUp(){
 	if (relativeTopPos>10)
@@ -107,10 +108,9 @@ function moveRight(){
 	document.getElementsByClassName('redDiv')[0].style.left = relativeLeftPos.toString() + "px";
 }
 
-function buildRectForClip(uR, uL, lR, lL){
-	var rect = "rect(" + uR.toString() + "," + lR.toString() + "," + lL.toString() + "," + uL.toString() + ")";
-	return rect;
-}
+/* Preference Manager
+*
+*/
 
 function changeWindowSize(size){
 	if (size == currentWindowSize)
@@ -160,8 +160,9 @@ function changeWindowSizeTo(desiredSize){
 	scrollBody.style.height = desiredSize.toString() + px;
 	scrollBody.style.marginTop = margin.toString() + px;
 	scrollBody.style.marginLeft = margin.toString() + px;
-	backgroundImg.style.size = imgSize.toString() + px;
+	backgroundImg.style.size = desiredSize.toString() + px;
 	limitOfMotion = desiredSize-10;
+	currentWindowSize = desiredSize;
 }
 
 function fadeMenuIn(){
@@ -174,8 +175,47 @@ function fadeMenuOut(){
 	optionsFadedIn = false;
 }
 
-function checkForMessageEvent(){
-	scrollBody = document.getElementsByClassName('messageDiv')[0];
-	messageDiv.style.display = "inline-block";
+/* Message Manager Class
+*
+*/
+var messageDisplayed = false;
+var uselessFlag = false;
+var messageArrayComplete = false;
+var messageIntervalWatcher;
 
+function checkForMessageEvent(){
+	message = checkPositionForMessage();
+	displayMessages(message);
+	
 }
+
+function displayMessages(message){
+	if (messageDisplayed)
+		return;
+
+	var i = 0;
+
+	messageDisplayed = true;
+	messageIntervalWatcher = setInterval(function(){
+		scrollBody = document.getElementsByClassName('messageDiv')[0];
+		scrollBody.style.display = "inline-block";
+		scrollBody.innerHTML = message[i];
+		if (i >= message.length-1){
+			clearInterval(messageIntervalWatcher)
+			setTimeout(hideMessage, 1000)
+			return;
+		}
+		i++;
+	}, 1000);	
+}
+
+// stub
+function checkPositionForMessage(){
+	return ["I built this message array", "to practice using", "longer strings that are very interesting"];
+}
+
+function hideMessage() {
+	scrollBody = document.getElementsByClassName('messageDiv')[0].style.display = "none";
+	messageDisplayed = false;
+}
+
