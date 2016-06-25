@@ -3,19 +3,11 @@
 */
 
 var clickedMainBox = false;
-var upDownIntervalWatcher;
-var rightLeftIntervalWatcher;
-var key;
 
 var relativeTopPos = 75;
 var relativeLeftPos = 25;
 var absoluteTopPos = 75;
 var absoluteLeftPos = 25;
-
-var rectUpperRight = 0;
-var rectUpperLeft = 0;
-var rectLowerRight = 250;
-var rectLowerLeft = 250;
 
 var slowTextSpeed = 100;
 var medTextSpeed = 75;
@@ -27,11 +19,34 @@ var currentWindowSize = 250; //px
 var limitOfMotion = currentWindowSize - 10;
 var optionsFadedIn = false;
 
+var pressedKeyMap = {
+	'A':false,
+	'W':false,
+	'S':false,
+	'D':false,
+	'N':false,
+	'M':false,
+	'enter':false};
+
+var actionMap = {
+	'A': moveLeft,
+	'S': moveDown,
+	'D': moveRight,
+	'W': moveUp,
+	'M': checkForMessageEvent,
+	'N': logSomething,
+	'enter': logSomething
+};
+
+
+function logSomething(){
+	console.log("to be implemented")
+}
+
 function prepareGame(){
 	if (!clickedMainBox){
 		document.getElementsByClassName('gameImg')[0].style.opacity = 1;
 		document.getElementsByClassName('redDiv')[0].style.opacity = 1;
-		document.getElementsByClassName('innerTextP')[0].innerHTML = "sweeeeeet";
 		document.getElementsByClassName('startText')[0].style.display = "none";
 		
 		clickedMainBox = true;
@@ -42,56 +57,63 @@ function prepareGame(){
 *
 */
 
-window.onkeypress = function(keydown){
-	if (clickedMainBox && !optionsFadedIn && !messageDisplayed){
-		switch(keydown.keyCode){
-			case 119:
-				document.getElementsByClassName('innerTextP')[0].innerHTML = "up";
-				upDownIntervalWatcher = setTimeout(moveUp, 10);
-				break;
-			case 115: 
-				document.getElementsByClassName('innerTextP')[0].innerHTML = "down";
-				upDownIntervalWatcher = setTimeout(moveDown, 10);
-				break;
-			default:
-				break;
-			}
-		switch(keydown.keyCode){
-			case 97:
-				document.getElementsByClassName('innerTextP')[0].innerHTML = "left";
-				rightLeftIntervalWatcher = setTimeout(moveLeft, 10);
-				break;
-			case 100: 
-				document.getElementsByClassName('innerTextP')[0].innerHTML = "right";
-				rightLeftIntervalWatcher = setTimeout(moveRight, 10);
-				break;
-			default:
-				break;
-			}
-		}
-	switch(keydown.keyCode){
-		case 110:
-			document.getElementsByClassName('innerTextP')[0].innerHTML = "n";
-			break;
-		case 109:
-			document.getElementsByClassName('innerTextP')[0].innerHTML = "m";
-			checkForMessageEvent();
-			break;
-		default:
-			document.getElementsByClassName('innerTextP')[0].innerHTML = keydown.keyCode;
-		}
+window.onkeydown = function(keydown){
+	if (keydown.keyCode == 65)
+		pressedKeyMap['A'] = true;
+	else if (keydown.keyCode == 87)
+		pressedKeyMap['W'] = true;
+	else if (keydown.keyCode == 83)
+		pressedKeyMap['S'] = true;
+	else if (keydown.keyCode == 68)
+		pressedKeyMap['D'] = true;
+	else if (keydown.keyCode == 78)
+		pressedKeyMap['N'] = true;
+	else if (keydown.keyCode == 77)
+		pressedKeyMap['M'] = true;
+	else if (keydown.keyCode == 13)
+		pressedKeyMap['enter'] = true;
 }
 
+window.onkeyup = function(keydown){
+	if (keydown.keyCode == 65)
+		pressedKeyMap['A'] = false;
+	else if (keydown.keyCode == 87)
+		pressedKeyMap['W'] = false;
+	else if (keydown.keyCode == 83)
+		pressedKeyMap['S'] = false;
+	else if (keydown.keyCode == 68)
+		pressedKeyMap['D'] = false;
+	else if (keydown.keyCode == 78)
+		pressedKeyMap['N'] = false;
+	else if (keydown.keyCode == 77)
+		pressedKeyMap['M'] = false;
+	else if (keydown.keyCode == 13)
+		pressedKeyMap['enter'] = false;
+}
 
-function moveUp(){
-	if (relativeTopPos>10)
-		relativeTopPos = relativeTopPos - 5;
-	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
+window.onload = function(){
+	setInterval(checkIfMotionRequired, 100);
+}
+
+function checkIfMotionRequired(){
+	if (messageDisplayed)
+		return;
+
+	for (key in pressedKeyMap){
+		if (pressedKeyMap[key])
+			actionMap[key]();
+	}
 }
 
 function moveDown(){
 	if (relativeTopPos < limitOfMotion)
 		relativeTopPos = relativeTopPos + 5;
+	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
+}
+
+function moveUp(){
+	if (relativeTopPos>10)
+		relativeTopPos = relativeTopPos - 5;
 	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
 }
 
@@ -179,7 +201,6 @@ function fadeMenuOut(){
 *
 */
 var messageDisplayed = false;
-var uselessFlag = false;
 var messageArrayComplete = false;
 var messageIntervalWatcher;
 
@@ -193,7 +214,7 @@ function displayMessages(message){
 	if (messageDisplayed)
 		return;
 
-	var i = 0;
+	var i = 0;;
 
 	messageDisplayed = true;
 	messageIntervalWatcher = setInterval(function(){
@@ -209,13 +230,12 @@ function displayMessages(message){
 	}, 1000);	
 }
 
-// stub
-function checkPositionForMessage(){
-	return ["I built this message array", "to practice using", "longer strings that are very interesting"];
-}
-
 function hideMessage() {
 	scrollBody = document.getElementsByClassName('messageDiv')[0].style.display = "none";
 	messageDisplayed = false;
 }
 
+// stub
+function checkPositionForMessage(){
+	return ["I built this message array", "to practice using", "longer strings that are very interesting"];
+}
