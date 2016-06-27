@@ -4,10 +4,8 @@
 
 var clickedMainBox = false;
 
-var relativeTopPos = 75;
-var relativeLeftPos = 25;
-var absoluteTopPos = 75;
-var absoluteLeftPos = 25;
+var currMarginTop = 75;
+var currMarginLeft = 100;
 
 var slowTextSpeed = 100;
 var medTextSpeed = 75;
@@ -16,7 +14,8 @@ var devTextSpeed = 1;
 var textSpeed = medTextSpeed;
 
 var currentWindowSize = 250; //px
-var limitOfMotion = currentWindowSize - 10;
+var currentImgSize = 1000;
+var limitOfMotion = currentImgSize - 150;
 var optionsFadedIn = false;
 
 var pressedKeyMap = {
@@ -38,17 +37,15 @@ var actionMap = {
 	'enter': logSomething
 };
 
-
-function logSomething(){
-	console.log("to be implemented")
+window.onload = function() {
+	setInterval(checkIfMotionRequired, 100);
 }
 
-function prepareGame(){
+function prepareGame() {
 	if (!clickedMainBox){
 		document.getElementsByClassName('gameImg')[0].style.opacity = 1;
 		document.getElementsByClassName('redDiv')[0].style.opacity = 1;
 		document.getElementsByClassName('startText')[0].style.display = "none";
-		
 		clickedMainBox = true;
 	}
 }
@@ -57,7 +54,7 @@ function prepareGame(){
 *
 */
 
-window.onkeydown = function(keydown){
+window.onkeydown = function(keydown) {
 	if (keydown.keyCode == 65)
 		pressedKeyMap['A'] = true;
 	else if (keydown.keyCode == 87)
@@ -74,7 +71,7 @@ window.onkeydown = function(keydown){
 		pressedKeyMap['enter'] = true;
 }
 
-window.onkeyup = function(keydown){
+window.onkeyup = function(keydown) {
 	if (keydown.keyCode == 65)
 		pressedKeyMap['A'] = false;
 	else if (keydown.keyCode == 87)
@@ -91,12 +88,14 @@ window.onkeyup = function(keydown){
 		pressedKeyMap['enter'] = false;
 }
 
-window.onload = function(){
-	setInterval(checkIfMotionRequired, 100);
+function labelAllKeysFalse() {
+	for (key in pressedKeyMap) {
+		pressedKeyMap[key] = false;
+	}
 }
 
-function checkIfMotionRequired(){
-	if (messageDisplayed)
+function checkIfMotionRequired() {
+	if (messageDisplayed || !clickedMainBox)
 		return;
 
 	for (key in pressedKeyMap){
@@ -105,36 +104,40 @@ function checkIfMotionRequired(){
 	}
 }
 
-function moveDown(){
-	if (relativeTopPos < limitOfMotion)
-		relativeTopPos = relativeTopPos + 5;
-	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
+function moveDown() {
+	if (currMarginTop > -limitOfMotion)
+		currMarginTop = currMarginTop - 5;
+	document.getElementsByClassName('gameImg')[0].style.marginTop = currMarginTop.toString() + "px";
 }
 
-function moveUp(){
-	if (relativeTopPos>10)
-		relativeTopPos = relativeTopPos - 5;
-	document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
+function moveUp() {
+	if (currMarginTop < 100)
+		currMarginTop = currMarginTop + 5;
+	document.getElementsByClassName('gameImg')[0].style.marginTop = currMarginTop.toString() + "px";
 }
 
-function moveLeft(){
-	if (relativeLeftPos > 10)
-		relativeLeftPos = relativeLeftPos - 5;
-	document.getElementsByClassName('redDiv')[0].style.left = relativeLeftPos.toString() + "px";
+function moveLeft() {
+	if (currMarginLeft < 100)
+		currMarginLeft = currMarginLeft + 5;
+	document.getElementsByClassName('gameImg')[0].style.marginLeft = currMarginLeft.toString() + "px";
 
 }
 
-function moveRight(){
-	if (relativeLeftPos<limitOfMotion)
-		relativeLeftPos = relativeLeftPos + 5;
-	document.getElementsByClassName('redDiv')[0].style.left = relativeLeftPos.toString() + "px";
+function moveRight() {
+	if (currMarginLeft > -limitOfMotion)
+		currMarginLeft = currMarginLeft - 5;
+	document.getElementsByClassName('gameImg')[0].style.marginLeft = currMarginLeft.toString() + "px";
 }
 
-/* Preference Manager
-*
+function logSomething() {
+	console.log("to be implemented")
+}
+
+/*
+ * Preference Manager
 */
 
-function changeWindowSize(size){
+function changeWindowSize(size) {
 	if (size == currentWindowSize)
 		return;
 	switch(size){
@@ -155,7 +158,7 @@ function changeWindowSize(size){
 	}
 }
 
-function changeTextSpeed(speed){
+function changeTextSpeed(speed) {
 	switch(speed){
 		case ("fast"):
 			textSpeed = fastTextSpeed;
@@ -172,7 +175,7 @@ function changeTextSpeed(speed){
 	}
 }
 
-function changeWindowSizeTo(desiredSize){
+function changeWindowSizeTo(desiredSize) {
 	var px = "px";
 	var margin = desiredSize*(-.5) - 10;
 	var imgSize = desiredSize*8;
@@ -187,12 +190,12 @@ function changeWindowSizeTo(desiredSize){
 	currentWindowSize = desiredSize;
 }
 
-function fadeMenuIn(){
+function fadeMenuIn() {
 	fadeIn('optionsMenu');
 	optionsFadedIn = true;
 }
 
-function fadeMenuOut(){
+function fadeMenuOut() {
 	fadeOut('optionsMenu');
 	optionsFadedIn = false;
 }
@@ -204,24 +207,24 @@ var messageDisplayed = false;
 var messageArrayComplete = false;
 var messageIntervalWatcher;
 
-function checkForMessageEvent(){
+function checkForMessageEvent() {
 	message = checkPositionForMessage();
 	displayMessages(message);
 	
 }
 
-function displayMessages(message){
+function displayMessages(message) {
 	if (messageDisplayed)
 		return;
 
 	var i = 0;;
 
 	messageDisplayed = true;
-	messageIntervalWatcher = setInterval(function(){
+	messageIntervalWatcher = setInterval(function() {
 		scrollBody = document.getElementsByClassName('messageDiv')[0];
 		scrollBody.style.display = "inline-block";
 		scrollBody.innerHTML = message[i];
-		if (i >= message.length-1){
+		if (i >= message.length-1) {
 			clearInterval(messageIntervalWatcher)
 			setTimeout(hideMessage, 1000)
 			return;
@@ -236,6 +239,6 @@ function hideMessage() {
 }
 
 // stub
-function checkPositionForMessage(){
-	return ["I built this message array", "to practice using", "longer strings that are very interesting"];
+function checkPositionForMessage() {
+	return [currMarginTop.toString() + ", " + currMarginLeft.toString()];
 }

@@ -30,11 +30,6 @@ div.scrollBody{
 	z-index: 10;
 }
 
-p.innerTextP{
-	text-align: center;
-	font-size: 2em;
-}
-
 h1{
 	text-align: center;
 }
@@ -104,7 +99,8 @@ img.gameImg{
 	padding: 0;
 	width: 1000px;
 	height: 1000px;
-	margin: -100px;
+	margin-top: 75px;
+	margin-left: 100px;
 	z-index: 15;
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -112,15 +108,15 @@ img.gameImg{
 }
 
 div.redDiv{
-	width:10px;
+	width: 10px;
 	height: 10px;
 	position: absolute;
 	background-color: red;
 	z-index: 16;
 	margin-top: -5px;
 	margin-left: -5px;
-	top:75px;
-	left: 25px;
+	top: 125px;
+	left: 125px;
 	opacity: .5;
 }
 h2.startText{
