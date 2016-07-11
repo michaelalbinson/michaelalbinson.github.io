@@ -69,7 +69,7 @@ void initiatePins() {
     pinMode(3, INPUT); //decrement -10 button
 }
 
-void indicateSetupCompleteWithTone(){
+void indicateSetupCompleteWithTone() {
     tone(9, 1000);
     delay(500);
     tone(9, 2000);
@@ -77,13 +77,13 @@ void indicateSetupCompleteWithTone(){
     noTone(9);
 }
 
-void elevatorFailureTone(){
+void elevatorFailureTone() {
     tone(9, 500);
     delay(1000);
     noTone(9);
 }
 
-void displayHello(){
+void displayHello() {
     display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
     display.display();
     delay(2000);
