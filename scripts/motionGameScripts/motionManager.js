@@ -41,26 +41,26 @@ function motionManager(){
 
 	function _moveDown() {
 		if (relativeTopPos < limitOfMotion)
-			relativeTopPos = relativeTopPos + 5;
+			relativeTopPos = relativeTopPos + 1;
 		document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
 	}
 
 	function _moveUp() {
 		if (relativeTopPos>10)
-			relativeTopPos = relativeTopPos - 5;
+			relativeTopPos = relativeTopPos - 1;
 		document.getElementsByClassName('redDiv')[0].style.top = relativeTopPos.toString() + "px";
 	}
 
 	function _moveLeft() {
 		if (relativeLeftPos > 10)
-			relativeLeftPos = relativeLeftPos - 5;
+			relativeLeftPos = relativeLeftPos - 1;
 		document.getElementsByClassName('redDiv')[0].style.left = relativeLeftPos.toString() + "px";
 
 	}
 
 	function _moveRight() {
 		if (relativeLeftPos<limitOfMotion)
-			relativeLeftPos = relativeLeftPos + 5;
+			relativeLeftPos = relativeLeftPos + 1;
 		document.getElementsByClassName('redDiv')[0].style.left = relativeLeftPos.toString() + "px";
 	}
 

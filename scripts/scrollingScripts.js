@@ -37,15 +37,12 @@ var actionMap = {
 	'enter': logSomething
 };
 
-window.onload = function() {
-	setInterval(checkIfMotionRequired, 100);
-}
-
 function prepareGame() {
 	if (!clickedMainBox){
 		document.getElementsByClassName('gameImg')[0].style.opacity = 1;
 		document.getElementsByClassName('redDiv')[0].style.opacity = 1;
 		document.getElementsByClassName('startText')[0].style.display = "none";
+		setInterval(checkIfMotionRequired, 100);
 		clickedMainBox = true;
 	}
 }
@@ -95,7 +92,7 @@ function labelAllKeysFalse() {
 }
 
 function checkIfMotionRequired() {
-	if (messageDisplayed || !clickedMainBox)
+	if (messageDisplayed || optionsFadedIn)
 		return;
 
 	for (key in pressedKeyMap){
@@ -230,7 +227,7 @@ function displayMessages(message) {
 			return;
 		}
 		i++;
-	}, 1000);	
+	}, 2000);	
 }
 
 function hideMessage() {
