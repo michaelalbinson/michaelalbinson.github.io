@@ -78,19 +78,19 @@ function draw(){
 function assignSuitImage(elementToAssign, cardSuit){
 	switch(cardSuit){
 		case "Hearts":
-			document.getElementById(elementToAssign).src = "http://www.pd4pic.com/images/heart-symbol-card-shape-game-playing-shapes-play.png";
+			document.getElementById(elementToAssign).src = "css/images/heart.png";
 		break;
 
 		case "Spades":
-			document.getElementById(elementToAssign).src = "http://static1.squarespace.com/static/54a38a60e4b0f4be674363b5/54ebad31e4b0ffad52bb4a7e/56176489e4b0d626a8729fec/1444374187756/squarespace+logo+2.png?format=775w";
+			document.getElementById(elementToAssign).src = "css/images/spade.png";
 		break;
 
 		case "Diamonds":
-			document.getElementById(elementToAssign).src = "https://pixabay.com/static/uploads/photo/2012/05/07/18/37/suit-48941_960_720.png";
+			document.getElementById(elementToAssign).src = "css/images/diamond.png";
 		break;
 
 		case "Clubs":
-			document.getElementById(elementToAssign).src = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/SuitClubs.svg/2000px-SuitClubs.svg.png";
+			document.getElementById(elementToAssign).src = "css/images/club.png";
 		break;
 
 		default:
@@ -121,7 +121,7 @@ function deal(){
 	dealerHiddenCard = card4;
 
 	assignSuitImage('dealerCenter1', card3[1]);
-	document.getElementById('dealerCenter2').src = "http://www.iconsdb.com/icons/preview/black/question-mark-xxl.png";
+	document.getElementById('dealerCenter2').src = "css/images/octopus1.png";
 
 	assignSuitImage('playerCenter1', card1[1]);
 	assignSuitImage('playerCenter2', card2[1]);
