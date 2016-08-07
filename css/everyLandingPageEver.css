@@ -6,11 +6,13 @@ body{
 	background-attachment: fixed;
 	padding: 0;
 	margin: 0;
+	font-family: fantasy;
 }
 
 h2{
 	padding: 0;
 	margin: 0;
+	color: #FF0000;
 }
 
 h3{
@@ -44,15 +46,16 @@ div.headerBar{
 	margin-top: 2%;
 	padding: 0;
 	color: white;
-	font-family: sans-serif;
 	height: 5em;
 }
 
 div.headerText{
-	position: relative;
-	display: inline-block;
-	top: 1.5em;
+	position: absolute;
+	top: 3em;
 	left: 0;
+	color: red;
+	font-family: cursive;
+	font-size: .5em;
 }
 
 img.headerImg{
@@ -63,10 +66,20 @@ img.headerImg{
 	right: 0;
 }
 
+img.headerImgLeft{
+	position: absolute;
+	height: 75px;
+	width: 75px;
+	top: -3em;
+	left: 0;
+}
+
 div.headerLinks{
-	position: relative;
+	position: absolute;
 	display: inline-block;
 	vertical-align: middle;
+	top: 1.5em;
+	right: 7em;
 }
 
 a.headerLink{
@@ -83,7 +96,6 @@ a.headerLink{
 div.subHeader{
 	background-color: rgba(0, 0, 0, .75);
 	text-align: center;
-	font-family: sans-serif;
 	margin-top: 0;
 	padding-top: 1%;
 	padding-bottom: 1%;
@@ -113,30 +125,24 @@ div.restOfThePage{
 	padding-bottom: 2em;
 }
 
-img.rightImg{
-	position: relative;
-	top: 5%
-	right: 5%;
-	height: 75px;
-	width: 75px;
+div.triDiv{
+	display: inline-block;
+	width: 30%;
 }
 
-img.centerImg{
-	position: relative;
-	top: 5%;
-	margin-left:-2.5%;
-	padding-left: 50%;
-	height: 75px;
-	width: 75px;
+div.triImg{
+	width: 100px;
+	height: 100px;
 }
 
-img.leftImg{
+div.weirdSplitThing{
 	position: relative;
-	top: 5%;
-	height: 75px;
-	width: 75px;
-	left: 5%;
-	margin-right: 1%;
+	padding: 1%;
+}
+
+h2.splitThingHeader{
+	text-align: center;
+	padding-bottom: 1%;
 }
 
 div.rightSplit{
@@ -157,16 +163,6 @@ div.leftSplit{
 	margin-right: 1.75%;
 }
 
-div.weirdSplitThing{
-	position: relative;
-	padding: 1%;
-}
-
-h2.splitThingHeader{
-	text-align: center;
-	padding-bottom: 1%;
-}
-
 p.centeredText{
 	text-align: center;
 }
@@ -180,27 +176,12 @@ div.unnecessaryFloweryLanguage{
 	color: white;
 }
 
-p.floweryTextBox{
-
-}
-
-div.footer{
+p.rec{
 	position: relative;
-	background-color: black;
-	text-align: center;
-	margin-left: 0;
-	margin-right: 0;
-	margin-bottom: 0;
-	padding-bottom: 0;
-	padding: 0;
-	color: white;
-	font-family: sans-serif;
-	height: 5em;
-}
-
-p.footerText{
-	position: relative;
-	top:2em;
+	width: 50%;
+	float:center;
+	margin-right: -25%;
+	left: 25%;
 }
 
 img.userImg{
@@ -217,8 +198,32 @@ img.userImg{
 p.userName{
 	position: relative;
 	display: inline-block;
-	size: 2em;
+	font-size: 1.5em;
 	vertical-align: middle;
+	color: orange;
+}
+
+div.footer{
+	position: relative;
+	background-color: rgb(235, 219, 203);
+	text-align: center;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding: 0;
+	color: white;
+	font-family: sans-serif;
+	height: 4em;
+	border-top-left-radius: .5em;
+	border-top-right-radius: .5em; 
+}
+
+img.footerImg{
+    width: 50px;
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 /**
   * link colors
