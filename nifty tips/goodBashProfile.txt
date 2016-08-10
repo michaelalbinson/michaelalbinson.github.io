@@ -1,0 +1,65 @@
+eval "$(rbenv init -)"
+source /usr/local/homebrew-now/etc/bashrc
+source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+
+#
+# Attribute codes:      Text color codes:       Background color codes:
+# 00=none               30=black                40=black
+# 01=bold               31=red                  41=red
+# 04=underscore         32=green                42=green
+# 05=blink              33=yellow               43=yellow
+# 07=reverse            34=blue                 44=blue
+# 08=concealed          35=magenta              45=magenta
+#                       36=cyan                 46=cyan
+#                       37=white                47=white
+#
+# Color prompt env variables
+   BLACK="\[\033[01;30m\]";       LIGHT_BLACK="\[\033[00;30m\]";
+     RED="\[\033[01;31m\]";         LIGHT_RED="\[\033[00;31m\]";
+   GREEN="\[\033[01;32m\]";       LIGHT_GREEN="\[\033[00;32m\]";
+  YELLOW="\[\033[01;33m\]";      LIGHT_YELLOW="\[\033[00;33m\]";
+    BLUE="\[\033[01;34m\]";        LIGHT_BLUE="\[\033[00;34m\]";
+ MAGENTA="\[\033[01;35m\]";     LIGHT_MAGENTA="\[\033[00;35m\]";
+    CYAN="\[\033[01;36m\]";        LIGHT_CYAN="\[\033[00;36m\]";
+    GRAY="\[\033[01;37m\]";        LIGHT_GRAY="\[\033[00;37m\]";
+   WHITE="\[\033[01;39m\]";
+BLACK_ON_WHITE="\[\033[47;30;01m\]";
+D_COLOR="\[\033[00;37m\]"; GRAD1=$(tty|cut -d/ -f3);
+
+# Prompt: dynamic git branch info on the command line plus date and history
+DATE_FRAGMENT=$LIGHT_CYAN'\D{%e-%b %T}'
+PATH_FRAGMENT=$GREEN'\w'
+GIT_FRAGMENT=$LIGHT_YELLOW'$(__git_ps1 '"[%s]"')'
+HISTORY_FRAGMENT=$LIGHT_GRAY!$LIGHT_MAGENTA'\!'
+PROMPT_FRAGMENT=$LIGHT_GRAY'\$'
+export PS1="$DATE_FRAGMENT $PATH_FRAGMENT$GIT_FRAGMENT $HISTORY_FRAGMENT $PROMPT_FRAGMENT $D_COLOR"
+
+alias gbr='git branch'
+alias gst='git status'
+alias glg='git log'
+alias gerrithook='curl -Lo .git/hooks/commit-msg https://source.devsnc.com/tools/hooks/commit-msg; chmod +x .git/hooks/commit-msg'
+
+function setjdk() {
+
+	if [ $# -ne 0 ]; then
+
+		removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+
+		if [ -n "${JAVA_HOME+x}" ]; then
+
+			removeFromPath $JAVA_HOME
+
+		fi
+		export JAVA_HOME=`/usr/libexec/java_home -v $@`
+		export PATH=$JAVA_HOME/bin:$PATH
+
+	fi
+
+}
+
+function removeFromPath() {
+
+	export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
+
+}

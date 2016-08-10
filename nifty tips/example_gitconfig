@@ -1,0 +1,31 @@
+[user]
+	name = Matt Coleman
+	email = matt.coleman@servicenow.com
+[core]
+	excludesfile = /Users/matt.coleman/.gitignore_global
+	autocrlf = input
+[branch]
+	autosetuprebase = always
+[gerrit]
+	createchangeid = true
+[diff]
+	tool = opendiff
+[push]
+	default = simple
+[alias]
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep "^[[:lower:]]"
+	push-review = "!f() { git push -u ${1:-origin} HEAD:$(git config branch.$(git name-rev --name-only HEAD).merge | sed -e 's@refs/heads/@refs/for/@'); }; f"
+	push-draft = "!f() { git push -u ${1:-origin} HEAD:$(git config branch.$(git name-rev --name-only HEAD).merge | sed -e 's@refs/heads/@refs/drafts/@'); }; f"
+	intersect-files = "!f() { git diff --name-only $1^ $1 | sort > .temp__1; git diff --name-only $2^ $2 | sort > .temp__2; comm -12 .temp__1 .temp__2; rm -f .temp__1 .temp__2; }; f"
+	intersect-diff = "!f() { git diff --name-only $1^ $1 | sort > .temp__1; git diff --name-only $2^ $2 | sort > .temp__2; comm -12 .temp__1 .temp__2 | xargs -n 1 git diff $1 $2; rm -f .temp__1 .temp__2; }; f"
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ln = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
+	logwhowhen = log --pretty=format:'%Cred%h%Creset - %C(bold blue)%an %Cgreen(%cd)%Creset %s'
+	logwhowhen-nocolor = log --pretty=format:'%h - %an (%cd) %s'
+	logwhowhencsv = log --pretty=format:'%an\t%s'
+	logcsv = log --pretty=format:'%Cred%h%Creset\t%Cgreen%ci%Creset\t%C(bold blue)%an%Creset\t%s'
+[credential]
+	helper = osxkeychain
