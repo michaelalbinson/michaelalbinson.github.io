@@ -5,10 +5,18 @@
 	<title>Solitaire</title>
 </head>
 <body>
+	<div class="warning">
+		<p>
+			WARNING: Your browser window is not large enough to properly render this page.
+			A minimum width of 1240 pixels is required.
+			Please expand your page or click <a href="">here</a> to open a page of the 
+			proper size.
+		</p>
+	</div>
 	<div class="header">
 		<h2 class="header-header">Solitaire</h2>
 	</div>
-	<hr>
+	<div class="placeholder"></div>
 	<div class="game-body">
 		<div class="card-holder">
 			<div class="row" id="rh1"><p class="rowNum">rh1</p></div>
@@ -17,22 +25,22 @@
 			<div class="row" id="rh4"><p class="rowNum">rh4</p></div>
 		</div>
 		<div class="row-container">
-			<div class="row" id="r1" onclick="determinePosition(1)"><p class="rowNum">1</p></div>
-			<div class="row" id="r2" onclick="determinePosition(2)"><p class="rowNum">2</p></div>
-			<div class="row" id="r3" onclick="determinePosition(3)"><p class="rowNum">3</p></div>
-			<div class="row" id="r4" onclick="determinePosition(4)"><p class="rowNum">4</p></div>
-			<div class="row" id="r5" onclick="determinePosition(5)"><p class="rowNum">5</p></div>
-			<div class="row" id="r6" onclick="determinePosition(6)"><p class="rowNum">6</p></div>
+			<div class="row" id="r1" onclick="daMan.determinePosition('rOne')"><p class="rowNum">1</p></div>
+			<div class="row" id="r2" onclick="daMan.determinePosition('rTwo')"><p class="rowNum">2</p></div>
+			<div class="row" id="r3" onclick="daMan.determinePosition('rThree')"><p class="rowNum">3</p></div>
+			<div class="row" id="r4" onclick="daMan.determinePosition('rFour')"><p class="rowNum">4</p></div>
+			<div class="row" id="r5" onclick="daMan.determinePosition('rFive')"><p class="rowNum">5</p></div>
+			<div class="row" id="r6" onclick="daMan.determinePosition('rSix')"><p class="rowNum">6</p></div>
 		</div>
 		<div class="deck">
-			<div class="row" id="r7" onclick="determinePosition(7)"><p class="rowNum">Deck</p></div>
-			<div class="row" id="r8"><p class="rowNum">Discard</p></div>
+			<div class="row" id="r7" onclick="daMan.determinePosition('deck')"><p class="rowNum">Deck</p></div>
+			<div class="row" id="r8" onclick="daMan.determinePosition('discard')"><p class="rowNum">Discard</p></div>
 			<div class="draw-button">
 				<button class="draw" onclick="daMan.draw()" disabled="true"><h3>Draw</h3></button>
 			</div>
 		</div>
 		<div class="buttonDash">
-			<button class="reset" onclick="begin()">
+			<button class="reset" onclick="daMan.begin()">
 				<h3>Begin</h3>
 			</button>
 		</div>
@@ -40,6 +48,9 @@
 	<div class="footer">
 		<button class="preference-button">
 			<img src="css/images/preferences.png" class="preference-img">
+		</button>
+		<button class="preference-button">
+			<img src="css/images/home.png" class="preference-img">
 		</button>
 	</div>
 </body>

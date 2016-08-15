@@ -20,7 +20,7 @@ h3{
 }
 
 div.header{
-	position: absolute;
+	position: relative;
 	width: 100%;
 	color: white;
 	text-align: center;
@@ -37,7 +37,7 @@ h2.header-header{
  ** Game Body
 **/
 div.game-body{
-	height: 100em;
+	height: 900px;
 }
 
 div.card-holder{
@@ -148,13 +148,10 @@ div.footer{
 }
 
 button.preference-button{
-	position: absolute;
+	position: relative;
 	background-color: rgba(0, 0, 0, 0);
-	right: 50%;
-	margin-right: -25px;
-	bottom: 1em;
-	border-radius: 25px;
-	border: 0;
+	text-align: center;
+	margin-top: 10px
 }
 
 img.preference-img{
@@ -162,4 +159,23 @@ img.preference-img{
 	height: 50px;
 	padding: 0;
 	margin: 0;
+}
+
+div.warning{
+	position: fixed;
+	display: none;
+	width: 350px;
+	height: 150px;
+	text-align: center;
+	margin-right: -175px;
+	margin-top: -75px;
+	right: 50%;
+	top: 50%;
+	z-index: 30;
+	background-color: rgba(255, 0, 0, .8);
+}
+
+div.placeholder{
+	height: 900px;
+	display: none;
 }
