@@ -147,18 +147,15 @@ div.footer{
 	height: 75px;
 }
 
-button.preference-button{
-	position: relative;
-	background-color: rgba(0, 0, 0, 0);
-	text-align: center;
-	margin-top: 10px
-}
-
 img.preference-img{
 	width: 50px;
 	height: 50px;
 	padding: 0;
 	margin: 0;
+	margin-top: 10px;
+	-webkit-filter: invert(1);
+    filter: invert(1);
+    cursor: pointer;
 }
 
 div.warning{
@@ -178,4 +175,8 @@ div.warning{
 div.placeholder{
 	height: 900px;
 	display: none;
+}
+
+.important{
+	cursor: pointer;
 }
