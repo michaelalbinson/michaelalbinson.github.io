@@ -180,3 +180,18 @@ div.placeholder{
 .important{
 	cursor: pointer;
 }
+
+div.card-upper-number{
+	position: absolute;
+	
+}
+
+div.card-lower-number{
+	position: absolute;
+
+}
+
+div.card-suit-image{
+	position: absolute;
+
+}

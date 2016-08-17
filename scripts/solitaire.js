@@ -1,10 +1,8 @@
 var daMan = new GameManager();
 
 function GameManager() {
-	this.cards = document.getElementsByClassName('rowNum');
-	this.drawButton = document.getElementsByClassName('draw')[0];
 	this.gameBegun = false;
-	var domMan = new DOMManipulator();
+	var domMan = new SolitaireDOMManipulator();
 	var interval = setInterval(makeSureWindowLargeEnough, 500);
 	var rowManager = null;
 
@@ -62,19 +60,20 @@ function GameManager() {
 
 // possible row names r1-r6 deck and discard
 function RowManager() {
+	this.deck = new Deck();
 	this.rows = {
-		rOne: new Row('r1'),
-		rTwo: new Row('r2'),
-		rThree: new Row('r3'),
-		rFour: new Row('r4'),
-		rFive: new Row('r5'),
-		rSix: new Row('r6'),
-		deck: new Row('deck'),
-		discard: new Row('discard'),
-		rhOne: new Row('rh1'),
-		rhTwo: new Row('rh2'),
-		rhThree: new Row('rh3'),
-		rhFour: new Row('rh4')
+		rOne: new Row('r1', this.deck),
+		rTwo: new Row('r2', this.deck),
+		rThree: new Row('r3', this.deck),
+		rFour: new Row('r4', this.deck),
+		rFive: new Row('r5', this.deck),
+		rSix: new Row('r6', this.deck),
+		deck: new Row('deck', this.deck),
+		discard: new Row('discard', this.deck),
+		rhOne: new Row('rh1', this.deck),
+		rhTwo: new Row('rh2', this.deck),
+		rhThree: new Row('rh3', this.deck),
+		rhFour: new Row('rh4', this.deck)
 	};
 
 	this.getRowWithName = function(name) {
@@ -86,11 +85,13 @@ function RowManager() {
 	}
 }
 
-function Row(rowName){
+function Row(rowName, deckObj){
 	var topCard = null;
 	var cardStack = null;
 	var rowName = rowName;
 	var stackContains = null;
+	var stack = null;
+	var deck = deckObj;
 
 	this.getCurrentCard = function() {
 		return topCard;
@@ -101,16 +102,23 @@ function Row(rowName){
 	}
 
 	this.checkIfStackContains = function(card) {
-
+		return stack.contains(card);
 	}
 
 	this.getRowName = function() {
 		return rowName;
 	}
+
+	this.pushStack = function(numberToDraw) {
+		var i = 0;
+		while(i >= numberToDraw){
+			stack.push(deck.draw());
+		}
+	}
 }
 
-function DeckManager() {
-	this.deck = init();
+function Deck() {
+	this.cards = init();
 
 	//shuffles the deck using the Fischer-Yates shuffle
 	this.shuffle = function(deck) {
@@ -118,15 +126,13 @@ function DeckManager() {
 
   		// While there remain elements to shuffle…
   		while (m) {
-
-    	// Pick a remaining element…
-    	i = Math.floor(Math.random() * m--);
-
+    		// Pick a remaining element…
+    		i = Math.floor(Math.random() * m--);
     		// And swap it with the current element.
     		t = deck[m];
     		deck[m] = deck[i];
     		deck[i] = t;
-    	}
+    		}
     	return deck;
     }
 
@@ -145,14 +151,12 @@ function DeckManager() {
 	this.draw = function() {
 		console.log(this.deck);
 		var top = this.deck[0];
-		console.log(top);
 		this.deck.splice(0, 1);
-		console.log(this.deck);
-		return top;
+		return new Card(Cardtop);
 	}
 }
 
-function DOMManipulator() {
+function SolitaireDOMManipulator() {
 	var drawButton = document.getElementsByClassName('draw')[0];
 	var gameBody = document.getElementsByClassName('game-body')[0];
 	var warningMsg = document.getElementsByClassName('warning')[0];
@@ -194,12 +198,34 @@ function DOMManipulator() {
 	}
 }
 
+/*
+function DOMManipulator() {
+	// retuns the first element found by class
+	this.getElementByClass = function(element){
+		var e = document.getElementsByClassName(element)[0];
+		if (e)
+			return e;
+		else
+			console.log("element by class name " + element + " not found");
+	}
+
+	// returns the first element found by id
+	this.getElementByID = function(element){
+		var e = document.getElementByID(element)[0];
+		if (e)
+			return e;
+		else
+			console.log("element with ID " + element + " not found");
+	}
+}
+*/
+
 //rawNumber must be from 1-52
 function Card(rawNumber) {
 	var rawNumber = rawNumber;
 	var suit;
 	var number;
-	var cardNames = ['A', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+	var cardNames = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 	var suits = ['heart', 'spade', 'diamond', 'club'];
 
 	determineSuitAndNumber(rawNumber);
@@ -216,9 +242,9 @@ function Card(rawNumber) {
 		if (rawNumber < 14) //1-13
 			setSuitAndNumber(rawNumber, 0);
 		else if (rawNumber >= 14 && rawNumber < 27) //14-26
-			setSuitAndNumber(rawNumber-13, 1);
+			setSuitAndNumber(rawNumber-14, 1);
 		else if (rawNumber >= 27 && rawNumber < 40) //27-39
-			setSuitAndNumber(rawNumber-26, 2);
+			setSuitAndNumber(rawNumber-28, 2);
 		else //40-52
 			setSuitAndNumber(rawNumber-39, 3);
 	}
