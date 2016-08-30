@@ -1,0 +1,42 @@
+Why do we use promises instead of a while loop?
+
+This is a fun question and it has to do with how delays are implemented. In arduino (C) creating a delay stops the execution of the program completely until the delay is complete, and then continues. This is a problem in javascript because there is no way to implement a true "delay" in the sense that a broser is constantly updating different things (like loading your netflix video while you browse amazon and do email at the same time), loading pages in other windows etc, and is single-threaded, meaning that only one thing can be happening at a time (which is why javascript is asynchronous, but that's another conversation). Thus, if you were allowed to simply put a sleep() or delay() into the javascript EVERYTHING in the browser would have to wait until the delay is over to continue, and no one developing browsers wanted the Javascript developers to be that selfish. 
+
+Thus, naturally, we have to use promises to make sure that we delay the proper amount of time before continuing so that we can implement a "delay" without blocking other things from happening in the browser. However, promises themselves are asynchronous, meaning that if I were to do something like this in a while loop:
+
+```
+while(true) {
+	delay(200).then(function() {
+		//do something else
+	});
+}
+``` 
+
+Instead of the whie loop waiting the two seconds for my while loop to complete, it would actually run over the while loop infinitely, very, very quicky, and likely cause my browser to freeze. This problem comes about because once we invoke the promise in the `delay()` function, Javascript will skip over the "do something else section," hit the bottom of the loop and then repeat... infinitely. And we all know what our favorite infinite empty loops do... 
+
+Thus, the solution of 
+
+```
+function loopMe(){
+	delay(timeOne).then(function() {
+		//do something
+		delay(timeTwo).then(function() {
+			//do something else
+		});
+	});
+}
+
+setInterval(loopMe, timeOne + timeTwo);
+```
+
+Seems to be the best way to implement a delay without blocking the browser or freezing it in an empty loop. Now how I'm going to make sure that I pull out all the delays properly and then add them together... remains to be seen. Something fun for another post I suppose!
+
+Why exclude goto keyword?
+
+because no one likes it and it can make debugging your code impossible. To quote the Arduino reference:
+
+"""
+The use of goto is discouraged in C programming, and some authors of C programming books claim that the goto statement is never necessary, but used judiciously, it can simplify certain programs. The reason that many programmers frown upon the use of goto is that with the unrestrained use of goto statements, it is easy to create a program with undefined program flow, which can never be debugged.
+"""
+
+seems legit.

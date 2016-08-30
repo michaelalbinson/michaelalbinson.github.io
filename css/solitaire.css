@@ -105,7 +105,7 @@ div.deck{
 div.draw-button{
 	position: relative;
 	bottom: -20px;
-	left: 180px;
+	left: 25px;
 	margin: 0;
 	padding: 0;
 	width: 100px;
@@ -183,15 +183,45 @@ div.placeholder{
 
 div.card-upper-number{
 	position: absolute;
-	
+	font-weight: bold;
+	left: 10px;
 }
 
 div.card-lower-number{
 	position: absolute;
-
+	bottom: 0;
+	right: 10px;
+	font-weight: bold;
 }
 
 div.card-suit-image{
 	position: absolute;
+}
 
+div.heart{
+	background-image: url(images/heart.png);
+	background-size: 50px, 50px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div.spade{
+	background-image: url(images/spade.png);
+	background-size: 50px, 50px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div.diamond{
+	background-image: url(images/diamond.png);
+	background-size: 50px, 50px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div.club{
+	background-image: url(images/club.png);
+	background-size: 50px, 50px;
+	background-repeat: no-repeat;
+	background-position: center;
 }

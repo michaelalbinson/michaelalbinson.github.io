@@ -19,18 +19,54 @@
 	<div class="placeholder"></div>
 	<div class="game-body">
 		<div class="card-holder">
-			<div class="row" id="rh1"><p class="rowNum">rh1</p></div>
-			<div class="row" id="rh2"><p class="rowNum">rh2</p></div>
-			<div class="row" id="rh3"><p class="rowNum">rh3</p></div>
-			<div class="row" id="rh4"><p class="rowNum">rh4</p></div>
+			<div class="row heart" id="rh1">
+				<div class="card-upper-number" id="rh1-topnum"></div>
+				<div class="card-lower-number" id="r1-bottomnum"></div>
+			</div>
+			<div class="row spade" id="rh2">
+				<div class="card-upper-number" id="rh2-topnum"></div>
+				<div class="card-lower-number" id="rh2-bottomnum"></div>
+			</div>
+			<div class="row diamond" id="rh3">
+				<div class="card-upper-number" id="rh3-topnum"></div>
+				<div class="card-lower-number" id="rh3-bottomnum"></div>
+			</div>
+			<div class="row club" id="rh4">
+				<div class="card-upper-number" id="rh4-topnum"></div>
+				<div class="card-lower-number" id="rh4-bottomnum"></div>
+			</div>
 		</div>
 		<div class="row-container">
-			<div class="row" id="r1" onclick="daMan.determinePosition('rOne')"><p class="rowNum">1</p></div>
-			<div class="row" id="r2" onclick="daMan.determinePosition('rTwo')"><p class="rowNum">2</p></div>
-			<div class="row" id="r3" onclick="daMan.determinePosition('rThree')"><p class="rowNum">3</p></div>
-			<div class="row" id="r4" onclick="daMan.determinePosition('rFour')"><p class="rowNum">4</p></div>
-			<div class="row" id="r5" onclick="daMan.determinePosition('rFive')"><p class="rowNum">5</p></div>
-			<div class="row" id="r6" onclick="daMan.determinePosition('rSix')"><p class="rowNum">6</p></div>
+			<div class="row" id="r1" onclick="daMan.determinePosition('rOne')">
+				<div class="card-upper-number" id="r1-topnum">1</div>
+				<p class="rowNum">1</p>
+				<div class="card-lower-number" id="r1-bottomnum">1</div>
+			</div>
+			<div class="row" id="r2" onclick="daMan.determinePosition('rTwo')">
+				<div class="card-upper-number" id="r2-topnum">2</div>
+				<p class="rowNum">2</p>
+				<div class="card-lower-number" id="r2-bottomnum">2</div>
+			</div>
+			<div class="row" id="r3" onclick="daMan.determinePosition('rThree')">
+				<div class="card-upper-number" id="r3-topnum">3</div>
+				<p class="rowNum">3</p>
+				<div class="card-lower-number" id="r3-bottomnum">3</div>
+			</div>
+			<div class="row" id="r4" onclick="daMan.determinePosition('rFour')">
+				<div class="card-upper-number" id="r4-topnum">4</div>
+				<p class="rowNum">4</p>
+				<div class="card-lower-number" id="r4-bottomnum">4</div>
+			</div>
+			<div class="row" id="r5" onclick="daMan.determinePosition('rFive')">
+				<div class="card-upper-number" id="r5-topnum">5</div>
+				<p class="rowNum">5</p>
+				<div class="card-lower-number" id="r5-bottomnum">5</div>
+			</div>
+			<div class="row" id="r6" onclick="daMan.determinePosition('rSix')">
+				<div class="card-upper-number" id="r6-topnum">6</div>
+				<p class="rowNum">6</p>
+				<div class="card-lower-number" id="r6-bottomnum">6</div>
+			</div>
 		</div>
 		<div class="deck">
 			<div class="row" id="r7" onclick="daMan.determinePosition('deck')"><p class="rowNum">Deck</p></div>
