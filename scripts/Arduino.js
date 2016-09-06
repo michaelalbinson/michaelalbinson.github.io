@@ -1,12 +1,5 @@
 "use strict";
 
-//the space allows us to locate names w/o removing them from variable/funciton names might still delete them from comments :(
-var datatypes = ["void ", "bool ", "int ", "String ", "boolean ", "unsigned ", "long ", "pointer ", "string ", "byte ", "double ", "const ",
-					"volitile ", "static "]; //const and volitile are special and needed for interrupts
-					//const is preferred of #define to create constants
-var otherThingsToLookFor = ["#define ", "enum ", "struct ", "setup()", "loop()"];
-
-var failExecutionIfFound = ["#include ", "word ", "goto "]; //maybe SerialEvent, enum, struct
 var LED_BUILTIN = "LED_BUILTIN";
 var HIGH = "HIGH";
 var LOW = "LOW";
@@ -17,9 +10,11 @@ var allowInterrupts = true;
 
 var startTime = window.performance.now();
 
+var currentArduino = new ArduinoUNO(); //should be able to be switched to another board in the future
+
 function ArduinoUNO() {
 	var pinNameSet = ['A0', 'A1', 'A2', 'A3', 'A4', 'A5', 'D0', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10', 'D11', 'D12', 'D13',
-					'AREF', 'GND-D', 'GND-A1', 'GND-A2', '5V', '3.3V', 'Vin', 'IOREF', 'RESET'];
+	'AREF', 'GND-D', 'GND-A1', 'GND-A2', '5V', '3.3V', 'Vin', 'IOREF', 'RESET'];
 	var pins;
 
 	function initPins(){
@@ -52,11 +47,11 @@ function ArduinoUNO() {
 
 function Pin(number, name){ //additional arguments are assumed to be features associated with each pin
 							//if those features do not exist they will be skipped.
-	var pinNumber = number;
-	var pinName = number;
-	var desc;
-	var possibleFeatures = ["PWM", "TX", "RX"];
-	var possibleStates = ["INPUT", "OUTPUT", "INPUT_PULLUP"];
+							var pinNumber = number;
+							var pinName = number;
+							var desc;
+							var possibleFeatures = ["PWM", "TX", "RX"];
+							var possibleStates = ["INPUT", "OUTPUT", "INPUT_PULLUP"];
 	var state = "INPUT"; //either INPUT, INPUT_PULLUP or OUTPUT
 	var possibleLevels = ; //HIGH or LOW
 
@@ -110,7 +105,7 @@ function Pin(number, name){ //additional arguments are assumed to be features as
 		else if (pinName === "Vin")
 			desc = "Leads from a battery can be inserted in the GND and Vin pin headers of the POWER connector to power the Arduino.";
 		else if (pinName === "AREF")
-			desc = "";
+			desc = "Provides an analog reference for the board to compare against if analogReference is set to ";
 		else if (pinName.contains('GND'))
 			desc = "A ground pin. ";
 		else if (pinName.contains('V'))
@@ -119,8 +114,8 @@ function Pin(number, name){ //additional arguments are assumed to be features as
 			desc = "An analog pin that can be set as an input or output to read and write analogue voltages between 0 and 5 volts.";
 		else if(pinNAme.contains('D'))
 			desc = "A digital pin that can be set as an input or output to read and write digital values " 
-					+ "(either 0 or LOW if there is no voltage applied or 1 or HIGH if there is a voltage applied).";
-		else 
+		+ "(either 0 or LOW if there is no voltage applied or 1 or HIGH if there is a voltage applied).";
+		else
 			throw new Error("this pin wasn't addressed " + pinName);
 	}
 }
@@ -128,35 +123,42 @@ function Pin(number, name){ //additional arguments are assumed to be features as
 /**
  * Button object
 **/
-function Button(name, buttonFunction) {
-	var buttonName = name;
-	var buttonFunc = buttonFunction;
+ function Button(name, buttonFunction) {
+ 	var buttonName = name;
+ 	var buttonFunc = buttonFunction;
 
 
-}
+ }
 
-function LED(ledName) {
-	var state = false;
-	var name = ledName;
+ function LED(ledName) {
+ 	var state = false;
+ 	var name = ledName;
 
-	this.getState = function() {
-		return state;
-	}
+ 	this.getState = function() {
+ 		return state;
+ 	}
 
-	this.getName = function() {
-		return name;
-	}
+ 	this.getName = function() {
+ 		return name;
+ 	}
 
-	this.setState = function(newState) {
-		state = newState;
+ 	this.setState = function(newState) {
+ 		state = newState;
 		//set state in DOM
 	}
 }
 
 /**
  * Does its best to take c code and make it javascript :D
-**/
-function ScriptConverter(script) {
+ **/
+ function ScriptConverter(script) {
+	//the space allows us to locate names w/o removing them from variable/funciton names, might still delete them from comments :(
+	var datatypes = ["void ", "bool ", "int ", "String ", "boolean ", "unsigned ", "long ", "pointer ", "string ", "byte ", "double ", "const ",
+					"volitile ", "static "]; //const and volitile are special and needed for interrupts
+					//const is preferred of #define to create constants
+	var otherThingsToLookFor = ["#define ", "enum ", "struct ", "setup()", "loop()"];
+
+	var failExecutionIfFound = ["#include ", "word ", "goto "]; //maybe SerialEvent, enum, struct
 	var scriptToConvert = script;
 
 	function convert() {
@@ -182,50 +184,58 @@ function ScriptConverter(script) {
 	}
 }
 
+//responsible for going through line by line and making conversions on the script
+function TextManipulator() {
+	var acceptableLineEndings = [";", "{", "}"];
+	// var textArea = document.getElementById("my-text-area");
+	// var arrayOfLines = textArea.value.split("\n");
+}
+
 /**
  * Manages the script execution
-**/
-function ExecutionManager(script) {
-	this.startTime = window.performance.now();
-	var converter = new ScriptConverter(script);
-	var script = converter.convert();
+ **/
+ function ExecutionManager(script) {
+ 	this.startTime = window.performance.now();
+ 	var converter = new ScriptConverter(script);
+ 	var script = converter.convert();
 
-	this.run = funciton(script){
-		execute(script);
-	}
+ 	this.run = funciton(script){
+ 		execute(script);
+ 	}
 
-	this.debug = function(){
-		converter.debug();
-	}
-}
+ 	this.debug = function(){
+ 		converter.debug();
+ 	}
+ }
 
 /**
  ************ All the fun global functions of Arduino exposed in javascript :D *********
-**/
+ **/
 
 /** 
  * Digital I/O
-**/
+ **/
 
-function pinMode(pin, mode) {
-	var modes = ["INPUT", "OUTPUT", "INPUT_PULLUP"];
+ function pinMode(pin, mode) {
+ 	var modes = ["INPUT", "OUTPUT", "INPUT_PULLUP"];
 
-}
+ }
 
-function digitalWrite(pin, level) {
-	var levels = ["LOW", "HIGH"];
+ function digitalWrite(pin, level) {
+ 	var levels = ["LOW", "HIGH"];
 
-}
+ }
 
-function digitalRead(pin) {
+ function digitalRead(pin) {
 
-}
+ }
 
 /** 
  * Analog I/O
-**/
+ **/
 
 function analogReference(ref) {
+
 
 }
 
@@ -241,71 +251,71 @@ function analogWrite(pin, level) { //PWM?
 
 /** 
  * Advanced I/O
-**/
+ **/
 
-function tone(pin, freq) {
+ function tone(pin, freq) {
 
-}
+ }
 
-function noTone(pin) {
+ function noTone(pin) {
 
-}
+ }
 
-function shiftOut() {
+ function shiftOut() {
 
-}
+ }
 
-function shiftIn() {
+ function shiftIn() {
 
-}
+ }
 
-function pulseIn() {
+ function pulseIn() {
 
-}
+ }
 
 /** 
  * Time
-**/
+ **/
 
-function millis() {
+ function millis() {
 	 return Math.floor((window.performance.now() - startTime)); //millis since start time (micros are given)
-}
+	}
 
-function micros() {
-	 return (window.performance.now() - startTime)*1000;
-}
+	function micros() {
+		return (window.performance.now() - startTime)*1000;
+	}
 
-function delay(ms) {
-    return(new Promise(function(resolve, reject) {
-        setTimeout(function() {
-        	resolve();
-        }, ms);
-    }));
-}
+	function delay(ms) {
+		return(new Promise(function(resolve, reject) {
+			setTimeout(function() {
+				resolve();
+			}, ms);
+		}));
+	}
 
-function delayMicroseconds(us) {
+	function delayMicroseconds(us) {
 	delay(Math.round(us/1000)); //
 }
 
 /** 
  * Math
-**/
+ **/
 
-function min(numberOne, numberTwo) {
-	return Math.min(numberOne, numberTwo);
-}
+ function min(numberOne, numberTwo) {
+ 	return Math.min(numberOne, numberTwo);
+ }
 
-function max(numberOne, numberTwo) {
-	return Math.max(numberOne, numberTwo);
-}
+ function max(numberOne, numberTwo) {
+ 	return Math.max(numberOne, numberTwo);
+ }
 
-function abs(number) {
-	return Math.abs(number);
-}
+ function abs(number) {
+ 	return Math.abs(number);
+ }
 
-function constrain(numberToConstrain, lowerBound, upperBound) {
+ function constrain(numberToConstrain, lowerBound, upperBound) {
 
-}
+ }
 
 function map(x, in_min, in_max, out_min, out_max) { //linear mapping straight from the Arduino website
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
@@ -324,11 +334,11 @@ function sqrt(x) {
 **/
 
 function sin(rad) {
-	return Math.sin(rad);
+ 	return Math.sin(rad);
 }
 
 function cos(rad) {
-	return Math.cos(rad);
+ 	return Math.cos(rad);
 }
 
 function tan(rad) {
@@ -340,150 +350,150 @@ function tan(rad) {
 **/
 
 function isAlphaNumberic(thisChar) {
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
-	if (isUpperCase(thisChar) || isLowerCase(thisChar) || isDigit(thisChar))
-		return true;
-	else
-		return false;
+ 	if (isUpperCase(thisChar) || isLowerCase(thisChar) || isDigit(thisChar))
+ 		return true;
+ 	else
+ 		return false;
 }
 
 function isAlpha(thisChar) {
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
-	if (isUpperCase(thisChar) || isLowerCase(thisChar))
-		return true;
-	else
-		return false;
+ 	if (isUpperCase(thisChar) || isLowerCase(thisChar))
+ 		return true;
+ 	else
+ 		return false;
 }
 
 function isAscii(thisChar) {
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
 }
 
 function isWhitespace(thisChar) {
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
 }
 
 function isControl(thisChar) {
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
 }
 
 function isDigit(thisChar) {
-	var digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	var digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
-	if (digits.contains(thisChar))
-		return true;
-	else
-		return false;
+ 	if (digits.contains(thisChar))
+ 		return true;
+ 	else
+ 		return false;
 }
 
 function isGraph(thisChar) {
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
-	if (!isWhitespace(thisChar) && isPrintable(thisChar))
-		return true;
-	else
-		return false;
+ 	if (!isWhitespace(thisChar) && isPrintable(thisChar))
+ 		return true;
+ 	else
+ 		return false;
 }
 
 function isLowerCase(thisChar) {
-	var lowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'. 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 
-							'v', 'w', 'x', 'y', 'z'];
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
-	if (lowerCaseLetters.contains(thisChar))
-		return true;
-	else
-		return false;
+ 	var lowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'. 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 
+ 	'v', 'w', 'x', 'y', 'z'];
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
+ 	if (lowerCaseLetters.contains(thisChar))
+ 		return true;
+ 	else
+ 		return false;
 }
 
 function isPrintable(thisChar) {
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
 }
 
 function isPunct(thisChar) {
-	var punctuation = ['"', "'", ',', '.', '/', ';', ':', '<', '>', '?', '[', ']', '{', '}', '|', '!', '@', '#', '$', '%', '^',
-						'&', '*', '(', ')', '-', '_', '=', '+', '`', '~'];
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	var punctuation = ['"', "'", ',', '.', '/', ';', ':', '<', '>', '?', '[', ']', '{', '}', '|', '!', '@', '#', '$', '%', '^',
+ 	'&', '*', '(', ')', '-', '_', '=', '+', '`', '~'];
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
-	if (punctuation.contains(thisChar))
-		return true;
-	else 
-		return false;
+ 	if (punctuation.contains(thisChar))
+ 		return true;
+ 	else 
+ 		return false;
 }
 
 function isSpace(thisChar) {
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
-	if (thisChar === " ")
-		return true;
-	else
-		return false;
+ 	if (thisChar === " ")
+ 		return true;
+ 	else
+ 		return false;
 }
 
 function isUpperCase(thisChar) {
-	var upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-							'U', 'V', 'W', 'X', 'Y', 'Z'];
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	var upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+ 	'U', 'V', 'W', 'X', 'Y', 'Z'];
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
-	if (upperCaseLetters.contains(thisChar))
-		return true;
-	else
-		return false;
+ 	if (upperCaseLetters.contains(thisChar))
+ 		return true;
+ 	else
+ 		return false;
 }
 
 function isHexadecimalDigit(thisChar) {
-	var hexChars = ['A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'];
-	if (thisChar.length > 2){
-		throw new Error("This input is not a char");
-		return;
-	}
+ 	var hexChars = ['A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'];
+ 	if (thisChar.length > 2){
+ 		throw new Error("This input is not a char");
+ 		return;
+ 	}
 
-	if (isDigit() || hexChars.contains(thisChar))
-		return true;
-	else
-		return false;
+ 	if (isDigit() || hexChars.contains(thisChar))
+ 		return true;
+ 	else
+ 		return false;
 }
 
 /** 
@@ -491,7 +501,7 @@ function isHexadecimalDigit(thisChar) {
 **/
 
 function randomSeed(seed) {
-	return random();
+ 	return random(seed);
 }
 
 function random(min, max) { //likely will not repeat as you can expect the Arduino random to repeat
@@ -554,76 +564,103 @@ function randomWithMaxAndMin(min, max) { // return between min and max
 
 /** 
  * Bits and Bytes
-**/
+ **/
 
-function lowByte() {
+ function lowByte() {
 
-}
+ }
 
-function highByte() {
+ function highByte() {
 
-}
+ }
 
-function bitRead() {
+ function bitRead() {
 
-}
+ }
 
-function bitWrite() {
+ function bitWrite() {
 
-}
+ }
 
-function bitSet() {
+ function bitSet() {
 
-}
+ }
 
-function bitClear() {
+ function bitClear() {
 
-}
+ }
 
-function bit() {
+ function bit() {
 
-}
+ }
 
 /** 
  * External Interrupts -- may not end up being supported
-**/
+ **/
 
-function attachInterrupt(pin, ISR, mode) {
-
+ function attachInterrupt(pin, ISR, mode) {
+ 	var pinNumbers = [0, 1];
+ 	if (!pinNumbers.contains(pin)){
+ 		throw new Error("The input/interrupt pin for attachInterrupt must be either 0, 1 (which map to pins D2 and D3 respectively on the UNO)");
+ 		return;
+ 	}
+	// attach event listener
 }
 
-function detachInterrupt() {
-
+function detachInterrupt(pin) {
+	var pinNumbers = [0, 1];
+	if (!pinNumbers.contains(pin)){
+		throw new Error("The input/interrupt pin for detachInterrupt must be either 0, 1 (which map to pins D2 and D3 respectively)");
+		return;
+	}
+	// dettach event listener
 }
 
-function digitalPinToInterrupt(pin) {
-	if (pin !== typeof number)
+function digitalPinToInterrupt(pin) { //can be used for either attaching or detaching an interrupt
+	var unoPinMapping = [2, 3];
+	if (typeof pin !== "number") {
+		throw new Error("digitalPinToInterrupt expects an int");
+		return;
+	}
+	if (!unoPinMapping.contains(pin)){
+		throw new Error("digitalPinToInterrupt expects either the number 2 or 3");
+		return;
+	}
+	return unoPinMapping.indexOf(pin);
 }
 
 /** 
  * Interrupts
-**/
+ **/
 
 function interrupts() { //enables interrupts
+	if (allowInterrupts) {
+		throw new Error("Interrupts already enabled");
+		return;
+	}
 	allowInterrupts = true;
 }
 
 function noInterrupts() { //disables interrupts
-	allowInterrupts = false;
+	if (allowInterrupts) {
+		throw new Error("Interrupts already disabled");
+		return;
+	}
+	allowInterrupts = false; //may need to go after and turn off event listening for a bit
 }
 
 /**
  * Provides the "Serial" object, realistically I won't be able to deliver some of it's member functions and have them work properly
-**/
-function SerialWindow() {
-	var serialBegun = false;
-	var serialSpeed;
+ **/
+ function SerialWindow() {
+ 	var serialBegun = false;
+ 	var serialSpeed;
 
-	this.available = function() {
-		return serialBegun;
-	}
+ 	this.available = function() {
+ 		return serialBegun;
+ 	}
 
-	this.availableForWrite = function() {
+ 	this.availableForWrite = function() {
 		//returns int number of bytes avalable to write
 	}
 
@@ -711,10 +748,10 @@ function SerialWindow() {
 	this.readBytesUntil = function() {
 	// 	Serial.readBytesUntil() reads characters from the serial buffer into an array. The function terminates if the terminator 
 	//  character is detected, the determined length has been read, or it times out
-// 		character : the character to search for (char)
-// 		buffer: the buffer to store the bytes in (char[] or byte[]) 
-//		length : the number of bytes to read (int)
-// 		returns a byte
+	// 		character : the character to search for (char)
+	// 		buffer: the buffer to store the bytes in (char[] or byte[]) 
+	//		length : the number of bytes to read (int)
+	// 		returns a byte
 	}
 
 	this.readString = function() {
@@ -723,32 +760,32 @@ function SerialWindow() {
 	}
 
 	this.readStringUntil = function(terminator) {
-// readStringUntil() reads characters from the serial buffer into a string. The function terminates if the terminator character is detected or it times out
-// returns The entire string read from the serial buffer, until the terminator character is detected
+	// readStringUntil() reads characters from the serial buffer into a string. The function terminates if the terminator character is detected or it times out
+	// returns The entire string read from the serial buffer, until the terminator character is detected
 	}
 
 	this.setTimeout = function(time) {
-// Serial.setTimeout() sets the maximum milliseconds to wait for serial data when using 
-// Serial.readBytesUntil(), Serial.readBytes(), Serial.parseInt() or Serial.parseFloat(). It defaults to 1000 milliseconds.
+	// Serial.setTimeout() sets the maximum milliseconds to wait for serial data when using 
+	// Serial.readBytesUntil(), Serial.readBytes(), Serial.parseInt() or Serial.parseFloat(). It defaults to 1000 milliseconds.
 	}
 
 	this.write = function(valueToWrite) {
-// Writes binary data to the serial port. This data is sent as a byte or series of bytes; 
-// to send the characters representing the digits of a number use the print() function instead.
-// val: a value to send as a single byte
-// str: a string to send as a series of bytes
+	// Writes binary data to the serial port. This data is sent as a byte or series of bytes; 
+	// to send the characters representing the digits of a number use the print() function instead.
+	// val: a value to send as a single byte
+	// str: a string to send as a series of bytes
 
-//returns number of bytes written
+	//returns number of bytes written
 	}
 
 	this.write = function(valueToWrite, len) {
-// Writes binary data to the serial port. This data is sent as a byte or series of bytes; 
-// to send the characters representing the digits of a number use the print() function instead.
-// val: a value to send as a single byte
-// str: a string to send as a series of bytes
-// len: the length of the buffer
+	// Writes binary data to the serial port. This data is sent as a byte or series of bytes; 
+	// to send the characters representing the digits of a number use the print() function instead.
+	// val: a value to send as a single byte
+	// str: a string to send as a series of bytes
+	// len: the length of the buffer
 
-//returns number of bytes written
+	//returns number of bytes written
 	}
 
 	this.serialEvent = function() {

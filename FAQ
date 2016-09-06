@@ -40,3 +40,7 @@ The use of goto is discouraged in C programming, and some authors of C programmi
 """
 
 seems legit.
+
+Why expose all of the Arduino functions globally?
+
+maybe we shouldn't...
