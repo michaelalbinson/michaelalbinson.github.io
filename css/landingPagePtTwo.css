@@ -1,0 +1,28 @@
+body {
+	background-image: url(images/IMG_5235.JPG);
+	background-attachment: fixed;
+    background-position: center; 
+	background-size: 100%;
+	background-repeat: no-repeat;
+	overflow: none;
+	color: gray;
+	padding: 0;
+	margin: 0;
+}
+
+.opener {
+	background: black;
+	background-color: rgba(0, 0, 0, .5);
+	padding: 0;
+	font-size: 2em;
+	color: white;
+	text-align: center;
+	position: fixed;
+	z-index: 100;
+}
+
+.spacer {
+	position: absolute;
+	height: 400em;
+	width: 100%
+}
