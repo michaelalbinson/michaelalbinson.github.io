@@ -101,6 +101,7 @@ hr.sponsor-divider {
 	width: 90%;
 	padding-right: 5%;
 	padding-left: 5%;
+	font-size: 1.5em;
 }
 
 .short-description {
@@ -139,9 +140,18 @@ hr.sponsor-divider {
 	height: auto;
 }
 
+.teams {
+	background-color: rgb(44,254,253);
+}
+
 .team-block {
 	display: inline-block;
 	margin-left: 5%;
 	margin-right: 5%;
 	width: 23%;
+}
+
+/* general image css */
+.flipped {
+	transform: scaleX(-1);
 }
