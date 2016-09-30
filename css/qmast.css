@@ -138,3 +138,10 @@ hr.sponsor-divider {
 	width: 5%;
 	height: auto;
 }
+
+.team-block {
+	display: inline-block;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 23%;
+}
