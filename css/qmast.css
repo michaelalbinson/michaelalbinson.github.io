@@ -21,6 +21,7 @@ h2{
 	margin-top: 0;
 }
 
+/* hr specific */
 hr {
 	width: 75%;
 }
@@ -29,19 +30,39 @@ hr.sponsor-divider {
 	width: 10%;
 }
 
+/* desktop and mobile headers */
 .header {
-	position: fixed;
 	background-color: rgba(0, 0, 155, .5);
 	z-index: 100;
 	width: 100%;
+	height: 2em;
 	text-align: center;
 	margin-left: : 0;
 	margin-right: 0;
 	margin-bottom: 0;
 	color: white;
 	vertical-align: middle;
-	font-size: 2em;
+	font-size: 1.5em;
 	top: 0;
+}
+
+.header-placeholder {
+	position: relative;
+	width: auto;
+	height: 1.5em;
+	top: .4em;
+}
+
+.header-image {
+	width: auto;
+	height: 2em;
+}
+
+.header-section {
+	position: relative;
+	display: inline-block;
+	top: -.7em;
+
 }
 
 .mobile-header {
@@ -51,42 +72,21 @@ hr.sponsor-divider {
 	top: 5%;
 }
 
+/* */
 .background {
-	background-image: url(../qmastImgs/catboatwater.jpg);
+	background-image: url(../qmastImgs/higherQualityBoat.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
-.hidden {
-	display: none;
-}
-
-.normal {
-	width: 20%;
-}
-
-.wider {
-	width: 75%;
-}
-
-.sponsor-image {
-	height: auto;
+.wrapper {
+	background-color: rgba(255, 255, 255, .5);
 }
 
 .sponsor-block {
 	display: block;
-}
-
-.header-image {
-	width: 5%;
-	height: auto;
-}
-
-.social-media-image {
-	width: 50px;
-	height: 50px;
 }
 
 .footer {
@@ -109,6 +109,39 @@ hr.sponsor-divider {
 	margin-top: 0;
 	padding-bottom: 2em;
 }
+.sponsor-sheet {
+	color: white;
+}
+
+.keep-in-touch {
+	height: 500px;
+	background-color: black;
+	vertical-align: middle;
+	color: white
+}
+
+.teams {
+	background-image: url(../qmastImgs/sponsor_img.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.team-block {
+	position: relative;
+	top: 5px;
+	display: inline-block;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 23%;
+	height: auto;
+}
+
+/* general image css */
+.flipped {
+	transform: scaleX(-1);
+}
 
 .logo {
 	width: 25%;
@@ -122,36 +155,70 @@ hr.sponsor-divider {
 	margin: 0;
 }
 
-.sponsor-sheet {
-	color: white;
-}
-
-.keep-in-touch {
-	display: flex;
-	align-items: center;
-	height: 500px;
-	background-color: black;
-	vertical-align: middle;
-	color: white
-}
-
-.header-placeholder {
-	width: 5%;
+.logo-image {
+	width: 50px;
 	height: auto;
 }
 
-.teams {
+.sponsor-image {
+	height: auto;
+}
+
+.normal {
+	width: 20%;
+}
+
+.wider {
+	width: 65%;
+}
+
+/* Button Styling */
+button.donate-button {
+	padding: 15px 25px;
+	font-size: 24px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
 	background-color: rgb(44,254,253);
-}
-
-.team-block {
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 5px #999;
 	display: inline-block;
-	margin-left: 5%;
-	margin-right: 5%;
-	width: 23%;
 }
 
-/* general image css */
-.flipped {
-	transform: scaleX(-1);
+.donate-button:hover {
+	background-color: #23CBCA;
+}
+
+.donate-button:active {
+  background-color: #23CBCA;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* General Tag css */
+.hidden {
+	display: none;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.paragraph-text-link {
+	color: black;
+	text-decoration: underline;
+}
+
+.paragraph-text-link:hover {
+	color: white;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.about-us {
+	margin-top: 4px;
 }
