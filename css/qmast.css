@@ -27,7 +27,7 @@ hr {
 }
 
 hr.sponsor-divider {
-	width: 10%;
+	width: 35%;
 }
 
 /* desktop and mobile headers */
@@ -86,7 +86,10 @@ hr.sponsor-divider {
 }
 
 .sponsor-block {
-	display: block;
+	display: inline-block;
+	border:1px solid grey;
+	width: 33%;
+	margin-bottom: 2em;
 }
 
 .footer {
@@ -161,12 +164,10 @@ hr.sponsor-divider {
 }
 
 .sponsor-image {
-	height: auto;
+	width: 90%;
+	margin-bottom: 5%;
 }
 
-.normal {
-	width: 20%;
-}
 
 .wider {
 	width: 65%;
