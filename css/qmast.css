@@ -68,7 +68,7 @@ hr.sponsor-divider {
 .mobile-header {
 	position: fixed;
 	z-index: 100;
-	left: 5%;
+	right: 5%;
 	top: 5%;
 }
 
@@ -171,6 +171,10 @@ hr.sponsor-divider {
 
 .wider {
 	width: 65%;
+}
+
+.hamburger {
+	width: 45px;
 }
 
 /* Button Styling */
