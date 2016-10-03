@@ -87,9 +87,12 @@ hr.sponsor-divider {
 
 .sponsor-block {
 	display: inline-block;
-	border:1px solid grey;
+	border:2px solid grey;
+	border-radius: 5px;
 	width: 33%;
 	margin-bottom: 2em;
+	margin-right: 2.5%;
+	margin-left: 2.5%;
 }
 
 .footer {
@@ -117,7 +120,7 @@ hr.sponsor-divider {
 }
 
 .keep-in-touch {
-	height: 500px;
+	height: 300px;
 	background-color: black;
 	vertical-align: middle;
 	color: white

@@ -7,9 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="css/qmast.css">
 	<link rel="shortcut icon" href="qmastImgs/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="qmastImgs/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="scripts/qmast.js"></script>
 </head>
-<body>
-	<div class="mobile-header">
+<body onresize="switchHeaders()" onload="switchHeaders()">
+	<div id="m-h" class="mobile-header">
 		<img class="hamburger" src="qmastImgs/altMenu.png">
 	</div>
 	<div class="background">
@@ -121,6 +123,8 @@
 	</div>
 	<br>
 	<div class="keep-in-touch">
+		<br>
+		<br>
 		<h2>Keep up to Date with QMAST</h2>
 		<br>
 		<hr>
