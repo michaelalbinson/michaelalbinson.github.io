@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error Propogation Experiment</title>
+	<script type="text/javascript" src="../scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="scripts/errorProp.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/errorProp.css">
+</head>
+<body>
+	<h1>Error Propogation!</h1>
+	<p>I hate error propogation, you hate error propogation, let's make that a little easier on everyone</p>
+	<h2>Enter Your Equation</h2>
+	<input id="equation" type="text" name="">
+	<br>
+	<button id="solveButton" onclick="detectMath()">Next</button>
+	<br><br>
+	<div id="variableContainer">
+	</div>
+	<!--
+	<a href="#cheatSheet">Cheat Sheet for using this</a>
+	<p>&delta; variable</p>
+	<input type="text" name="">
+	-->
+	<button id="mathButton" class="hidden" onclick="doTheMath()" disabled="true">Do the math!</button>
+	<p>quick hints:
+		<ul>
+			<li>make sure that there is only one variable on the left side of the equation</li>
+			<li>know that only standard operators are allowed (* / - +)</li>
+			<li>some standard functions and values are allowed (PI, E, log(), ln())</li>
+			<li>note that PI and E are RESERVED KEYS (for now), so you cannot include 'PI' or 'E' in any variable names, or they will be removed</li>
+			<li>exponents are allowed, but make sure they are separated from the rest of the equation by a space (i.e. e^2 + 2 will be evaluated
+			as (e^2) + 2, but e^2+2 will be evaluated as e^4)</li>
+		</ul>
+	</p>
+</body>
+</html>

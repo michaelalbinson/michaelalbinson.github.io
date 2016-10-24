@@ -139,8 +139,8 @@ hr.sponsor-divider {
 	position: relative;
 	top: 5px;
 	display: inline-block;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
 	width: 23%;
 	height: auto;
 }
@@ -168,7 +168,7 @@ hr.sponsor-divider {
 	padding: 0;
 	margin: 0;
 	z-index: 20;
-	margin-bottom: -4px;
+	margin-bottom: -5px;
 }
 
 .logo-image {
