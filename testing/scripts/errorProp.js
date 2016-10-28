@@ -6,20 +6,21 @@ var epm = new ErrorPropogationManager();
 
 function detectMath() {
 	var contents = $(equation).val();
-	var efg = new ErrorElementGenerator();
-	efg.clearAllElements(contents);
+	var eeg = new ErrorElementGenerator();
+	eeg.clearAllElements(contents);
 	epm.setEquationString(contents);
 	var variables = epm.findAllVariables();
 	if(!variables)
 		return;
-	efg.createOneElementNoDelta(variables[0]);
-	efg.createAllVariableElements(variables[1]);
+
+	eeg.createOneElementNoDelta(variables[0]);
+	eeg.createAllVariableElements(variables[1]);
 }
 
 function doTheMath() {
 	var contents = $(equation).val();
 	epm.ensureAllElementsPresent();
-	epm.collectElements();
+	var elementsAndError = epm.collectElements();
 	epm.executeMath();
 }
 
@@ -32,7 +33,7 @@ function ErrorPropogationManager() {
 			return;
 
 		var eqProcessor = new EquationProcessor(equationString);
-		return eqProcessor.variables();
+		return eqProcessor.getVariables();
 	}
 
 	this.getEquationString = function() {
@@ -105,9 +106,31 @@ function ErrorElementGenerator() {
 		$(mathButton).removeClass("hidden");
 		//setInterval(100, )
 	}
+
+	this.collectElements = function() {
+		var obj;
+		$(variableContainer).children().each(function() {
+			if ($(this).is("br"))
+				return;
+
+			obj[$(this).prop('id')] = {"value":$(this).children().val(), 
+										"delta": del}; //TODO: replace del with delta for each var
+		});
+	}
+
+	this.checkElements = function() {
+		var obj;
+		$(variableContainer).children().each(function() {
+			if ($(this).prop('nodeName') != "BR")
+				continue;
+
+			obj[$(this).prop('id')] = {"value":$(this).children().val(), 
+										"delta", del}; //TODO: replace del with delta for each var
+		});
+	}
 }
 
-function EquationProcessor(equation) { //TODO: detect variable on left side of the = sign and process it differently
+function EquationProcessor(equation) {
 	var eq = equation;
 	var syntacticElements = ['=', '-', '/'];
 	var numbericElements = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
@@ -115,7 +138,7 @@ function EquationProcessor(equation) { //TODO: detect variable on left side of t
 	var mathConstants = ['E', 'PI'];
 
 	//returns a list of variables for the equation
-	this.variables = function() {
+	this.getVariables = function() {
 		var workingStr = equation;
 
 		var leftHandVar = removeLeftHalf(workingStr);
@@ -187,23 +210,65 @@ function EquationProcessor(equation) { //TODO: detect variable on left side of t
 }
 
 function PropogationExecutor() {
+	var variablesAndDeltas; //json of form {var:{value: val, delta: del}}
 
-	function arithmeticError() {
+	function arithmeticError(arithmeticExpression) {
+		var error;
+		var variables = separateVariables(arithmeticExpression);
+		var sum;
+		for (var i in variables)
+			sum += (variablesAndDeltas[variables[i]][1])^2;
 
+		error = sqrt(sum)
+		return error;
 	}
 
-	function geometricError() {
+	function geometricError(geometricExpression) {
+		var error;
+		var variables = separateVariables(geometricExpression);
+		var sum;
+		for (var i in variables)
+			sum += (variablesAndDeltas[variables[i]][1]/variablesAndDeltas[variables[i]][0])^2;
 
+		error = sqrt(sum) * evaluateExpression(geometricExpression);
+		return error;
 	}
 
-	function logarithmicError() {
+	function logarithmicError(logarithmicInteriorExpression, callingFunction) {
 
+		console.log("Not complete yet");
+		return;
+
+		var variables = getKeyVariables(logarithmicInteriorExpression, "ln"); //obj = {a{value:val, delta:del}}
+		if (callingFunction == 'ln(') {
+			error = variablesAndDeltas[logarithmicInteriorExpression][1]/variablesAndDeltas[logarithmicInteriorExpression][0];
+			return error;
+		}
+		else if (callingFunction == 'log(') { //log(base, exp)
+			Math.log();
+		}
 	}
 
-	function exponentialError() {
+	function exponentialError(exponentialExpression, callingFunction) {
+		console.log("Not Complete Yet");
+		return;
 
+		var power = callingFunction;
+		var keyVars = getKeyVariables(exponentialExpression, "exp"); //obj = {a:{value:val, delta:del}, y:{value:val} }
 	}
 
+	function setVariablesAndDeltas(objToSet) {
+		variablesAndDeltas = objToSet;
+	}
+
+	function getVariablesAndDeltas() {
+		return variablesAndDeltas;
+	}
+
+
+	function evaluateExpression() {
+
+	}
 }
 
 function EquationAnalyzer() {
@@ -218,43 +283,43 @@ function EquationAnalyzer() {
 			//if yes, execute
 			//if no, return error
 
-		for (var i in allowedFunctions){
-			var index = expression.indexOf(allowedFunctions[i])
-			if (index < 0)
-				continue;
+			for (var i in allowedFunctions){
+				var index = expression.indexOf(allowedFunctions[i])
+				if (index < 0)
+					continue;
 
-			
+
+			}
+
 		}
-		
+
+		function findGroupings() {
+			var groupingSymbols = ['(', '[', '{'];
+			var matchingEndSymbol = [')', ']', '}'];
+
+		}
+
+		function findExponents() {
+			var findExponentSymbols = ['^', '^('];
+
+		}
+
+		function findGeometric() {
+			var geometricSymbols = ['*', '/'];
+
+		}
+
+		function findArithmetic() {
+			var arithmeticSymbols = ['+', '-']
+
+		}
+
+		function recursiveCheck(expression) {
+			var workingExp = expression;
+			findFunctions(workingExp);
+			findExponents(workingExp);
+			findGeometric(workingExp);
+			findArithmetic(workingExp);
+		}
 	}
-
-	function findGroupings() {
-		var groupingSymbols = ['(', '[', '{'];
-		var matchingEndSymbol = [')', ']', '}'];
-
-	}
-
-	function findExponents() {
-		var findExponentSymbols = ['^', '^('];
-
-	}
-
-	function findGeometric() {
-		var geometricSymbols = ['*', '/'];
-
-	}
-
-	function findArithmetic() {
-		var arithmeticSymbols = ['+', '-']
-
-	}
-
-	function recursiveCheck(expression) {
-		var workingExp = expression;
-		findFunctions(workingExp);
-		findExponents(workingExp);
-		findGeometric(workingExp);
-		findArithmetic(workingExp);
-	}
-}
 
