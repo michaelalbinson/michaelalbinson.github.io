@@ -5,7 +5,7 @@ var headers = ["Hey, guess what? I love you", "Guess how many days left :)))", "
 			"I wanna cuddle with you right now", "I wanna kiss you all over ;)"];
 var newHeader = headers[Math.floor(Math.random()*headers.length)];
 
-var now = new Date('11/28/2016 12:00 AM');
+var now = new Date('11/24/2016 12:00 AM');
 var SEC = 1000;
 var MIN = SEC * 60;
 var HOUR = MIN * 60;
