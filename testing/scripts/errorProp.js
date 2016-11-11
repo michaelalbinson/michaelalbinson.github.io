@@ -89,7 +89,7 @@ function ErrorElementGenerator() {
 		$(variableContainer).append(element);
 	}
 
-	function createVariablePair(varName, endOfVariables) {
+	function createVariablePair(varName, endOfVariables) { // add class "paired" to indicate that a variable and delta are paired
 		var element = '<div id="'+ varName + '">'+ varName +' <input type="text" class="var"></input></div>';
 		var deltaElement = '<div id="'+ varName +'Delta">&delta;'+ varName +' <input type="text" class="varDelta"></input></div>';
 		if (!endOfVariables)
@@ -99,7 +99,7 @@ function ErrorElementGenerator() {
 	}
 
 	function displayResult(result) {
-		$(resultDiv).val(result);
+		$(resultDiv).val("Error is: " + result);
 	}
 
 	function showMathButtonAndStartInterval() {

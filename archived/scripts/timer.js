@@ -2,7 +2,7 @@
 
 var headers = ["Hey, guess what? I love you", "Guess how many days left :)))", "&hearts;", "Hi. Hi. Hey. Hey you. Guess what? Chickenbutt ;)",
 			"I missssss youuuuu", ":P", "Hey guess where I wanna be right now? Oh yeah, that's right, with you", "I love you",
-			"I wanna cuddle with you right now", "I wanna kiss you all over ;)"];
+			"I wanna cuddle with you right now", "I wanna kiss you all over ;)", "I love you a lot"];
 var newHeader = headers[Math.floor(Math.random()*headers.length)];
 
 var now = new Date('11/24/2016 12:00 AM');
@@ -18,6 +18,15 @@ function getAndSetCurrentTime(moment) {
     var hours = Math.floor((timeUntil % DAY) / HOUR);
     var minutes = Math.floor((timeUntil % HOUR) / MIN);
     var seconds = Math.floor((timeUntil % MIN) / SEC);
+
+    if (hours < 10)
+    	hours = "0" + hours;
+
+    if(minutes < 10)
+    	minutes = "0" + minutes;
+
+    if(seconds < 10)
+    	seconds = "0" + seconds;
 
     $(timer).html(days + " days, " + hours + ":" + minutes + ":" + seconds);
 }
