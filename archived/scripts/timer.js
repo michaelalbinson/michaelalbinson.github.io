@@ -5,7 +5,8 @@ var headers = ["Hey, guess what? I love you", "Guess how many days left :)))", "
 			"I wanna cuddle with you right now", "I wanna kiss you all over ;)", "I love you a lot"];
 var imageSources = ["http://65.media.tumblr.com/6da638acc238255f0f74d6426a80c9df/tumblr_inline_nsvhtpGz5a1r0eu1s_500.png",
                         "https://i.ytimg.com/vi/W5sgIcwSl0g/maxresdefault.jpg", "https://i.ytimg.com/vi/J5X4FmB_Rb4/hqdefault.jpg",
-                        "http://vignette3.wikia.nocookie.net/steven-universe/images/f/f6/Harpoon_Gun.JPG/revision/latest?cb=20150521122917"]
+                        "http://vignette3.wikia.nocookie.net/steven-universe/images/f/f6/Harpoon_Gun.JPG/revision/latest?cb=20150521122917", 
+                        "http://68.media.tumblr.com/bc996272b1a819b32187f2f775def30b/tumblr_inline_ntyw94yKKY1seyqdu_500.gif"]
 
 var newHeader = headers[Math.floor(Math.random()*headers.length)];
 
