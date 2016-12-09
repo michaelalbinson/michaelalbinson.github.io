@@ -1,6 +1,17 @@
 div{
     text-align: center;
 }
+
+body {
+	margin-bottom: 0
+}
+
+img.logo {
+	border-radius: 0.625em;
+	width:50px;
+	height:50px;
+}
+
 #header1{
     display: block;
     background: rgba(174, 174, 108, .75);
@@ -63,46 +74,52 @@ div.experiences{
     padding: 1.875em;
     background: rgba(250, 240, 230, .75);
     color: black;
-    border-radius: .625em;
 
 }
 div.bottom{
     padding: 1.875em;
     background-color: rgba(250, 240, 230, .75);
     color: black;
-    border-radius: 0.625em;
 }
 div.education{
     padding: 1.875em;
     background-color: rgba(250, 240, 230, .75);
     color: black;
-    border-radius: 0.625em;
 }
 div.volunteering{
     padding: 1.875em;
     background-color: rgba(250, 240, 230, .75);
     color: black;
-    border-radius: 0.625em;
 }
 div.footer{
     background-color: rgba(135, 99, 64, .75);
-    border-radius: 0.625em;
     padding: 1.875em;
     text-align: center;
     border-right: 0;
     border-left: 0;
-    border-bottom: 0;
+    padding-bottom: 0;
 }
 ul{
     text-align: left;
     font-size: 1.25em;
 }
-img{
-    border-radius: 0.625em;
-}
 a{
     color: black;
 }
+a:hover {
+	color: white;
+}
+
 hr{
     width: 75%;
+}
+.footer-text {
+	text-align: center;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.company-logo {
+	border-radius: 0.625em;
+	background-color: linen;
 }
