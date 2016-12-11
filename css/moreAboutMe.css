@@ -68,3 +68,11 @@ a{
 hr{
     width: 75%;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
+.no-underline {
+    text-decoration: none;
+}

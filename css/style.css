@@ -123,3 +123,7 @@ hr{
 	border-radius: 0.625em;
 	background-color: linen;
 }
+
+.dates{
+	text-align: left;
+}
