@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="shortcut icon" href="css/images/pageLogo.ico"/>
+        <meta name="author" content="Michael Albinson">
+        <meta name="keywords" content="Resistors, Resistor, Color, Code, Color Code, Calculator, Resistor Calculator">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Calculate Resistor Values</title>
+        <script src="scripts/resistor.js"></script>
+        <link rel="stylesheet" href="css/resistor.css">
+        <style>
+        </style>
+    </head>
+<body>
+    <h2 class="centered">How many bands does your resistor have?</h2>
+    <div>
+        <div class="btn-group centered" role="group" aria-label="Search Options">
+            <button id="1" type="button" class="btn btn-secondary" onclick="toggleSelection(1)">1</button>
+            <button id="2" type="button" class="btn btn-secondary" onclick="toggleSelection(2)">2</button>
+            <button id="3" type="button" class="btn btn-secondary" onclick="toggleSelection(3)">3</button>
+            <button id="4" type="button" class="btn btn-secondary" onclick="toggleSelection(4)">4</button>
+            <button id="5" type="button" class="btn btn-secondary" onclick="toggleSelection(5)">5</button>
+            <button id="6" type="button" class="btn btn-secondary" onclick="toggleSelection(6)">6</button>
+        </div>
+    </div>
+    <div>
+        <div id="resistor-1-band" class="hidden holder">
+            <img class="resistor-img" src="http://www.clipartbest.com/cliparts/9Tz/oez/9Tzoeznac.png">
+            <div id="r1-band1" class="band"></div>
+        </div>
+        <div id="resistor-2-band" class="holder hidden">
+            <img class="resistor-img" src="http://www.clipartbest.com/cliparts/9Tz/oez/9Tzoeznac.png">
+            <span id="r2-band1" class="band"></span>
+            <span id="r2-band2" class="band"></span>
+        </div>
+        <div id="resistor-3-band" class="holder hidden">
+            <img class="resistor-img" src="http://www.clipartbest.com/cliparts/9Tz/oez/9Tzoeznac.png">
+            <div id="r3-band1" class="band"></div>
+            <div id="r3-band2" class="band"></div>
+            <div id="r3-band3" class="band"></div>
+        </div>
+        <div id="resistor-4-band" class="holder hidden">
+            <img class="resistor-img" src="http://www.clipartbest.com/cliparts/9Tz/oez/9Tzoeznac.png">
+            <div id="r4-band1" class="band"></div>
+            <div id="r4-band2" class="band"></div>
+            <div id="r4-band3" class="band"></div>
+            <div id="r4-band4" class="band"></div>
+        </div>
+        <div id="resistor-5-band" class="holder hidden">
+            <img class="resistor-img" src="http://www.clipartbest.com/cliparts/9Tz/oez/9Tzoeznac.png">
+            <div id="r5-band1" class="band"></div>
+            <div id="r5-band2" class="band"></div>
+            <div id="r5-band3" class="band"></div>
+            <div id="r5-band4" class="band"></div>
+            <div id="r5-band5" class="band"></div>
+        </div>
+        <div id="resistor-6-band" class="holder hidden">
+            <img class="resistor-img" src="http://www.clipartbest.com/cliparts/9Tz/oez/9Tzoeznac.png">
+            <div id="r6-band1" class="band"></div>
+            <div id="r6-band2" class="band"></div>
+            <div id="r6-band3" class="band"></div>
+            <div id="r6-band4" class="band"></div>
+            <div id="r6-band5" class="band"></div>
+            <div id="r6-band6" class="band"></div>
+        </div>
+    </div>
+    <div class="hidden">
+        <label for="resistance">Resistance:</label>
+        <input id="resistance" type="text" disabled>
+        <label for="tolerance">Tolerance:</label>
+        <input id="tolerance" type="text" disabled>
+    </div>
+
+    <hr>
+    <div class="centered">
+        <div id="color-1" class="col-xs-2 hidden space">
+            <button id="selected-1" class="selected-box" data-toggle="tooltip" title="Selected Color" tabindex="-1"></button><br><br>
+            <h4>Color 1</h4>
+            <button class="black" data-toggle="tooltip" title="black" onclick="activate(this)"></button><br>
+            <button class="brown" data-toggle="tooltip" title="brown" onclick="activate(this)"></button><br>
+            <button class="red" data-toggle="tooltip" title="red" onclick="activate(this)"></button><br>
+            <button class="orange" data-toggle="tooltip" title="orange" onclick="activate(this)"></button><br>
+            <button class="yellow" data-toggle="tooltip" title="yellow" onclick="activate(this)"></button><br>
+            <button class="green" data-toggle="tooltip" title="green" onclick="activate(this)"></button><br>
+            <button class="blue" data-toggle="tooltip" title="blue" onclick="activate(this)"></button><br>
+            <button class="violet" data-toggle="tooltip" title="violet" onclick="activate(this)"></button><br>
+            <button class="grey" data-toggle="tooltip" title="grey" onclick="activate(this)"></button><br>
+            <button class="white" data-toggle="tooltip" title="white" onclick="activate(this)"></button><br>
+        </div>
+        <div id="color-2" class="col-xs-2 hidden space">
+            <button id="selected-2" data-toggle="tooltip" title="Selected Color" tabindex="-1"></button><br><br>
+            <h4>Color 2</h4>
+            <button class="black" data-toggle="tooltip" title="black" onclick="activate(this)"></button><br>
+            <button class="brown" data-toggle="tooltip" title="brown" onclick="activate(this)"></button><br>
+            <button class="red" data-toggle="tooltip" title="red" onclick="activate(this)"></button><br>
+            <button class="orange" data-toggle="tooltip" title="orange" onclick="activate(this)"></button><br>
+            <button class="yellow" data-toggle="tooltip" title="yellow" onclick="activate(this)"></button><br>
+            <button class="green" data-toggle="tooltip" title="green" onclick="activate(this)"></button><br>
+            <button class="blue" data-toggle="tooltip" title="blue" onclick="activate(this)"></button><br>
+            <button class="violet" data-toggle="tooltip" title="violet" onclick="activate(this)"></button><br>
+            <button class="grey" data-toggle="tooltip" title="grey" onclick="activate(this)"></button><br>
+            <button class="white" data-toggle="tooltip" title="white" onclick="activate(this)"></button><br>
+        </div>
+        <div id="color-3" class="col-xs-2 hidden space">
+            <button id="selected-3" data-toggle="tooltip" title="Selected Color" tabindex="-1"></button><br><br>
+            <h4>Color 3</h4>
+            <button class="black" data-toggle="tooltip" title="black" onclick="activate(this)"></button><br>
+            <button class="brown" data-toggle="tooltip" title="brown" onclick="activate(this)"></button><br>
+            <button class="red" data-toggle="tooltip" title="red" onclick="activate(this)"></button><br>
+            <button class="orange" data-toggle="tooltip" title="orange" onclick="activate(this)"></button><br>
+            <button class="yellow" data-toggle="tooltip" title="yellow" onclick="activate(this)"></button><br>
+            <button class="green" data-toggle="tooltip" title="green" onclick="activate(this)"></button><br>
+            <button class="blue" data-toggle="tooltip" title="blue" onclick="activate(this)"></button><br>
+            <button class="violet" data-toggle="tooltip" title="violet" onclick="activate(this)"></button><br>
+            <button class="grey" data-toggle="tooltip" title="grey" onclick="activate(this)"></button><br>
+            <button class="white" data-toggle="tooltip" title="white" onclick="activate(this)"></button><br>
+            <button class="silver" data-toggle="tooltip" title="silver" onclick="activate(this)"></button><br>
+            <button class="gold" data-toggle="tooltip" title="gold" onclick="activate(this)"></button><br>
+        </div>
+        <div id="color-4" class="col-xs-2 hidden space">
+            <button id="selected-4" data-toggle="tooltip" title="Selected Color" tabindex="-1"></button><br><br>
+            <h4>Color 4</h4>
+            <button class="black" data-toggle="tooltip" title="black" onclick="activate(this)"></button><br>
+            <button class="brown" data-toggle="tooltip" title="brown" onclick="activate(this)"></button><br>
+            <button class="red" data-toggle="tooltip" title="red" onclick="activate(this)"></button><br>
+            <button class="orange" data-toggle="tooltip" title="orange" onclick="activate(this)"></button><br>
+            <button class="yellow" data-toggle="tooltip" title="yellow" onclick="activate(this)"></button><br>
+            <button class="green" data-toggle="tooltip" title="green" onclick="activate(this)"></button><br>
+            <button class="blue" data-toggle="tooltip" title="blue" onclick="activate(this)"></button><br>
+            <button class="violet" data-toggle="tooltip" title="violet" onclick="activate(this)"></button><br>
+            <button class="grey" data-toggle="tooltip" title="grey" onclick="activate(this)"></button><br>
+            <button class="white" data-toggle="tooltip" title="white" onclick="activate(this)"></button><br>
+            <button class="silver" data-toggle="tooltip" title="silver" onclick="activate(this)"></button><br>
+            <button class="gold" data-toggle="tooltip" title="gold" onclick="activate(this)"></button><br>
+        </div>
+        <div id="color-5" class="col-xs-2 hidden space">
+            <button id="selected-5" data-toggle="tooltip" title="Selected Color" tabindex="-1"></button><br><br>
+            <h4>Color 5</h4>
+            <button class="black" data-toggle="tooltip" title="black" onclick="activate(this)"></button><br>
+            <button class="brown" data-toggle="tooltip" title="brown" onclick="activate(this)"></button><br>
+            <button class="red" data-toggle="tooltip" title="red" onclick="activate(this)"></button><br>
+            <button class="orange" data-toggle="tooltip" title="orange" onclick="activate(this)"></button><br>
+            <button class="yellow" data-toggle="tooltip" title="yellow" onclick="activate(this)"></button><br>
+            <button class="green" data-toggle="tooltip" title="green" onclick="activate(this)"></button><br>
+            <button class="blue" data-toggle="tooltip" title="blue" onclick="activate(this)"></button><br>
+            <button class="violet" data-toggle="tooltip" title="violet" onclick="activate(this)"></button><br>
+            <button class="grey" data-toggle="tooltip" title="grey" onclick="activate(this)"></button><br>
+            <button class="white" data-toggle="tooltip" title="white" onclick="activate(this)"></button><br>
+            <button class="silver" data-toggle="tooltip" title="silver" onclick="activate(this)"></button><br>
+            <button class="gold" data-toggle="tooltip" title="gold" onclick="activate(this)"></button><br>
+        </div>
+        <div id="color-6" class="col-xs-2 hidden space">
+            <button id="selected-6" data-toggle="tooltip" title="Selected Color" tabindex="-1"></button><br><br>
+            <h4>Color 6</h4>
+            <button class="black" data-toggle="tooltip" title="black" onclick="activate(this)"></button><br>
+            <button class="brown" data-toggle="tooltip" title="brown" onclick="activate(this)"></button><br>
+            <button class="red" data-toggle="tooltip" title="red" onclick="activate(this)"></button><br>
+            <button class="orange" data-toggle="tooltip" title="orange" onclick="activate(this)"></button><br>
+            <button class="yellow" data-toggle="tooltip" title="yellow" onclick="activate(this)"></button><br>
+            <button class="green" data-toggle="tooltip" title="green" onclick="activate(this)"></button><br>
+            <button class="blue" data-toggle="tooltip" title="blue" onclick="activate(this)"></button><br>
+            <button class="violet" data-toggle="tooltip" title="violet" onclick="activate(this)"></button><br>
+            <button class="grey" data-toggle="tooltip" title="grey" onclick="activate(this)"></button><br>
+            <button class="white" data-toggle="tooltip" title="white" onclick="activate(this)"></button><br>
+            <button class="silver" data-toggle="tooltip" title="silver" onclick="activate(this)"></button><br>
+            <button class="gold" data-toggle="tooltip" title="gold" onclick="activate(this)"></button><br>
+        </div>
+        <br><br><br>
+    </div>
+</body>
+</html>

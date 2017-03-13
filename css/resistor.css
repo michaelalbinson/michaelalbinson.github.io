@@ -1,0 +1,154 @@
+body {
+    background-color: linen;
+}
+
+.hidden {
+    display: none !important;
+}
+.space button {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.space {
+    padding-bottom: 10px;
+}
+.black {
+    background-color: black;
+}
+.brown {
+    background-color: saddlebrown;
+}
+.red {
+    background-color: red;
+}
+.orange {
+    background-color: orange;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.violet {
+    background-color: purple;
+}
+.grey {
+    background-color: grey;
+}
+.white {
+    background-color: white;
+}
+.gold {
+    background-color: gold;
+}
+.silver {
+    background-color: silver;
+}
+
+.resistor-img {
+    width: 400px;
+}
+
+.band {
+    position: absolute;
+    width: 2%;
+    height: 44%;
+    border: 1px solid black;
+    top: 0;
+    margin-top: 14%;
+}
+
+.holder {
+    position: relative;
+    display: inline-block;
+}
+
+.centered {
+    text-align: center;
+}
+
+input {
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+#r1-band1 {
+    right: 49%;
+}
+
+#r2-band1 {
+    left: 40%;
+}
+
+#r2-band2 {
+    right: 40%;
+}
+
+#r3-band1 {
+    left: 35%;
+}
+#r3-band2 {
+    left: 49%;
+}
+#r3-band3 {
+    right: 35%;
+}
+
+#r4-band1 {
+    left: 30%;
+}
+#r4-band2 {
+    left: 42%;
+}
+#r4-band3 {
+    right: 42%;
+}
+#r4-band4 {
+    right: 30%;
+}
+
+#r5-band1 {
+    left: 29%;
+}
+#r5-band2 {
+    left: 39%;
+}
+#r5-band3 {
+    left: 49%;
+}
+#r5-band4 {
+    right: 39%;
+}
+#r5-band5 {
+    right: 29%;
+}
+
+#r6-band1 {
+    left: 28.33%;
+}
+#r6-band2 {
+    left: 36.66%;
+}
+#r6-band3 {
+    left: 45%;
+}
+#r6-band4 {
+    right: 45%;
+}
+#r6-band5 {
+    right: 36.66%;
+}
+#r6-band6 {
+    right: 28.33%;
+}
+
+.active {
+    border-color: purple;
+}
