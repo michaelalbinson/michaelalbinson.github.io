@@ -13,17 +13,17 @@ function toggleSelection(num) {
     $('#calc').removeClass('hidden');
     correctColors();
     showCalculations();
+    calculate();
+    hideNotPertient();
 }
 
 function hideAll() {
     for (var i = 1; i <= 6; i++) {
         var colorEl = $('#color-' + i);
-        if (!colorEl.hasClass('hidden'))
-            colorEl.addClass('hidden');
+        hideIt(colorEl);
 
         var resEl = $('#resistor-'+ i + '-band');
-        if (!resEl.hasClass('hidden'))
-            resEl.addClass('hidden');
+        hideIt(resEl);
     }
 }
 
@@ -35,6 +35,13 @@ function calculate() {
     var currentBands = bands[current];
     var tol = $('#tolerance');
     var res = $('#resistance');
+    var therm = $('#thermal');
+    var wrap = $('#thermal-wrap');
+    if(current != 6)
+        hideIt(wrap);
+    else
+        wrap.removeClass('hidden');
+
     if(!allAreFilled(current))
        return clearCalcs();
 
@@ -63,6 +70,11 @@ function calculate() {
                 colors[currentBands['color-3']], multipliers[currentBands['color-4']]));
             break;
         case(6):
+            tol.val(tolerance[currentBands['color-5']] ? tolerance[currentBands['color-5']] :'Not a valid tolerance');
+            res.val(getNumberString(colors[currentBands['color-1']], colors[currentBands['color-2']],
+                colors[currentBands['color-3']], multipliers[currentBands['color-4']]));
+
+            therm.val(thermal[currentBands['color-6']] + decodeEntities('&#8451;'));
             break;
         default:
             break;
@@ -75,18 +87,23 @@ function getNumberString(one, two, multiplier) {
     else if (arguments.length == 3)
         return processNumber((one + two) * multiplier) + decodeEntities('&#8486;');
     else if (arguments.length == 4)
-        return processNumber((one + two + multiplier) * arguments[3])+ decodeEntities('&#8486;');
+        return processNumber((one + two + multiplier) * arguments[3]) + decodeEntities('&#8486;');
 }
 
 function processNumber(num) {
-    if (num >= 1000000)
-        return num/1000000 + ' M';
+    if(!isInt(num))
+        num = num.toFixed(2);
+
+    if (num >= 1000000000)
+        num = num/1000000000 + ' G';
+    else if (num >= 1000000)
+        num = num/1000000 + ' M';
     else if (num >= 1000)
-        return num/1000 + ' k';
-    else if (num <= 1)
-        return (num).toFixed(2) + ' ';
+        num = num/1000 + ' k';
     else
-        return (num) + ' ';
+        num =(num) + ' ';
+
+    return num;
 }
 
 var colors = {
@@ -111,6 +128,8 @@ var multipliers = {
     "green": 100000,
     "blue": 1000000,
     "violet": 10000000,
+    "grey": 100000000,
+    "white": 1000000000,
     "gold": 0.1,
     "silver": 0.01
 };
@@ -118,12 +137,23 @@ var multipliers = {
 var tolerance = {
     "brown": "1%",
     "red": "2%",
+    "orange": "3%",
+    "yellow": "4%",
     "green": "0.5%",
     "blue": "0.25%",
     "violet": "0.10%",
     "grey": "0.05%",
     "gold": "5%",
     "silver": "10%"
+};
+
+var thermal = {
+    "brown": '100 ppm/',
+    "red": '50 ppm/',
+    "orange": '15 ppm/',
+    "yellow": '25 ppm/',
+    "blue": '10 ppm/',
+    "violet": '5 ppm/'
 };
 
 var bands = { //holds current band colors
@@ -214,4 +244,17 @@ function decodeEntities(encodedString) {
     var textArea = document.createElement('textarea');
     textArea.innerHTML = encodedString;
     return textArea.value;
+}
+
+function hideIt(el) {
+    if (!el.hasClass('hidden'))
+        el.addClass('hidden')
+}
+
+function hideNotPertient() {
+
+}
+
+function isInt(n) {
+    return n % 1 === 0;
 }

@@ -1,5 +1,6 @@
 body {
-    background-color: linen;
+    background-color: #D4BBA3;
+    height: 100%;
 }
 
 .hidden {
@@ -151,4 +152,22 @@ input {
 
 .active {
     border-color: purple;
+}
+
+.question {
+    cursor: help;
+}
+
+#wrap {
+    background-color: linen;
+    min-height: 100%;
+    height: auto;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+}
+
+.footerImg {
+    width: 45px;
 }
