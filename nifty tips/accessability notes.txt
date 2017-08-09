@@ -1,0 +1,28 @@
+XSS
+Reflected 
+Stored
+
+Commonly embedded into UI pages
+Failure to sanitize inputs
+whitelisting of approved tags
+output encoding defense is best defense
+
+I &lt;script&gt; <- way to escape script tags
+http only flag <- stops javascript from accessing cookie
+secure flag <- cookies only transmitted over https
+
+Blacklist, then validate against whitelist ->  gain max protection and gain info about new attacks
+
+OWASP has lots of articles and cheat sheets
+OWASP Authentication cheat sheet
+OWASP XSS Prevention Cheat Sheet
+OWASP CSURF -> CSURF token
+Change Login url redirect methodology as it is currently dangerous
+OWASP ASVS
+OWASP Prevention cheat sheet
+OWASP developer guide 
+Links should have visited_by field
+
+
+https://wpa.wharton.upenn.edu/video/wpa-conference-2016-panel-teams/
+EFFECTIVE TEAMS ^ 8 mins
