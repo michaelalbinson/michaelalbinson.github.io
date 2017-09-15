@@ -297,6 +297,19 @@ p{
     border-top-color: #c87c6f;
 }
 
+.divider-personal {
+    background-image: url('images/IMG_5711.JPG');
+    height: 15em;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    color: white;
+}
+
+.left {
+    text-align: left;
+}
+
 /**
  Adapted ticker, will not work on IE, thanks to @Lewis Carey
  https://codepen.io/lewismcarey/pen/GJZVoG
