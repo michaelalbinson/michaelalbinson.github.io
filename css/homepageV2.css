@@ -49,6 +49,21 @@
     display: block;
 }
 
+.divider {
+    height: 15em;
+    background-image: url("uncompressed/breadboard.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    color: white;
+}
+
+.divider-blur {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 .brief {
     text-align: left;
     padding: 10px 10px 10px 10px;
@@ -74,24 +89,53 @@
 header {
     position: fixed;
     height: 50px;
-    background-color: white;
+    background-color: white ;
     color: white;
     width: 100%;
     border-bottom: solid 1px lightgrey;
     z-index: 100;
+    -moz-box-shadow:    0 3px #111;
+    -webkit-box-shadow: 0 3px #111;
+    -o-box-shadow: 0 0 8px 1px #111;
+    box-shadow: 0 0 8px 1px #111;
 }
 
 .header-filler {
     height: 50px;
 }
 
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 45%;
+}
+
+hr.black {
+    border-top-color: rgb(0, 0, 0);
+}
+
+.not-centered {
+    text-align: left;
+}
+
 body {
     margin: 0;
+    background-color: black !important;
+}
+
+.white-wrap {
+    background-color: white;
 }
 
 .mech {
-    background-color: slategray;
+    background-color: #c87c6f;
 
+}
+
+.design-div .brief {
+    background-color: #c87c6f;
 }
 
 .teach {
@@ -99,15 +143,30 @@ body {
 }
 
 .header-img {
-    float: right;
     width: 50px;
     height: 50px;
     display: inline-block;
     padding: 2.5px 2.5px 2.5px 2.5px;
 }
 
+.right {
+    float: right;
+}
+
+header a {
+    color: black !important;
+}
+
+a {
+    color: #c87c6f;
+}
+
+footer img {
+    filter: invert(100%);
+}
+
 .vol {
-    background-color: purple;
+    background-color: linen;
     color: black;
 }
 
@@ -121,20 +180,26 @@ body {
 
 footer {
     width: 100%;
-    height: 100px;
     background-color: black;
+    text-align: center;
 }
 
 .title {
     position: relative;
-    top:50%;
+    top: 50%;
+    transform: translateY(50%);
+    vertical-align: middle;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
     transform: translateY(50%);
     vertical-align: middle;
 }
 
 .mech img {
-    width: 65px;
-    height: 65px;
+    width: 2.5em;
     position: absolute;
     right: 15px;
     -webkit-animation: spin 4s linear infinite;
@@ -201,4 +266,105 @@ footer {
     float: right;
     height: 1px;
     width: 40px;
+}
+
+.splash {
+    width: 100%;
+    height: 60em;
+    background-image: url("uncompressed/splash.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    text-align: center;
+}
+
+.splash-blur {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.vertical-center {
+    vertical-align: middle;
+}
+
+p{
+    word-wrap: break-word;
+}
+
+.section-separator {
+    border-top-color: #c87c6f;
+}
+
+/**
+ Adapted ticker, will not work on IE, thanks to @Lewis Carey
+ https://codepen.io/lewismcarey/pen/GJZVoG
+ */
+
+@-webkit-keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+.ticker-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-left: 100%;
+}
+
+.ticker {
+    display: inline-block;
+    height: 4rem;
+    line-height: 4rem;
+    white-space: nowrap;
+    padding-right: 100%;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    -moz-animation-name: ticker;
+    -o-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 60s;
+    -moz-animation-duration: 60s;
+    -o-animation-duration: 60s;
+    animation-duration: 60s;
+}
+.ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 2rem;
+    color: white;
+}
+
+body {
+    padding-bottom: 5rem;
+}
+
+h1, h2, p {
+    padding: 0 5%;
 }

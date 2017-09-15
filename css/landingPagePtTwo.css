@@ -10,6 +10,13 @@ body {
 	margin: 0;
 }
 
+textarea {
+	max-width: 55%;
+	max-height: 45%;
+	margin: auto;
+	padding: 10px;
+}
+
 .opener {
 	background: black;
 	background-color: rgba(0, 0, 0, .5);
@@ -17,12 +24,33 @@ body {
 	font-size: 2em;
 	color: white;
 	text-align: center;
-	position: fixed;
 	z-index: 100;
 }
 
 .spacer {
-	position: absolute;
 	height: 400em;
-	width: 100%
+	width: 100%;
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.logo {
+	filter: invert(100%);
+	width: 100px;
+}
+
+.post-logo {
+	background-color: rgba(237, 237, 237, .9);
+	text-align: center;
+}
+
+.decent-width {
+	width: 25%;
+}
+
+.decent-height {
+	height: 25%;
+}
+
+.bigger-width {
+	width: 50%;
 }
