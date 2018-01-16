@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8">
+   <style>
+    .room {
+      cursor: pointer;
+      opacity: 0;
+    }
+   </style>
+  <g
+     id="layer1">
+    <image
+       y="70.119797"
+       x="0.92603457"
+       id="image3826"
+       xlink:href="./ILC-1.jpg"
+       preserveAspectRatio="none"
+       height="165.74255"
+       width="208.30269" />
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 118.26875,114.70208 -16.66875,0.26459 -0.26458,18.07986 16.49236,0.44097 z"
+       tabindex='0' onclick="alert('bmh111')"
+       id="bmh111" class="room"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 130.26319,124.13889 v -9.6132 l -11.99444,0.17639 0.0882,9.34861 z"
+       tabindex='0' onclick="alert('bmh114')"
+       id="bmh114" class="room"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 130.26319,133.3993 v -9.26041 l -11.90625,-0.0882 -0.52916,9.43681 z"
+       tabindex='0' onclick="alert('bmh113')"
+       id="bmh113" class="room"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 117.82778,133.4875 -0.0882,1.32292 1.41111,8.81944 11.1125,-1.67569 v -8.55487 z"
+       tabindex='0' onclick="alert('bmh112')"
+       id="bmh112" class="room"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 37.998669,162.73803 -0.422206,-7.31826 5.629431,-0.98515 3.096189,-0.42221 v 8.72562 z"
+       tabindex='0' onclick="alert('bmh105')"
+       id="bmh105" class="room"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 144.72709,156.50625 -8.20209,0.0882 -0.35278,-8.90765 6.08542,-0.70555 2.38125,0.0882 z"
+       tabindex='0' onclick="alert('bmh116')"
+       id="path4689" class="room"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 153.10555,147.06945 -8.46666,-1e-5 0.0882,9.43681 8.37847,0.0882 z"
+       tabindex='0' onclick="alert('bmh117')"
+       id="path4687" class="room"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 161.39583,146.98125 -8.29028,0.0882 v 9.525 l 8.46667,-0.17639 z"
+       tabindex='0'
+       id="path4685" class="room" onclick="alert('bmh118')"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 161.39583,146.98125 0.17639,9.4368 8.29027,0.17639 1e-5,-9.70139 z"
+       tabindex='0'
+       id="path4683" class="room" onclick="alert('bmh119')"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1; cursor: pointer;"
+       d="m 39.124556,170.61924 -1.125887,-7.88121 h 8.303414 v 7.88121 z"
+       tabindex='0' onclick="alert('bmh104')"
+       id="bmh104" class="room"/>
+    <path
+       style="fill:red;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 120.5618,170.61736 0.0882,-9.17222 h 9.4368 v 9.17222 z"
+       tabindex='0'
+       id="bmh131" onclick="alert('this is bmh 131!')" class="room"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 146.93194,170.70555 v -14.1993 l -10.40694,0.0882 -0.17639,14.02292 z"
+       tabindex='0'
+       id="bmh130" class="room" onclick="alert('bmh130')"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 146.93194,170.70555 h 10.40695 l 0.0882,-14.11111 -10.49514,-0.0882 z"
+       tabindex='0'
+       id="bmh129" class="room" onclick="alert('bmh129')"/>
+    <path
+       style="fill:black;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 167.56944,166.91319 v -2.46944 h 2.38125 l -0.0882,-7.84931 h -12.43541 l 0.0882,10.49514 z"
+       tabindex='0'
+       id="path4681" class="room" onclick="alert('bmh128')"/>
+  </g>
+</svg>
