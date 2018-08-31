@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sample blackjack</title>
+	<link rel="stylesheet" type="text/css" href="css/blackjackStyle.css">
+	<link rel="shortcut icon" href="assets/pageLogo.ico">
+	<title>Blackjack!</title>
+	<script src="js/blackjack.js"></script>
+</head>
+<body>
+	<h1>Blackjack</h1>
+	<br><br><br>
+	<h2>Dealer</h2>
+	<div class="dealerDeck">
+		<div class="card" id="card1"> 
+			<div class="cardUpper" id="card1_slot1_dealer"></div>
+			<img src="assets/diamond.png" class="centerImage" id="dealerCenter1">
+			<div class="cardLower" id="card1_slot2_dealer"></div>
+		</div>
+		<div class="card" id="card2">
+			<div class="cardUpper" id="card2_slot1_dealer"></div>
+			<img src="assets/club.png" class="centerImage" id="dealerCenter2">
+			<div class="cardLower" id="card2_slot2_dealer"></div>
+		</div>
+		<div class="card" id="card3">
+			<div class="cardUpper" id="card3_slot1_dealer"></div>
+			<img src="assets/heart.png" class="centerImage" id="dealerCenter3">
+			<div class="cardLower" id="card3_slot2_dealer"></div>
+		</div>
+		<div class="card" id="card4">
+			<div class="cardUpper" id="card4_slot1_dealer"></div>
+			<img src="assets/spade.png" class="centerImage" id="dealerCenter4">
+			<div class="cardLower" id="card4_slot2_dealer"></div>
+		</div>
+		<div class="card" id="card5">
+			<div class="cardUpper" id="card5_slot1_dealer"></div>
+			 <img src="assets/diamond.png" class="centerImage" id="dealerCenter5">
+			<div class="cardLower" id="card5_slot2_dealer"></div>
+		</div>
+	</div>
+	<br>
+	<h2>Player</h2>
+	<div class="playerDeck">
+		<div class="card" id="playerCard1">
+			<div class="cardUpper" id="player_card1_slot1"></div>
+			 <img src="assets/diamond.png" class="centerImage" id="playerCenter1">
+			<div class="cardLower" id="player_card1_slot2"></div>
+		</div>
+		<div class="card" id="playerCard2">
+			<div class="cardUpper" id="player_card2_slot1"></div>
+			 <img src="assets/club.png" class="centerImage" id="playerCenter2">
+			<div class="cardLower" id="player_card2_slot2"></div>
+		</div>
+		<div class="card" id="playerCard3">
+			<div class="cardUpper" id="player_card3_slot1"></div>
+			 <img src="assets/heart.png" class="centerImage" id="playerCenter3">
+			<div class="cardLower" id="player_card3_slot2"></div>
+		</div>
+		<div class="card" id="playerCard4">
+			<div class="cardUpper" id="player_card4_slot1"></div>
+			 <img src="assets/spade.png" class="centerImage" id="playerCenter4">
+			<div class="cardLower" id="player_card4_slot2"></div>
+		</div>
+		<div class="card" id="playerCard5">
+			<div class="cardUpper" id="player_card5_slot1"></div>
+			 <img src="assets/diamond.png" class="centerImage" id="playerCenter5">
+			<div class="cardLower" id="player_card5_slot2"></div>
+		</div>
+	</div>
+	<br>
+	<div id="buttonHolder">
+		<input type="text" id="resultBox" value="Let's Play A Game">
+		<input type="button" id="playButton" onclick="begin()" value="Play!"></input>
+		<input type="button" id="dealButton" onclick="deal()" value="Deal" disabled="true"></input>
+		<input type="button" id="hitButton" value="Hit me!" onclick="hit()" disabled="true"></input>
+		<input type="button" id="stayButton" onclick="dealerDraw()" value="Stay!" disabled="true"></input>
+	</div>
+	<br><br><br><br>
+	<div class="footer">
+		<a href="mailto:mikealbinson@gmail.com"><img alt="Email" src="assets/email.png" class="footerImg"></a>
+		<a href="https://www.linkedin.com/in/michaelalbinson"><img alt="Linkedin" src="assets/linkedin.png" class="footerImg"></a>
+		<a href="https://github.com/michaelalbinson"><img alt="Github" src="assets/github_cat.png" class="footerImg" "></a>
+		<hr>
+        <a href="../../index.html"><img class="footerImg" alt="home" src="assets/home.png"></a>
+	</div>
+</body>
+</html>
