@@ -1,0 +1,151 @@
+body{
+	background-color: grey;
+}
+
+h2{
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: .25em;
+}
+
+hr{
+	width: 75%;
+}
+
+div.scrollBody{
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	margin-left: -135px;
+	margin-top: -135px;
+	top: 50%;
+	left: 50%;
+	background-color: black;
+	border-style: solid;
+	border-color: black;
+	border-width: 10px;
+	border-radius: 10px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	z-index: 10;
+}
+
+h1{
+	text-align: center;
+}
+
+div.infoText{
+	position: fixed;
+	background-color: green;
+	bottom: 2em;
+	width: 80%;
+	margin-left: -40%;
+	left: 50%;
+	text-align: center;
+	border-style: solid;
+	border-color: black;
+	border-width: 5px;
+	border-radius: 5px;
+	font-size: 1.5em;
+}
+
+button.optionsButton{
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0);
+	right: 50px;
+	margin-right: -25px;
+	margin-top: -25px;
+	top: 50px;
+	border-radius: 25px;
+	border: 0;
+}
+
+input.exitPreferencesButton{
+	font-color: green;
+}
+
+input{
+	position: relative;
+	border: 1px;
+	background-color: rgb(192,192,192);
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	color: #1ec503;
+	font-size: 1em;
+}
+
+div.optionsMenu{
+	background-color: linen;
+	border-color: black;
+}
+
+img{
+	height: 50px;
+	width: 50px;
+}
+
+form{
+	font-size: .9em;
+}
+
+input.exitPreferencesButton{
+	background-color: black;
+	color: green;
+}
+
+img.gameImg{
+	position: absolute;
+	padding: 0;
+	width: 1000px;
+	height: 1000px;
+	margin-top: 75px;
+	margin-left: 100px;
+	z-index: 15;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	opacity: .5;
+}
+
+div.redDiv{
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	background-color: red;
+	z-index: 16;
+	margin-top: -5px;
+	margin-left: -5px;
+	top: 125px;
+	left: 125px;
+	opacity: .5;
+}
+h2.startText{
+	position: absolute;
+	z-index: 20;
+	color: white;
+	text-align: center;
+}
+
+input.enterSizeBox{
+	margin-top: 0;
+	padding: 0;
+}
+
+p.topP{
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+div.messageDiv{
+	display: none;
+	position: absolute;
+	z-index: 20;
+	text-align: center;
+	background-color: linen;
+	border-style: solid;
+	width: 80%;
+	margin-left: -40%;
+	left: 50%;
+	border-radius: 5px;
+	top: 5%;
+}

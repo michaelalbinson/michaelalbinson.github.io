@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <p>Input either innerFunc() or outerFunc()</p>
+
+    <script>
+    function objThing() {
+        this.executeFunc = function(){
+            eval(document.getElementById('demo').value);
+        }
+
+        function innerFunc() {
+            console.log("uniqueFunc");
+        }
+    }
+
+    function outerFunc() {
+        console.log("outerFunc");
+    }
+
+    var thing = new objThing();
+
+    function myFunction() {
+        eval(document.getElementById('demo').value);
+    }
+    </script>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="thing.executeFunc()">In closure</button>
+    <button type="button" onclick="myFunction()">Outside of closure</button>
+    <p id="message"></p>
+</body>
+</html>
