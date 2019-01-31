@@ -56,7 +56,7 @@ var imageSources = ["http://65.media.tumblr.com/6da638acc238255f0f74d6426a80c9df
 
 var newHeader = headers[Math.floor(Math.random()*headers.length)];
 
-var now = new Date('12/9/2017 12:00 PM');
+var now = new Date('2/16/2019 12:00 PM');
 var SEC = 1000;
 var MIN = SEC * 60;
 var HOUR = MIN * 60;
