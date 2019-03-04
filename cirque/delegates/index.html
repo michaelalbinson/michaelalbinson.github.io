@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta name="author" content="Michael Albinson" />
+    <link rel="shortcut icon" type="image/png" href="../assets/logo.png">
+
+    <title>CIRQUE 2019</title>
+	<link rel="stylesheet" href="../css/bootstrap4.css" type="text/css">
+	<link rel="stylesheet" href="../css/header.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/style.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/splash.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/footer.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/mobile-style.css" type="text/css"/>
+
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/bootstrap4.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/buttons.js"></script>
+	<script type="text/javascript" src="../js/sources.js"></script>
+
+	<!-- <<Mobile Viewport Code>> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Social Media tags -->
+	<meta property="og:title" content="CIRQUE 2019">
+	<meta property="og:description" content="CIRQUE: The Queen's Engineering Conference on Industry and Resources. CIRQUE strives to connect motivated, intelligent engineering students with compelling speakers from a broad cross-section of modern industry. The conference exposes students to the current business world while demonstrating the versatility of their engineering degree.">
+	<meta property="og:image" content="http://queenscirque.ca/assets/logo.png">
+	<meta property="og:url" content="http://queenscirque.ca">
+	<meta name="twitter:card" content="summary_large_image">
+
+    <!-- Import fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+	<header>
+		<div class="desktop-header">
+			<ul>
+				<li><a href="../">Home</a></li>
+				<li><a href="../delegates">Delegates</a></li>
+				<li><a href="../speakers">Speakers</a></li>
+				<li><a href="../partners">Partners</a></li>
+			</ul>
+			<hr class="full">
+		</div>
+		<div class="alt-menu">
+			<a class="hamburgler">
+				<div class="bun top"></div>
+				<div class="meat"></div>
+				<div class="bun bottom"></div>
+			</a>
+		</div>
+		<div id="mobile-menu">
+			<a href="../" onclick="toggleMenu();"><h4>Home</h4></a>
+			<hr class="full">
+			<a href="../delegates" onclick="toggleMenu();"><h4>Delegates</h4></a>
+			<hr class="full">
+			<a href="../speakers" onclick="toggleMenu();"><h4>Speakers</h4></a>
+			<hr class="full">
+			<a href="../partners" onclick="toggleMenu();"><h4>Partners</h4></a>
+		</div>
+	</header>
+	<div class="header-push"></div>
+<section>
+	<h1>Delegates</h1>
+	<div class="fake-hr">
+		<div></div>
+		<img src="../assets/logo.png" alt="CIRQUE logo">
+		<div></div>
+	</div>
+	<div class="description">
+		<div class="inner-image-wrap extra-light">
+			<p>
+				As a CIRQUE delegate, you will have the opportunity to connect with top employers and broaden your view about postgraduate opportunities through a weekend of speaker panels, workshops, networking sessions and socials. 
+			</p>
+			<p>
+				To become a delegate, click on the link below to complete the general application form!
+			</p>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSeUqB49ihXq0j6Hw94nrKS9NzdJhOLIhR6bfy7th2TVRA3Rlw/viewform" class="btn btn-primary btn-lg" >Apply Now!</a>
+		</div>
+	</div>
+</section><script type="text/javascript">
+	// dirty little trick to make the schedule stuff work properly
+	var PREFIX = "../";
+</script>
+<section>
+	<div class="description">
+		<div class="inner-image-wrap extra-light">
+			<br>
+			<div class="btn-group" role="group" aria-label="Basic example">
+				<button id="apply-button" type="button" class="btn btn-light" onclick="switchDelegateSec('apply')">Apply!</button>
+				<button id="schedule-button" type="button" class="btn btn-light active" onclick="switchDelegateSec('schedule')">2019 Schedule</button>
+				<button id="logistics-button" type="button" class="btn btn-light" onclick="switchDelegateSec('logistics')">Logistics</button>
+				<!-- <button id="resumes-button" type="button" class="btn btn-light" onclick="switchDelegateSec('resumes')">Delegate Resumes</button> -->
+			</div>
+			<div id="apply" class="hidden del-but-sec">
+				<p>Thank you for your interest in CIRQUE! To become a delegate, you must complete the general application. The application consists of two short answer questions and some general information about yourself.</p> 
+				<p>Feeling ready to learn how limitless your future can be? Click the button below to get started!</p>
+				<h3>Application Deadline: 11:59 PM, January 31st, 2019</h3>
+				<br><br><br>
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSeUqB49ihXq0j6Hw94nrKS9NzdJhOLIhR6bfy7th2TVRA3Rlw/viewform" class="btn btn-primary btn-lg" >Apply Now!</a>
+				<br><br>
+			</div>
+			<div id="schedule" class="del-but-sec">
+				<br>
+				<h2>CIRQUE 2019 Schedule</h2>
+				<p><i>Click on an event to see more</i></p>
+				<div class="row">
+					<div class="col-md">
+						<h3>Friday February 8th</h3>
+						<table id="feb-2">
+							<tr class="centered header-cell">
+								<th>Time</th>
+								<th class="left-border">Event</th>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>16:00</td>
+								<td class="left-border">Registration and Sponsorship Expo</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>17:00</td>
+								<td class="left-border">Opening Remarks and Dinner</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>18:00</td>
+								<td class="left-border">Friday Keynote: Julie Lassonde</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>19:00</td>
+								<td class="left-border">BCG Case Study</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>20:15</td>
+								<td class="left-border">Workshop - Presented by Enactus</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>21:15</td>
+								<td class="left-border">Speaker: Dave Timan</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>22:00</td>
+								<td class="left-border">Social at Blu Martini (19+)</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-md">
+						<h3>Saturday February 9th</h3>
+						<table id="feb-3">
+							<tr class="centered header-cell">
+								<th>Time</th>
+								<th>Event</th>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>8:30</td>
+								<td class="left-border">Breakfast and Morning Welcome</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>9:30</td>
+								<td class="left-border">Speaker: Emily Columbo</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>10:30</td>
+								<td class="left-border">Workshop - Presented by Starfish Medical</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>11:30</td>
+								<td class="left-border">Coffee Break</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>12:00</td>
+								<td class="left-border">Workshop - Presented by Smith School of Business</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>13:00</td>
+								<td class="left-border">Lunch</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>14:00</td>
+								<td class="left-border">Speaker: Tom Kennedy</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>15:00</td>
+								<td class="left-border">Workshop - Presented by Scotiabank</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>17:30</td>
+								<td class="left-border">Coffee Break</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>18:00</td>
+								<td class="left-border">Speaker: Nick Whalen</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>19:00</td>
+								<td class="left-border">Dinner</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>20:00</td>
+								<td class="left-border">Saturday Keynote: Annette Bergeron</td>
+							</tr>
+							<tr class="clickable-row" tabindex="0" role="button">
+								<td>21:00</td>
+								<td class="left-border">Closing Remarks and Social</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-offset-2"></div>
+			</div>
+			<div id="logistics" class="hidden del-but-sec">
+				<br><br>
+				<i>CIRQUE 2019 will be held at the Holiday Inn Hotel in Kingston, Ontario February 8-9. Use the map below for directions.</i>
+				<br><br>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34412.87241804271!2d-76.51735071909788!3d44.253521162212564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfd7913319d45c3b1!2sHoliday+Inn+Kingston+Waterfront!5e0!3m2!1sen!2sca!4v1547498444799" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+<!-- 			<div id="resumes" class="hidden del-but-sec">
+				<br>
+				<h4>Submitting a Delegate Resume</h4>
+				<p>If you are interested in providing a resume to the corporate sponsors and partners of CIRQUE 2018, please download and fill out the resume found below and submit it to <a href="mailto:13ahb1@queensu.ca">13ahb1@queensu.ca</a>.</p>
+				<p>A package of delegate resumes will then be shared with all of the companies attending CIRQUE</p>
+				<br><br><br>
+				<form method="get" action="files/CIRQUEResumeTemplate.docx" target="_blank">
+   					<button class="btn btn-lg btn-primary" type="submit">Download Delegate Resume Template</button>
+				</form>
+			</div> -->
+			<br><br><br>
+		</div>
+	</div>
+</section>
+<div class="modal fade" id="scheduleModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h3 class="modal-title"><span id="schd-modal-title">Modal title</span></h3>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          	<span aria-hidden="true">&times;</span>
+	        </button>
+	        <br>
+			<div class="time"><h4 id="time-target"></h4></div>
+		</div>
+		<div class="modal-body">
+			<div id="modal-img-target" class="blocker"></div>
+			<br>
+				<div id="body-text-target" class="justify-text">TEXT</div>
+				<div id="map-target">TGT</div>
+				<br><br>
+				<button data-dismiss="modal" class="btn btn-light">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+	<footer>
+	    <br>
+		<h6><strong>CIRQUE Spotlight</strong></h6>
+		<hr class="no-margin">
+		<p><a href="../spotlight/biomedical/">Biomedical</a> • <a href="../spotlight/fintech/">FinTech</a> • <a href="../spotlight/consulting/">Consulting</a></p>
+		<p><a href="mailto:cirque@engsoc.queensu.ca">Contact Us</a> • <a href="../FAQ">FAQ</a></p>
+		<a href="mailto:cirque@engsoc.queensu.ca"><img src="../assets/email.png" alt="Image of a letter" class="footer-img email"></a>
+		<a href="https://www.facebook.com/QueensConferenceOnIndustryAndResourcesCirque/"><img src="../assets/facebook.png" alt="Facebook logo" class="footer-img fb"></a>
+		<a href="https://www.linkedin.com/company/11334446/" target="_blank"><img src="../assets/linkedin.png" alt="Linkedin logo" class="footer-img linkedin"></a>
+		<a href="https://www.instagram.com/whatiscirque/" target="_blank"><img src="../assets/instagram.png" alt="Instagram logo" class="footer-img insta"></a>
+		<a href="https://twitter.com/cirque_queens"><img src="../assets/twitter.png" alt="Twitter logo" class="footer-img twitter"></a>
+		<hr class="inner">
+		<p>© CIRQUE - Conference on Industry and Resources: Queen's University Engineering 2018 - 2019</p>
+		<p>Website design by <a href="http://michaelalbinson.github.io">Michael Albinson</a></p>
+	</footer>
+</body>
+</html>

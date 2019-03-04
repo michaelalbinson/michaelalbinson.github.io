@@ -1,0 +1,51 @@
+header h2 {
+    display: inline-block;
+}
+
+.header-img {
+    width: 2em;
+}
+
+.desktop-header {
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    z-index: 500;
+    height: 3rem;
+}
+
+.desktop-header a {
+    color: white;
+    text-decoration: none;
+}
+
+.desktop-header a:hover,
+.desktop-header a:focus,
+.desktop-header a:active {
+    color: var(--main-theme-purple);
+    text-decoration: none;
+}
+
+.desktop-header hr {
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-header ul {
+    margin-top: 0.65rem;
+    list-style: none;
+    margin-bottom: 0.4rem;
+    width: 100%;
+    padding: 0;
+    display: block;
+}
+
+.desktop-header li {
+    display: inline-block;
+    font-size: 1.25rem;
+    width: 19.5%;
+}
+
+.header-push {
+    height: 5rem;
+}
