@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap4.css">
+	<script src="../scripts/jquery-3.1.1.min.js"></script>
+	<style type="text/css">
+		.hidden {
+			display: none;
+		}
+		.half {
+			width: 75%;
+		}
+
+		div {
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		var current = 'first';
+
+		function switchTo(toThis) {
+			if (toThis === current)
+				return;
+
+			switchVisible(current, toThis);
+			current = toThis;
+		}
+
+		function switchVisible(from, to) {
+			$('#' + from).addClass('hidden');
+			$('#' + from + '-button').removeClass('active');
+			$('#' + to).removeClass('hidden');
+			$('#' + to + '-button').addClass('active');
+		}
+	</script>
+</head>
+<body>
+	<br /><br />
+	<div style="text-align: center;">
+		<div class="btn-group" role="group" aria-label="Basic example">
+		  	<button id="first-button" type="button" class="btn btn-secondary active" onclick="switchTo('first')">First Floor</button>
+		  	<button id="second-button" type="button" class="btn btn-secondary" onclick="switchTo('second')">Second Floor</button>
+		  	<button id="third-button" type="button" class="btn btn-secondary" onclick="switchTo('third')">Third Floor</button>
+		</div>
+	</div>
+	<div id="first">
+	   	<object data="base_assets/ILC-1.svg" type="image/svg+xml" class="half">
+	  		<img src="base_assets/ILC-1.svg" />
+		</object>
+	</div>
+	<div id="second" class="hidden">
+		<object data="base_assets/ILC-2.svg" type="image/svg+xml"  class="half">
+	  		<img src="base_assets/ILC-2.svg" />
+		</object>
+	</div>
+	<div id="third" class="hidden">
+		<object data="base_assets/ILC-3.svg" type="image/svg+xml"  class="half">
+	  		<img src="base_assets/ILC-3.svg" />
+		</object>
+	</div>
+</body>
+</html>

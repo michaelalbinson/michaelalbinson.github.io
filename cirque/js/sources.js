@@ -2,9 +2,9 @@ var PREFIX = "../";
 
 var payload = {
 	"2 - 16:00": { // Registration and Sponsorship Expo
-		html: "<img src='../assets/scotiabank.png' class='modal-img' alt='Scotiabank logo'><br>" +
-		"<img src='../assets/bcg-short.png' class='modal-img-small' alt='BCG logo'>" + 
-		"<img src='../assets/starfish.png' class='modal-img-small' alt='Starfish Medical logo'><br><br>" +
+		html: "<img src='../assets/scotiabank.png' class='modal-img' alt='Scotiabank logo'><br />" +
+		"<img src='../assets/bcg-short.png' class='modal-img-small' alt='BCG logo'>" +
+		"<img src='../assets/starfish.png' class='modal-img-small' alt='Starfish Medical logo'><br /><br />" +
 		"<p>A welcome event where delegates are invited to register themselves, and then move on to the Sponsorship Expo.</p>" +
 		"<p>The Sponsorship Expo is a chance for all delegates to meet and network with representatives from our sponsors and partners, as well as some of our speakers!</p>"
 	},
@@ -21,7 +21,7 @@ var payload = {
 		text: "At CIRQUE 2019, BCG representatives will lead a case-study workshop giving delegates the opportunity to work in teams and put their strategic thinking to the ultimate test! The case study theme is new and emerging technologies! If you’re interested in consulting, the business industry, space, or just want to get better at case studies in an interactive session, this is an incredible opportunity! BCG representatives will also be joining us at dinners and socials, so get ready to put your networking skills to use!",
 		companysrc: "assets/bcg.png",
 		img_alt: "BCG logo"
-	}, 
+	},
 	"2 - 20:15": { // Enactus Workshop
 		text: "Enactus is back for CIRQUE 2019 after running a mini pitch competition last year. Details will be announced soon!",
 		companysrc: "assets/enactus.png"
@@ -32,7 +32,7 @@ var payload = {
 		img_alt: "Dave Timan Headshot"
 	},
 	"2 - 22:00": { // Social at Blu Martini (19+)
-		html: "<p>A chance to relax, network and hang out with your fellow delegates and speakers!</p><br><p>See the map below for directions</p>",
+		html: "<p>A chance to relax, network and hang out with your fellow delegates and speakers!</p><br /><p>See the map below for directions</p>",
 		map: '<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1429.4441493838945!2d-76.480776691776!3d44.22995806670342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x4cd2aaf8eaa6189f%3A0xfd7913319d45c3b1!2sHoliday+Inn+Kingston+Waterfront%2C+2+Princess+St%2C+Kingston%2C+ON+K7L+1A2!3m2!1d44.230691199999995!2d-76.4781261!4m5!1s0x4cd2aaf94bbc94f1%3A0x377159e8703fadb3!2sBLU+Martini%2C+178+Ontario+St%2C+Kingston%2C+ON+K7L+2Y8!3m2!1d44.228869499999995!2d-76.4812839!5e0!3m2!1sen!2sca!4v1548827065696" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
 	},
 
@@ -194,7 +194,7 @@ function renderModal(el) {
 	clearAll();
 	loadAll(info);
 	$('#scheduleModal').modal();
-} 
+}
 
 function getCellName(el) {
 	var date = $(el).parent().parent()[0].id;
@@ -207,7 +207,7 @@ function appendElInfoToPayload(elName, payload) {
 	payload.defaultTitle = el.children().next().text();
 	payload.startTime = el.children().first().text();
 
-	end = el.next().children().first().text(); 
+	end = el.next().children().first().text();
 	payload.endTime = end ? end : "23:59";
 }
 
@@ -222,7 +222,7 @@ function loadAll(payload) {
 	var txt = $('#body-text-target');
 	var map = $('#map-target');
 	var img = $('#modal-img-target');
-	
+
 	if (payload.title)
 		title.html(payload.title);
 	else
@@ -237,11 +237,11 @@ function loadAll(payload) {
 		txt.html("<p>" + payload.text + "</p>");
 
 	if (payload.companysrc)
-		img.html("<img src='" + PREFIX + payload.companysrc + "' class='modal-img' alt='" + payload.img_alt +"'><br><br>");
+		img.html("<img src='" + PREFIX + payload.companysrc + "' class='modal-img' alt='" + payload.img_alt +"'><br /><br />");
 	else if (payload.doublesrc)
 		img.html("<img src='" + PREFIX + "assets/team/Jamison.jpg' class='modal-img-small super-rounded' alt='Benigna Ahsan'>" +
 			"<img src='" + PREFIX + "assets/team/Andrew.jpg' class='modal-img-small super-rounded' alt='Jamie-Lee Freeston'>");
 	else if (payload.speakersrc)
 		img.html("<img src='" + PREFIX + payload.speakersrc + "' class='modal-img rounded' alt='" + payload.img_alt +"'>");
 
-}	
+}

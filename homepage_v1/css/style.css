@@ -1,0 +1,124 @@
+div{
+    text-align: center;
+}
+
+body {
+	margin-bottom: 0
+}
+
+img.logo {
+	border-radius: 0.625em;
+	width:50px;
+	height:50px;
+}
+
+#header1{
+    display: block;
+    background: rgba(174, 174, 108, .75);
+    color: white;
+    padding: 0.625em;
+    border: 0;
+    left: 0.625em;
+    top: 0.625em;
+    border-radius: 0.625em;
+    position: fixed;
+    opacity: 1;
+}
+div.secondHeader{
+    display: block;
+    background: rgba(174, 174, 108, .75);
+    color: white;
+    padding: 0.625em;
+    border: 0;
+    right: 0.625em;
+    top: 0.625em;
+    border-radius: 0.625em;
+    position: fixed;
+}
+#topIndex{
+    text-align: center;
+    background: url("./uncompressed/background.jpg") no-repeat fixed center;
+    color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+p{
+    font-size: 1.5em;
+    text-align: left;
+}
+h1.FileTitle{
+    font-size: 3.125em;
+    font-family: sans-serif;
+    padding: .625em;
+}
+h1{
+    font-size: 2em;
+    font-family: sans-serif;
+}
+h3{
+    text-align: left;
+}
+input{
+    border: 0;
+    padding: 0;
+    font-size: 1.125em;
+}
+input[type="submit"]{
+    background: green;
+    color: black;
+}
+div.experiences{
+    padding: 1.875em;
+    background: rgba(250, 240, 230, .75);
+    color: black;
+
+}
+div.bottom{
+    padding: 1.875em;
+    background-color: rgba(250, 240, 230, .75);
+    color: black;
+}
+div.education{
+    padding: 1.875em;
+    background-color: rgba(250, 240, 230, .75);
+    color: black;
+}
+div.volunteering{
+    padding: 1.875em;
+    background-color: rgba(250, 240, 230, .75);
+    color: black;
+}
+div.footer{
+    background-color: rgba(135, 99, 64, .75);
+    text-align: center;
+    border-right: 0;
+    border-left: 0;
+    padding: 1.875em 1.875em 0;
+}
+ul{
+    text-align: left;
+    font-size: 1.25em;
+}
+a{
+    color: black;
+}
+a:hover {
+	color: white;
+}
+
+hr{
+    width: 75%;
+}
+.footer-text {
+	text-align: center;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.company-logo {
+	border-radius: 0.625em;
+	background-color: linen;
+}
+
+.dates{
+	text-align: left;
+}
