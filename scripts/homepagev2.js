@@ -1,7 +1,7 @@
 "use strict";
 $(document).ready(function() {
     setInterval(function() {
-        $('.flash-block').toggle()
+        $('.flash-block').toggle('visibility', 1);
     }, 500);
 
     $('.read-on').click(function() {

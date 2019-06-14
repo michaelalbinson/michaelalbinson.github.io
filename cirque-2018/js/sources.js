@@ -1,8 +1,8 @@
 var payload = {
 	"2 - 16:00": { // Registration and Sponsorship Expo
-		html: "<img src='assets/scotiabank.png' class='modal-img' alt='Scotiabank logo'><br>" +
-		"<img src='assets/bcg-short.png' class='modal-img-small' alt='BCG logo'>" + 
-		"<img src='assets/td.png' class='modal-img-small' alt='TD logo'><br><br>" +
+		html: "<img src='assets/scotiabank.png' class='modal-img' alt='Scotiabank logo'><br />" +
+		"<img src='assets/bcg-short.png' class='modal-img-small' alt='BCG logo'>" +
+		"<img src='assets/td.png' class='modal-img-small' alt='TD logo'><br /><br />" +
 		"<p>A welcome event where delegates are invited to register themselves, and then move on to the Sponsorship Expo.</p>" +
 		"<p>The Sponsorship Expo is a chance for all delegates to meet and network with representatives from our sponsors and partners, as well as some of our speakers!</p>"
 	},
@@ -17,13 +17,13 @@ var payload = {
 	"2 - 19:30": { // Enactus Workshop
 		text: "The Queen’s division of Enactus will be running a mini pitch competition on Day 1 of the conference. Teams of delegates will be tasked with pitching a creative and out-of-the-box product/idea given by the Enactus reps! They will have time to mull over how to pitch their product/idea with the goal of getting an investment. Feedback will be provided on pitch and presentation skills. Entrepreneurs contain a diverse set of social skills that engineers would benefit from having, so the goal of this workshop is to help engineering undergrads expand their social and presentation skills! These skills will be important for later events to come!! If you’re also looking for extra-curricular opportunities, come check this workshop out to gain perspective on what the students from Enactus Queen’s do!",
 		companysrc: "assets/enactus.png"
-	}, 
+	},
 	"2 - 21:00": { // Speaker: Hugh Cameron
 		html: "<p>A native of Montreal, Canada, Hugh Cameron is a systems engineer, entrepreneur and Visiting Professor since 2010 at Makerere University’s College of Computing and Information Sciences.  He leads the college’s Software Business Incubation programme, a collaboration between the university, its local business and government partners, and other universities.  He also advises local startups on business planning, finance and operations.  Dividing his time between Canada and Uganda, he nurtures academic and practical interests in the creation of economically sustainable ventures that boost development in low-resource settings. </p><p>Prior to his time in Uganda, Hugh was an occasional academic, a career telecoms engineer and R&amp;D director at Bell-Northern Research and Nortel Networks in Canada.  While delivering pioneering telephone network management and interactive customer service applications, he also served on several scientific conference committees, international standards bodies and research grant selection panels.  After leaving Nortel, he became co-founder and CTO of a Canadian company providing outsourced medical transcription and web applications for medical departments, faculties and hospitals.  At the time of its sale in 2009, Accentus had  grown to become Canada’s largest supplier of outsourced transcription services.</p><p>Hugh received his BSc in mathematics and engineering from Queen’s University (Sci’73) and his PhD in applied mathematics from the University of Cambridge.</p>",
 		speakersrc: "assets/speakers/hugh.jpg"
 	},
 	"2 - 22:00": { // Social at Blu Martini (19+)
-		html: "<p>A chance to relax, network and hang out with your fellow delegates and speakers!</p><br><p>See the map below for directions</p>",
+		html: "<p>A chance to relax, network and hang out with your fellow delegates and speakers!</p><br /><p>See the map below for directions</p>",
 		map: '<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2858.9596784312425!2d-76.48314713462567!3d44.22848852910578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x4cd2aaf95a879fff%3A0xdb3fba468055fd81!2sDelta+Hotels+by+Marriott+Kingston+Waterfront%2C+Johnson+Street%2C+Kingston%2C+ON!3m2!1d44.228314999999995!2d-76.48040859999999!4m5!1s0x4cd2aaf94bbc94f1%3A0x377159e8703fadb3!2sBLU+Martini%2C+178+Ontario+St%2C+Kingston%2C+ON+K7L+2Y8!3m2!1d44.228869499999995!2d-76.4812839!5e0!3m2!1sen!2sca!4v1517358753059" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
 	},
 	"3 - 8:30": { // Breakfast
@@ -83,7 +83,7 @@ var payload = {
 };
 
 function affixDataToModal() {
-	
+
 }
 
 function greyOutThePast() {
@@ -188,7 +188,7 @@ function renderModal(el) {
 	clearAll();
 	loadAll(info);
 	$('#scheduleModal').modal();
-} 
+}
 
 function getCellName(el) {
 	var date = $(el).parent().parent()[0].id;
@@ -201,7 +201,7 @@ function appendElInfoToPayload(elName, payload) {
 	payload.defaultTitle = el.children().next().text();
 	payload.startTime = el.children().first().text();
 
-	end = el.next().children().first().text(); 
+	end = el.next().children().first().text();
 	payload.endTime = end ? end : "23:59";
 }
 
@@ -217,7 +217,7 @@ function loadAll(payload) {
 	var map = $('#map-target');
 	var img = $('#modal-img-target');
 	var times = $('#time-target').html(payload.startTime + "-" + payload.endTime);
-	
+
 	if (payload.title)
 		title.html(payload.title);
 	else
@@ -232,11 +232,11 @@ function loadAll(payload) {
 		txt.html("<p>" + payload.text + "</p>")
 
 	if (payload.companysrc)
-		img.html("<img src='" + payload.companysrc + "' class='modal-img' alt='" + payload.title +"'><br><br>");
+		img.html("<img src='" + payload.companysrc + "' class='modal-img' alt='" + payload.title +"'><br /><br />");
 	else if (payload.doublesrc)
 		img.html("<img src='assets/team/bae.jpg' class='modal-img-small super-rounded' alt='Benigna Ahsan'>" +
 			"<img src='assets/team/j_l.jpg' class='modal-img-small super-rounded' alt='Jamie-Lee Freeston'>");
 	else if (payload.speakersrc)
 		img.html("<img src='" + payload.speakersrc + "' class='modal-img rounded' alt='" + payload.title +"'>");
 
-}	
+}

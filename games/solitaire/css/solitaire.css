@@ -1,0 +1,211 @@
+body{
+	background-size: cover;
+	background: url("../assets/cliffs.jpg") no-repeat fixed center;
+	padding: 0;
+	margin: 0;
+	font-family: fantasy;
+}
+
+h2{
+	margin: 0;
+	padding: 0;
+}
+
+h3{
+	margin: 0;
+	padding: 0;
+}
+
+div.header{
+	position: relative;
+	width: 100%;
+	color: white;
+	text-align: center;
+	height: 60px;
+	background-image: url("../assets/starryNight.png");
+	opacity: .9;
+}
+
+h2.header-header{
+	padding-top: .5em;
+}
+
+/**
+ ** Game Body
+**/
+div.game-body{
+	height: 900px;
+}
+
+div.card-holder{
+	position: relative;
+	height: 200px;
+	width: 615px;
+	margin-top: -100px;
+	margin-right: -250px;
+	top: 11em;
+	left: 21em;
+	background-color: rgba(256, 256, 256, .8);
+}
+
+div.row-container{
+	position: relative;
+	display: inline-block;
+	height: 300px;
+	width: 920px;
+	background-color: rgba(256, 256, 256, .8);
+	margin-top: 0;
+	margin-left: 1em;
+	top: -12.55em;
+}
+
+div.row{
+	position: relative;
+	display: inline-block;
+	width: 120px;
+	height: 170px;
+	margin: 12px;
+	border: solid white;
+}
+
+p.rowNum{
+	position: relative;
+	border: solid black;
+	border-radius: 2em;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0;
+	width: 4.5em;
+	height: 1.2em;
+	margin: -.6em -2.25em 0 0;
+	top: 50%;
+	right: -19%;
+}
+
+div.deck{
+	position: relative;
+	display: inline-block;
+	height: 300px;
+	width: 305px;
+	background-color: rgba(256, 256, 256, .8);
+	margin: 13em 1em 0;
+	padding: 0;
+}
+
+div.draw-button{
+	position: relative;
+	bottom: -20px;
+	left: 25px;
+	margin: 0;
+	padding: 0;
+	width: 100px;
+	height: 40px;
+}
+
+button.draw{
+	width: 100px;
+	height: 40px;
+	border: none;
+	background-color: rgba(109, 145, 177, .8);
+}
+
+div.buttonDash{
+	position: relative;
+	background-color: rgba(109, 145, 177, .8);
+	text-align: center;
+	width: 100px;
+	height: 40px;
+	margin-left: -50px;
+	left: 50%;
+	margin-top: -8em;
+}
+
+button.reset{
+	position: relative;
+	border: none;
+	width: 50px;
+	margin-top: -9px;
+	top: 25%;
+}
+
+div.footer{
+	position: relative;
+	background-color: black;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+	height: 75px;
+}
+
+img.preference-img{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 10px 0 0;
+	-webkit-filter: invert(1);
+    filter: invert(1);
+    cursor: pointer;
+}
+
+div.warning{
+	position: fixed;
+	display: none;
+	width: 350px;
+	height: 150px;
+	text-align: center;
+	margin-right: -175px;
+	margin-top: -75px;
+	right: 50%;
+	top: 50%;
+	z-index: 30;
+	background-color: rgba(255, 0, 0, .8);
+}
+
+div.placeholder{
+	height: 900px;
+	display: none;
+}
+
+.important{
+	cursor: pointer;
+}
+
+div.card-upper-number{
+	position: absolute;
+	font-weight: bold;
+	left: 10px;
+}
+
+div.card-lower-number{
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	font-weight: bold;
+}
+
+div.card-suit-image{
+	position: absolute;
+}
+
+div.heart{
+	background: url(../assets/heart.png) no-repeat center;
+}
+
+div.spade{
+	background: url(../assets/spade.png) no-repeat center;
+}
+
+div.diamond{
+	background: url(../assets/diamond.png) no-repeat center;
+}
+
+div.club{
+	background: url(../assets/club.png) no-repeat center;
+}
+
+div.heart,
+div.spade,
+div.diamond,
+div.club {
+	background-size: contain;
+}

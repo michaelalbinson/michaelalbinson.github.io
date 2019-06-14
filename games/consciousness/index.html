@@ -13,21 +13,21 @@
 </head>
 
 <body>
-	<div class="gameBody"> 
+	<div class="gameBody">
 		<h1>Consciousness</h1>
-		<div class="text-container" onload="beginToggling()"><p class="gameText">/Master/: Click "see what happens" to begin</p></div><div class="text-container"><br></div><div class="blinkingBox"></div>
-		<br>
+		<div class="text-container" onload="beginToggling()"><p class="gameText">/Master/: Click "see what happens" to begin</p></div><div class="text-container"><br /></div><div class="blinkingBox"></div>
+		<br />
 		<input class = "acceptButton" type="button" value="Click to see what happens" onclick="handleButtonPush()"></input>
-		<input class = "continueField" type="text" placeholder="enter 'y' or 'n'" onkeydown="if (event.keyCode == 13) {handleKeydown(this)}"></input>
-		<br>
+		<input class = "continueField" type="text" placeholder="enter 'y' or 'n'" onkeydown="if (event.keyCode === 13) {handleKeydown(this)}"></input>
+		<br />
 		<div class="stage2">
 			<input class = "genButton" type="button" value="surprise?" onclick="discussSurprise()"></input>
-			<br>
+			<br />
 			<input class = "genButton" type="button" value="whatever, man, I'm not about this" onclick="discussWhatever()"></input>
-			<br>
+			<br />
 			<input class = "genButton" type="button" value="CAKE??" onclick="discussCake()">  </input>
 		</div>
-		<br>
+		<br />
 		<img src="assets/cake.png" class="cakeImage" title="cake">
 		<div class="optionsMenu">
 			<h2>var preferences = </h2>
@@ -38,18 +38,18 @@
 			<img src="assets/rightSquare.png" class="rightBracket">
 			<img src="assets/leftSquare.png" class="leftBracket">
 			<h2 class="optionHeader">textSpeedOptions =</h2>
-			<hr>
+			<hr />
 			<img src="assets/curly-right.png" class="rightBrace">
 			<form class="speedForm">
-  				<label><input type="radio" name="speed" value="slow" onchange="changeTextSpeed('slow');" class="radio"> slow</label><br><br>
-		    	<label><input type="radio" name="speed" value="medium" checked onchange="changeTextSpeed('medium');" class="radio"> medium</label><br><br>
-  				<label><input type="radio" name="speed" value="fast" onchange="changeTextSpeed('fast');" class="radio"> fast</label><br><br>
+  				<label><input type="radio" name="speed" value="slow" onchange="changeTextSpeed('slow');" class="radio"> slow</label><br /><br />
+		    	<label><input type="radio" name="speed" value="medium" checked onchange="changeTextSpeed('medium');" class="radio"> medium</label><br /><br />
+  				<label><input type="radio" name="speed" value="fast" onchange="changeTextSpeed('fast');" class="radio"> fast</label><br /><br />
   				<label><input type="radio" name="speed" value="dev" onchange="changeTextSpeed('dev');" class="radio"> ludicrous (dev)</label>
 			</form>
 			<form class="compassForm">
-				<input type="button" value="reset to beginning" class="skipButton", onclick="resetToBeginning();"> <br><br>
-  				<input type="button" value="reset to story selection" class="skipButton", onclick="skipToStorySelection();"> <br><br>
-				<input type="button" value="go back a button press" class="skipButton", onclick="backOneStage();">
+				<input type="button" value="reset to beginning" class="skipButton" onclick="resetToBeginning();"> <br /><br />
+  				<input type="button" value="reset to story selection" class="skipButton" onclick="skipToStorySelection();"> <br /><br />
+				<input type="button" value="go back a button press" class="skipButton" onclick="backOneStage();">
 				<!--REMINDER: flesh out methods for reset and go back a step methods -->
 			</form>
 			<form class="toxicForm">
