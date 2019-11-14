@@ -1,12 +1,2 @@
-
-.idea/modules.xml
-
-.idea/vcs.xml
-
-.idea/workspace.xml
-
-.idea/michaelalbinson.github.io.iml
-
-.idea/dictionaries/michaelalbinson.xml
-
+.idea/*
 .DS_Store
