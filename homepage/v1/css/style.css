@@ -37,7 +37,7 @@ div.secondHeader{
 }
 #topIndex{
     text-align: center;
-    background: url("./uncompressed/background.jpg") no-repeat fixed center;
+    background: url("uncompressed/background.jpg") no-repeat fixed center;
     color: white;
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
