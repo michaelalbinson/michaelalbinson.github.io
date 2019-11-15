@@ -1,0 +1,32 @@
+.dropdown {
+    margin-top: 15px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.dropdown a {
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    text-decoration: underline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    padding: 12px 16px;
+    z-index: 1;
+    overflow: visible;
+    margin-left: -15px;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus .dropdown-content,
+.dropdown:active .dropdown-content{
+    display: block;
+}

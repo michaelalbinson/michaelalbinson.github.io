@@ -12,14 +12,14 @@ class SectionHeader extends _BaseDOM {
 		this.styles.push('./css/section-header.css');
 		this.createStyles();
 
-		var parent = document.createElement('div');
-		parent.setAttribute('class', this._classList || this.getAttribute('class'));
+		var parent = createElement(elements.DIV);
+		parent.setAttribute(CLASS, this._classList || this.getAttribute(CLASS));
 		parent.setAttribute('id', this._id || this.getAttribute('id'));
 
-		var blur = document.createElement('div');
-		blur.setAttribute('class', 'divider-blur d-flex align-items-center');
+		var blur = createElement(elements.DIV);
+		blur.setAttribute(CLASS, 'divider-blur d-flex align-items-center');
 
-		var title = document.createElement('h2');
+		var title = createElement('h2');
 		title.innerText = this._title || this.getAttribute('section-title');
 
 		blur.appendChild(title);

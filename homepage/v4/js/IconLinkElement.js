@@ -1,16 +1,25 @@
 class IconLinkElement extends _BaseDOM {
+	constructor(source, link, alt, classList) {
+		super();
+
+		this.source = source;
+		this.link = link;
+		this.alt = alt;
+		this.classList = classList;
+	}
+
 	connectedCallback() {
 		this.styles.push('./css/icon-link.css');
 		this.createStyles();
 
-		var div = document.createElement('span');
-		this.a = document.createElement('a');
-		this.a.href = this.getAttribute('href');
+		var div = createElement(elements.SPAN);
+		this.a = createElement(elements.A);
+		this.a.href = this.link || this.getAttribute(HREF);
 
-		this.img = document.createElement('img');
-		this.img.setAttribute('src', this.getAttribute('src'));
-		this.img.setAttribute('class', this.getAttribute('class') || 'header-icon');
-		this.img.setAttribute('alt', this.getAttribute('alt'));
+		this.img = createElement(elements.IMG);
+		this.img.setAttribute(SRC, this.source || this.getAttribute(SRC));
+		this.img.setAttribute(CLASS, this.classList || this.getAttribute(CLASS) || 'header-icon');
+		this.img.setAttribute(ALT, this.alt || this.getAttribute(ALT));
 		this.a.appendChild(this.img);
 
 		div.appendChild(this.a);
@@ -19,22 +28,6 @@ class IconLinkElement extends _BaseDOM {
 
 	attributeChangedCallback(attrName, oldVal, newVal) {
 		this[attrName] = newVal;
-	}
-
-	set class(value) {
-		this.img.setAttribute('class', value || "");
-	}
-
-	set alt(value) {
-		this.img.setAttribute('alt', value || "");
-	}
-
-	set src(value) {
-		this.img.setAttribute('src', value || "");
-	}
-
-	set href(value) {
-		this.a.setAttribute('href', value || "");
 	}
 }
 
