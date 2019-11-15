@@ -1,0 +1,64 @@
+/**
+ Adapted ticker, will not work on IE, thanks to @Lewis Carey
+ https://codepen.io/lewismcarey/pen/GJZVoG
+ */
+
+@-webkit-keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+.ticker-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-left: 100%;
+}
+
+.ticker {
+    display: inline-block;
+    height: 3rem;
+    line-height: 3rem;
+    white-space: nowrap;
+    padding-right: 100%;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    -moz-animation-name: ticker;
+    -o-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 60s;
+    -moz-animation-duration: 60s;
+    -o-animation-duration: 60s;
+    animation-duration: 60s;
+}
+.ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    color: white;
+}
