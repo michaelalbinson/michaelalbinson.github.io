@@ -1,0 +1,19 @@
+hr {
+    border-color: grey;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 45%;
+}
+
+.quarter-width {
+    width: 20%;
+}
+
+hr.black {
+    border-top-color: rgb(0, 0, 0);
+}

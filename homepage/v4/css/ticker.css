@@ -32,7 +32,6 @@
     overflow: hidden;
     height: 3rem;
     background-color: rgba(0, 0, 0, 0.9);
-    padding-left: 100%;
 }
 
 .ticker {
@@ -55,6 +54,7 @@
     -moz-animation-duration: 60s;
     -o-animation-duration: 60s;
     animation-duration: 60s;
+    width: 100%;
 }
 .ticker__item {
     display: inline-block;

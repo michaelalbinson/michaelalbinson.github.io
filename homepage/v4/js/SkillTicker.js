@@ -3,15 +3,16 @@ class SkillTicker extends _BaseDOM {
 		this.styles.push('./css/ticker.css');
 		this.createStyles();
 
-		var tickerWrap = document.createElement('div');
-		tickerWrap.setAttribute('class', 'ticker-wrap');
-		var ticker = document.createElement('div');
-		ticker.setAttribute('class', 'ticker');
-		tickerItems.forEach((t) => {
-			var tickerItem = document.createElement('div');
+		var tickerWrap = createElement(elements.DIV);
+		tickerWrap.setAttribute(CLASS, 'ticker-wrap');
+		var ticker = createElement(elements.DIV);
+		ticker.setAttribute(CLASS, 'ticker');
+
+		_BaseDOM.addChildrenToElement(ticker, tickerItems, (t) => {
+			var tickerItem = createElement(elements.DIV);
 			tickerItem.innerText = t;
-			tickerItem.setAttribute('class', 'ticker__item');
-			ticker.appendChild(tickerItem);
+			tickerItem.setAttribute(CLASS, 'ticker__item');
+			return tickerItem;
 		});
 
 		tickerWrap.appendChild(ticker);

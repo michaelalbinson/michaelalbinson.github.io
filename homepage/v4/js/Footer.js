@@ -3,7 +3,7 @@ class Footer extends _BaseDOM {
 		this.styles.push('./css/footer.css');
 		this.createStyles();
 
-		var footer = document.createElement('footer');
+		var footer = createElement('footer');
 		footer.appendChild(Footer.getQuestionLink());
 		Footer.appendIcons(footer);
 		footer.appendChild(Footer.getCopyright());
@@ -12,30 +12,26 @@ class Footer extends _BaseDOM {
 	}
 
 	static getQuestionLink() {
-		var questionLink = document.createElement('div');
-		var link = document.createElement('a');
-		link.setAttribute('href', 'mailto:michael@albinson.ca');
+		var questionLink = createElement(elements.DIV);
+		var link = createElement(elements.A);
+		link.setAttribute(HREF, EMAIL);
 		link.innerText = "Questions? Contact Me!";
 		questionLink.appendChild(link);
 		return questionLink;
 	}
 
 	static getCopyright() {
-		var text = document.createElement('div');
+		var text = createElement(elements.DIV);
 		text.innerText = "© Michael Albinson 2019";
 		return text;
 	}
 
 	static appendIcons(footer) {
+		const footerIconClasses = 'header-img inverted';
 		_BaseDOM.addChildrenToElement(footer, icons, createIcon);
 
 		function createIcon(iconDetails) {
-			var icon = document.createElement('icon-link');
-			icon.setAttribute('href', iconDetails.href);
-			icon.setAttribute('src', iconDetails.src);
-			icon.setAttribute('alt', iconDetails.alt);
-			icon.setAttribute('class', 'header-img inverted');
-			return icon;
+			return new IconLinkElement(iconDetails.src, iconDetails.href, iconDetails.alt, footerIconClasses);
 		}
 	}
 }

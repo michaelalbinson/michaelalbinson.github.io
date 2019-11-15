@@ -12,10 +12,10 @@ class _BaseDOM extends HTMLElement {
 		_BaseDOM.addChildrenToElement(this.root, this.styles, getStyleElement);
 
 		function getStyleElement(href) {
-			var style = document.createElement('link');
+			var style = createElement('link');
 			style.setAttribute('rel', 'stylesheet');
-			style.setAttribute('href', href);
-			style.setAttribute('type', 'text/css');
+			style.setAttribute(HREF, href);
+			style.setAttribute(TYPE, 'text/css');
 			return style;
 		}
 	}
@@ -24,9 +24,9 @@ class _BaseDOM extends HTMLElement {
 		_BaseDOM.addChildrenToElement(this.root, this.scripts, getScriptElement);
 
 		function getScriptElement(src) {
-			var script = document.createElement('script');
-			script.setAttribute('src', src);
-			script.setAttribute('type', 'text/javascript');
+			var script = createElement('script');
+			script.setAttribute(SRC, src);
+			script.setAttribute(TYPE, 'text/javascript');
 			return script;
 		}
 	}
@@ -42,7 +42,7 @@ class _BaseDOM extends HTMLElement {
 			if (!iterator.hasOwnProperty(index))
 				continue;
 
-			var child = createElementFn(iterator[index]);
+			var child = createElementFn(iterator[index], index);
 
 			rootElement.appendChild(child);
 		}
