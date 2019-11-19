@@ -1,3 +1,5 @@
+'use strict';
+
 class CustomHR extends _BaseDOM {
 	constructor(className) {
 		super();

@@ -1,3 +1,5 @@
+'use strict';
+
 class SectionHeader extends _BaseDOM {
 	constructor(title, id, classList) {
 		super();
