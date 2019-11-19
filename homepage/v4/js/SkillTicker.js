@@ -1,3 +1,5 @@
+'use strict';
+
 class SkillTicker extends _BaseDOM {
 	connectedCallback() {
 		this.styles.push('./css/ticker.css');

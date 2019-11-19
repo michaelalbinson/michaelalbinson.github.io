@@ -1,3 +1,5 @@
+'use strict';
+
 class IconLinkElement extends _BaseDOM {
 	constructor(source, link, alt, classList) {
 		super();

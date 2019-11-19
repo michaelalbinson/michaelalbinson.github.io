@@ -1,3 +1,5 @@
+'use strict';
+
 class Footer extends _BaseDOM {
 	connectedCallback() {
 		this.styles.push('./css/footer.css');

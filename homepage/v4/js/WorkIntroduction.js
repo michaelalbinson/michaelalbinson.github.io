@@ -1,3 +1,5 @@
+'use strict';
+
 class WorkIntroduction extends _BaseDOM {
 	constructor() {
 		super();
