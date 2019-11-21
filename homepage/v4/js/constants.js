@@ -15,7 +15,8 @@ const elements = {
 	A: 'a',
 	IMG: 'img',
 	SECTION: 'section',
-	BUTTON: 'button'
+	BUTTON: 'button',
+	P: 'p'
 };
 
 const createElement = (elType) => document.createElement(elType);

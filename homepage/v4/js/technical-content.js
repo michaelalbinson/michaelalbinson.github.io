@@ -90,7 +90,7 @@ const essdevExperience = {
 	dates: 'May 2016 - May 2018',
 	image: queensEngSocLogo,
 	bullets: [
-		"Managed a small team in a major year-long design project designed to improve the engineering experience at Queen's",
+		"Managed 3 small teams in major year-long design project designed to improve the engineering experience at Queen's",
 		"Architected and contributed to a web app that utilized NodeJS, HTML, CSS, JavaScript and Bootstrap technologies",
 		"Wrote primarily server-side code, but also contributed to the front-end",
 		"Educated on core web technologies and their role in the system",
@@ -171,7 +171,7 @@ const queensEdu = {
 	dates: 'September 2014 - May 2019',
 	image: queensULogo,
 	bullets: [
-		"Dual Major in Biomechanical Engineering (BASc.) and Computing (Bcmp.)",
+		"Dual Degrees in Biomechanical Engineering (BASc.) and Computing (Bcmp.)",
 		"Participated in and managed the Queen's Fuel Cell Team (Mechanical and Electrical Divisions), the Club " +
 			"Varsity Baseball Team, Robogals Queen's Chapter, Qhacks and was a Freshman Orientation Leader, " +
 			"Queen's Engineering Society Software Development Team (ESSDev)."

@@ -1,4 +1,5 @@
-"use strict";
+'use strict';
+
 $(document).ready(function() {
     setInterval(function() {
         $('.flash-block').toggle('visibility', 1);
@@ -9,9 +10,9 @@ $(document).ready(function() {
         console.log(el);
     });
 
-    $('button.show-brief').click(showBrief)
+    $('button.show-brief').click(showBrief);
 
-    function showBrief(e) {
+    function showBrief() {
     	const ROTATE = "rotate(180deg)";
     	const BLOCK = "block";
     	const NONE = "none";
