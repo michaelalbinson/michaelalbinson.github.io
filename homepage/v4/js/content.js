@@ -85,4 +85,4 @@ const bio = "My name is Michael Albinson dual degree Biomechanical Engineering a
 	"am very self directed, and am a fast learner. I am willing to put my nose to the grindstone in order to excel and " +
 	"deliver. Challenges that other people shy away from are my bread and butter. I love to take on the new, " +
 	"the demanding, and the seemingly impossible. I've worked on ideas big and small, " +
-	"projects in software, electronics and mechanics. Got an idea? <a href='" + LINKEDIN + "'> Let's Talk</a>";
+	"projects in software, electronics and mechatronics. Got an idea? <a href='" + LINKEDIN + "'> Let's Talk</a>";

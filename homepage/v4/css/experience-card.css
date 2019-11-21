@@ -11,9 +11,14 @@
     max-height: 150px;
 }
 
+p.date-dom {
+    font-weight: lighter;
+    font-style: italic;
+}
+
 article.card {
     color: black;
-    margin: 0 10px;
+    margin: 0 10px 10px 10px;
 }
 
 .card:hover {
@@ -27,9 +32,65 @@ article.card {
 }
 
 .job-div {
-    padding: 10px 0 30px 0;
+    padding: 10px;
 }
 
 .job-div a {
     line-height: 150px;
+}
+
+@keyframes spin { 100% {
+        transform: rotate(360deg);
+    }
+}
+
+.paper-clip-icon {
+    display: none;
+}
+
+.show-brief {
+    width: 100%;
+}
+
+.show-brief img {
+    height: 2rem;
+}
+
+.mech {
+    background-color: #c87c6f;
+}
+
+.mech img {
+    width: 2.5em;
+    position: absolute;
+    right: 15px;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+}
+
+.design-div {
+    text-align: center;
+}
+
+.design-div .brief {
+    background-color: #c87c6f;
+}
+
+.teach {
+    background-color: linen;
+}
+
+.brief {
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+}
+
+.cs {
+    background-color: black;
+    color: lime;
+    font-family: Inconsolata, sans-serif;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 10px 0 10px;
 }
