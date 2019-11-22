@@ -55,6 +55,18 @@ const bsaLogo = {
 	src: '../../assets/scouts.png'
 };
 
+const wayke = {
+	alt: 'Wayke logo',
+	href: 'http://wayke.github.io',
+	src: '../../assets/wayke_logo.png'
+};
+
+const momagerLogo = {
+	alt: 'Momager logo',
+	href: 'http://momager.com',
+	src: '../../assets/momager.png'
+};
+
 /** Experiences **/
 const serviceNowExperience = {
 	title: 'ServiceNow Platform Software Engineer',
@@ -81,7 +93,10 @@ const ucsfRLExperience = {
 	dates: 'February 2017 - Present',
 	image: ucsfLogo,
 	bullets: [
-		"TODO"
+		"Architected and executed a full-stack application for an experimental medical diagnostic device.",
+		"The application, while still under non-disclosure, utilizes big-data analyses to improve the well-being of " +
+			"both amateur and professional athletes.",
+		"Developed a website, mobile app and backend architecture which used Node.js, MySQL, HTML, CSS, and Swift."
 	]
 };
 
@@ -90,7 +105,7 @@ const essdevExperience = {
 	dates: 'May 2016 - May 2018',
 	image: queensEngSocLogo,
 	bullets: [
-		"Managed 3 small teams in major year-long design project designed to improve the engineering experience at Queen's",
+		"Led small teams of members in the creation of websites and mobile applications that benefited Engineering Students.",
 		"Architected and contributed to a web app that utilized NodeJS, HTML, CSS, JavaScript and Bootstrap technologies",
 		"Wrote primarily server-side code, but also contributed to the front-end",
 		"Educated on core web technologies and their role in the system",
@@ -161,7 +176,11 @@ const essdevMentor = {
 	dates: 'September 2018 - May 2019',
 	image: queensEngSocLogo,
 	bullets: [
-		"TODO"
+		"Mentored 10 students over the course of a year in software development fundamentals and architectural design.",
+		"Worked in a variety of programming languages and frameworks including: Node.js, Python, React, Angular, " +
+			"MongoDB, PHP, MySQL, and Java.",
+		"Spearheaded the use of AGILE techniques to increase team efficiency and transparency.",
+		"Ran tutorials on Git, Python, JavaScript, Web Development and Application Development Fundamentals."
 	]
 };
 
@@ -207,7 +226,29 @@ const fixNCleanExp = {
 	dates: 'September 2014 - May 2018',
 	image: queensEngSocLogo,
 	bullets: [
-		"TODO"
+		"Participated in the Engineering Society's biannual Fix n' Clean event.",
+		"The program coordinates sending students across Kingston to perform cleaning and basic repairs in the " +
+			"homes of seniors or those disabled."
+	]
+};
+
+const momagerProject = {
+	title: 'Momager',
+	dates: 'June 2019 - Present',
+	image: momagerLogo,
+	bullets: [
+		'Architected, designed and implemented a website, API, desktop app and mobile app'
+	]
+};
+
+const waykeProject = {
+	title: 'Wayke',
+	dates: 'February 2016',
+	image: wayke,
+	bullets: [
+		"Helped to develop a desktop-based plugin for the Muse headband using python in order to perform complex data analysis on brainwaves.",
+		"Developed a companion hardware component using Arduino, Cylon.js and Firebase.",
+		"Helped to develop a full stack of operations in under 48 hours."
 	]
 };
 
@@ -224,7 +265,8 @@ const mechanicalExperiences = [
 ];
 
 const projectExperiences = [
-
+	// momagerProject,
+	// waykeProject
 ];
 
 const teachingExperiences = [

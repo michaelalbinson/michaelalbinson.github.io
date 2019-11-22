@@ -33,7 +33,8 @@ class Footer extends _BaseDOM {
 		_BaseDOM.addChildrenToElement(footer, icons, createIcon);
 
 		function createIcon(iconDetails) {
-			return new IconLinkElement(iconDetails.src, iconDetails.href, iconDetails.alt, footerIconClasses);
+			return new IconLinkElement(iconDetails.src, iconDetails.href, iconDetails.alt, footerIconClasses,
+				iconDetails.hoverClass);
 		}
 	}
 }
