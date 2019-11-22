@@ -7,17 +7,20 @@ const icons = [
 	{
 		href: 'https://www.linkedin.com/in/michaelalbinson',
 		src: '../../assets/linkedin.png',
-		alt: 'Linkedin logo'
-	},
-	{
-		href: LINKEDIN,
-		src: '../../assets/github_cat.png',
-		alt: 'Github mascot'
+		alt: 'Linkedin logo',
+		hoverClass: 'linkedin'
 	},
 	{
 		href: EMAIL,
 		src: '../../assets/email.png',
-		alt: 'A letter'
+		alt: 'A letter',
+		hoverClass: 'email'
+	},
+	{
+		href: LINKEDIN,
+		src: '../../assets/github_cat.png',
+		alt: 'Github mascot',
+		hoverClass: 'github'
 	},
 ];
 
