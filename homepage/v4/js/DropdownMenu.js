@@ -28,6 +28,9 @@ class DropdownMenu extends _BaseDOM {
 		let link = createElement(elements.A);
 		link.innerText = title;
 		link.setAttribute(HREF, titleLink);
+		link.addEventListener('click', () => {
+			_BaseDOM.invokeEvent('section' + titleLink)
+		});
 
 		bold.appendChild(link);
 		dropdownHeader.appendChild(bold);
@@ -38,6 +41,9 @@ class DropdownMenu extends _BaseDOM {
 		_BaseDOM.addChildrenToElement(dropdownList, listItems, (item, index) => {
 			let listItem = createElement(elements.A);
 			listItem.setAttribute(HREF, item.link);
+			listItem.addEventListener('click', () => {
+				_BaseDOM.invokeEvent('subsection' + item.link);
+			});
 
 			let boldItem = createElement('strong');
 			boldItem.innerText = item.text;

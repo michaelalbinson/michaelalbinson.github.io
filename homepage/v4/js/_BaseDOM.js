@@ -42,9 +42,24 @@ class _BaseDOM extends HTMLElement {
 			if (!iterator.hasOwnProperty(index))
 				continue;
 
-			var child = createElementFn(iterator[index], index);
-
+			let child = createElementFn(iterator[index], index);
 			rootElement.appendChild(child);
 		}
+	}
+
+    /**
+     * @param eventName {string}
+     * @param callback {function}
+     */
+	static addListener(eventName, callback) {
+		document.body.addEventListener(eventName, callback);
+	}
+
+    /**
+     * @param eventName {string}
+     */
+	static invokeEvent(eventName) {
+		let evt = new Event(eventName);
+		document.body.dispatchEvent(evt);
 	}
 }

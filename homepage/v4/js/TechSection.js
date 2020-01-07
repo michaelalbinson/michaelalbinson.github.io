@@ -1,8 +1,10 @@
 'use strict';
 
 class TechSection extends _BaseDOM {
-	constructor(title, cards, cardStyle) {
+	constructor(title, cards, cardStyle, id) {
 		super();
+
+		const _id = id || title.toLowerCase().replace(' ', '-');
 
 		if (cards.length < 1)
 			return;
@@ -13,7 +15,7 @@ class TechSection extends _BaseDOM {
 
 		const container = createElement(elements.SECTION);
 		container.setAttribute(CLASS, 'tech-container');
-		container.setAttribute(ID, title.toLowerCase().replace(' ', '-'));
+		container.setAttribute(ID, _id);
 
 		const h3 = createElement('h3');
 		h3.innerText = title;
@@ -21,6 +23,11 @@ class TechSection extends _BaseDOM {
 		container.appendChild(new CustomHR());
 
 		container.appendChild(TechSection.getCards(cards, cardStyle));
+
+		_BaseDOM.addListener('subsection#' + _id, () => {
+			container.scrollIntoView();
+			window.scrollBy(0, -75);
+		});
 
 		this.root.appendChild(container);
 	}
