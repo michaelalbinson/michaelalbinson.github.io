@@ -27,6 +27,12 @@ class SectionHeader extends _BaseDOM {
 		blur.appendChild(title);
 		parent.appendChild(blur);
 		this.root.appendChild(parent);
+
+		_BaseDOM.addListener('section#' + this._id, scrollIntoView);
+
+		function scrollIntoView() {
+			parent.scrollIntoView();
+		}
 	}
 
 	get id() {
