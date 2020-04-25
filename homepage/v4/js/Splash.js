@@ -20,9 +20,9 @@ class Splash extends _BaseDOM {
 		container.style.alignItems = 'center';
 
 		const img = createElement(elements.IMG);
-		img.src = '../../assets/IMG_5235.JPG';
+		img.src = '../../assets/michael-profile.jpeg';
 		img.setAttribute(CLASS, 'profile');
-		img.setAttribute(ALT, 'Michael Albinson')
+		img.setAttribute(ALT, 'Michael Albinson');
 		container.appendChild(img);
 		container.appendChild(new CustomHR(CustomHR.widths.quarter));
 
@@ -38,6 +38,10 @@ class Splash extends _BaseDOM {
 		p.innerHTML = bio;
 		textContainer.appendChild(p);
 		container.appendChild(textContainer);
+
+		_BaseDOM.addListener('subsection#about', () => {
+			document.body.scrollIntoView();
+		});
 
 		return container;
 	}
