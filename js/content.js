@@ -2,6 +2,7 @@
 
 const EMAIL = 'mailto:michael@albinson.ca';
 const LINKEDIN = 'https://www.linkedin.com/in/michaelalbinson';
+const GITHUB = "https://github.com/michaelalbinson";
 
 const icons = [
 	{
@@ -17,7 +18,7 @@ const icons = [
 		hoverClass: 'email'
 	},
 	{
-		href: LINKEDIN,
+		href: GITHUB,
 		src: 'assets/github_cat.png',
 		alt: 'Github mascot',
 		hoverClass: 'github'
