@@ -24,4 +24,6 @@ function switchVisible(from, to) {
 	$('#' + from + '-button').removeClass('active');
 	$('#' + to).removeClass('hidden');
 	$('#' + to + '-button').addClass('active');
+
+	$('.box').matchHeight();
 }
