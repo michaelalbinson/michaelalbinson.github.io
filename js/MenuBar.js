@@ -5,7 +5,7 @@ class MenuBar extends _BaseDOM {
 		super();
 
 		this.styles.push(BOOTSTRAP4);
-		this.styles.push('./css/menu-bar.css');
+		this.styles.push('css/menu-bar.css');
 		this.createStyles();
 
 		const container = createElement(elements.DIV);

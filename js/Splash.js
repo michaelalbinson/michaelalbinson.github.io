@@ -5,7 +5,7 @@ class Splash extends _BaseDOM {
 		super(props);
 
 		this.styles.push(BOOTSTRAP4);
-		this.styles.push('./css/splash.css');
+		this.styles.push('css/splash.css');
 		this.createStyles();
 
 		let container = createElement('section');
@@ -20,7 +20,7 @@ class Splash extends _BaseDOM {
 		container.style.alignItems = 'center';
 
 		const img = createElement(elements.IMG);
-		img.src = '../../assets/michael-profile.jpeg';
+		img.src = 'assets/michael-profile.jpeg';
 		img.setAttribute(CLASS, 'profile');
 		img.setAttribute(ALT, 'Michael Albinson');
 		container.appendChild(img);

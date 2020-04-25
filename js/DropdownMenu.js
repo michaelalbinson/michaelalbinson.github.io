@@ -4,7 +4,7 @@ class DropdownMenu extends _BaseDOM {
 	constructor(title, titleLink, listItems) {
 		super();
 
-		this.styles.push('./css/dropdown.css');
+		this.styles.push('css/dropdown.css');
 		this.createStyles();
 
 		let dropdown = createElement(elements.DIV);

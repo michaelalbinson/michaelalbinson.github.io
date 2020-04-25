@@ -151,6 +151,10 @@ article.card {
     padding: 0 10px 0 10px;
 }
 
+.cs h5 {
+    margin-top: 0.5rem;
+}
+
 .edu {
     background-color: linen;
 }

@@ -2,10 +2,10 @@
 
 class Footer extends _BaseDOM {
 	connectedCallback() {
-		this.styles.push('./css/footer.css');
+		this.styles.push('css/footer.css');
 		this.createStyles();
 
-		var footer = createElement('footer');
+		const footer = createElement('footer');
 		footer.appendChild(Footer.getQuestionLink());
 		Footer.appendIcons(footer);
 		footer.appendChild(Footer.getCopyright());
@@ -14,8 +14,8 @@ class Footer extends _BaseDOM {
 	}
 
 	static getQuestionLink() {
-		var questionLink = createElement(elements.DIV);
-		var link = createElement(elements.A);
+		const questionLink = createElement(elements.DIV);
+		const link = createElement(elements.A);
 		link.setAttribute(HREF, EMAIL);
 		link.innerText = "Questions? Contact Me!";
 		questionLink.appendChild(link);
@@ -23,7 +23,7 @@ class Footer extends _BaseDOM {
 	}
 
 	static getCopyright() {
-		var text = createElement(elements.DIV);
+		const text = createElement(elements.DIV);
 		text.innerText = "© Michael Albinson 2019-2020";
 		return text;
 	}

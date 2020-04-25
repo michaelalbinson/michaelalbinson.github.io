@@ -4,7 +4,7 @@ class WorkIntroduction extends _BaseDOM {
 	constructor() {
 		super();
 
-		this.styles.push('./css/work-intro.css');
+		this.styles.push('css/work-intro.css');
 		this.createStyles();
 	}
 

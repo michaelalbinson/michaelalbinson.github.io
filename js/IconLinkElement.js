@@ -4,7 +4,7 @@ class IconLinkElement extends _BaseDOM {
 	constructor(source, link, alt, classList, hoverClass) {
 		super();
 
-		this.styles.push('./css/icon-link.css');
+		this.styles.push('css/icon-link.css');
 		this.createStyles();
 
 		this.source = source;

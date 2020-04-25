@@ -10,7 +10,7 @@ class TechSection extends _BaseDOM {
 			return;
 
 		this.styles.push(BOOTSTRAP4);
-		this.styles.push('./css/tech-section.css');
+		this.styles.push('css/tech-section.css');
 		this.createStyles();
 
 		const container = createElement(elements.SECTION);

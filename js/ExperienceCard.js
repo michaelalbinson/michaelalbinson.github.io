@@ -11,8 +11,8 @@ class ExperienceCard extends _BaseDOM {
 		this.cardStyle = cardStyle;
 
 		this.styles.push(BOOTSTRAP4);
-		this.styles.push('./css/paperclip.css');
-		this.styles.push('./css/experience-card.css');
+		this.styles.push('css/paperclip.css');
+		this.styles.push('css/experience-card.css');
 		this.createStyles();
 
 		const container = createElement('article');
@@ -60,6 +60,9 @@ class ExperienceCard extends _BaseDOM {
 		container.setAttribute(CLASS, 'brief ' + this.cardStyle);
 		const briefHeader = createElement('h5');
 		briefHeader.innerText = 'Summary';
+		if (TechSection.cardStyles.CS === this.cardStyle)
+			briefHeader.innerText = '[Summary]';
+
 		container.appendChild(briefHeader);
 
 		const list = createElement('ul');
@@ -97,7 +100,7 @@ class ExperienceCard extends _BaseDOM {
 		button.addEventListener('click', this.showBrief.bind(this));
 		const caratBtn = createElement(elements.IMG);
 		button.setAttribute('aria-expanded', false);
-		caratBtn.setAttribute(SRC, '../../assets/down_arrow.png');
+		caratBtn.setAttribute(SRC, 'assets/down_arrow.png');
 		caratBtn.setAttribute(ALT, 'Down button');
 		button.appendChild(caratBtn);
 
