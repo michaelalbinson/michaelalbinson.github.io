@@ -1,6 +1,6 @@
 'use strict';
 
-const BOOTSTRAP4 = '../../css/bootstrap4.css';
+const BOOTSTRAP4 = 'css/bootstrap4.css';
 
 const CLASS = "class";
 const HREF = 'href';
@@ -19,4 +19,4 @@ const elements = {
 	P: 'p'
 };
 
-const createElement = (elType) => document.createElement(elType);
+const createElement = elType => document.createElement(elType);

@@ -5,7 +5,7 @@ class CustomHR extends _BaseDOM {
 		super();
 
 		this.styles.push(BOOTSTRAP4);
-		this.styles.push('./css/hr.css');
+		this.styles.push('css/hr.css');
 		this.createStyles();
 
 		var hr = createElement('hr');

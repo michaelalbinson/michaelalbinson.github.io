@@ -12,9 +12,9 @@ class BootstrapButton extends _BaseDOM {
 	}
 
 	connectedCallback() {
-		var button = createElement('button');
+		const button = createElement('button');
 		button.innerText = this._title || this.getAttribute('title');
-		button.setAttribute(CLASS, 'btn ' + (this._classList || this.getAttribute('classList') || 'btn-default'))
+		button.setAttribute(CLASS, 'btn ' + (this._classList || this.getAttribute('classList') || 'btn-default'));
 		button.addEventListener('click', this._onClick);
 
 		this.root.appendChild(button);

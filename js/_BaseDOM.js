@@ -1,5 +1,6 @@
 'use strict';
 
+
 class _BaseDOM extends HTMLElement {
 	constructor() {
 		super();

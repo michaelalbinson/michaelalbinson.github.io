@@ -6,19 +6,19 @@ const LINKEDIN = 'https://www.linkedin.com/in/michaelalbinson';
 const icons = [
 	{
 		href: 'https://www.linkedin.com/in/michaelalbinson',
-		src: '../../assets/linkedin.png',
+		src: 'assets/linkedin.png',
 		alt: 'Linkedin logo',
 		hoverClass: 'linkedin'
 	},
 	{
 		href: EMAIL,
-		src: '../../assets/email.png',
+		src: 'assets/email.png',
 		alt: 'A letter',
 		hoverClass: 'email'
 	},
 	{
 		href: LINKEDIN,
-		src: '../../assets/github_cat.png',
+		src: 'assets/github_cat.png',
 		alt: 'Github mascot',
 		hoverClass: 'github'
 	},

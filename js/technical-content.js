@@ -10,61 +10,61 @@ const ucsfLogo = {
 const serviceNowLogo = {
 	alt: 'ServiceNow logo',
 	href: 'https://www.servicenow.com/',
-	src: './assets/servicenow.svg'
+	src: 'assets/servicenow.svg'
 };
 
 const queensEngSocLogo = {
 	alt: 'Queen\'s University Engineering Society logo',
 	href: 'https://engsoc.queensu.ca/',
-	src: '../../assets/engsoc.png'
+	src: 'assets/engsoc.png'
 };
 
 const pandoraLogo = {
 	alt: 'Pandora Internet Radio logo',
 	href: 'http://pandora.com/about',
-	src: '../../assets/pandora_radio.png'
+	src: 'assets/pandora_radio.png'
 };
 
 const qfctLogo = {
 	alt: 'Queen\'s Fuel Cell Team logo',
 	href: 'http://qfct.ca/',
-	src: '../../assets/qfct.png'
+	src: 'assets/qfct.png'
 };
 
 const apsciLogo = {
 	alt: 'Queen\'s University Engineering and Applied Science logo',
 	href: 'https://engineering.queensu.ca/',
-	src: '../../assets/queens_eng_logo.jpg'
+	src: 'assets/queens_eng_logo.jpg'
 };
 
 const queensULogo = {
 	alt: 'Queen\'s University logo',
 	href: 'http://queensu.ca/',
-	src: '../../assets/Queens_U.png'
+	src: 'assets/Queens_U.png'
 };
 
 const bransonLogo = {
 	alt: 'Branson High School logo',
 	href: 'https://www.branson.org/',
-	src: '../../assets/branson.png'
+	src: 'assets/branson.png'
 };
 
 const bsaLogo = {
 	alt: 'Boy Scouts of America logo',
 	href: 'http://www.scouting.org/',
-	src: '../../assets/scouts.png'
+	src: 'assets/scouts.png'
 };
 
 const wayke = {
 	alt: 'Wayke logo',
 	href: 'http://wayke.github.io',
-	src: '../../assets/wayke_logo.png'
+	src: 'assets/wayke_logo.png'
 };
 
 const momagerLogo = {
 	alt: 'Momager logo',
 	href: 'http://momager.com',
-	src: '../../assets/momager.png'
+	src: 'assets/momager.png'
 };
 
 /** Experiences **/

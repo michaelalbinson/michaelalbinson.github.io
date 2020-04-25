@@ -2,7 +2,7 @@
 
 class SkillTicker extends _BaseDOM {
 	connectedCallback() {
-		this.styles.push('./css/ticker.css');
+		this.styles.push('css/ticker.css');
 		this.createStyles();
 
 		var tickerWrap = createElement(elements.DIV);

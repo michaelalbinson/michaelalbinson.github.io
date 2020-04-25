@@ -1,6 +1,6 @@
 .divider {
     height: 15em;
-    background: url("../../../assets/IMG_5235.JPG") no-repeat center;
+    background: url("../assets/IMG_5235.JPG") no-repeat center;
     background-size: 100%;
     color: white;
 }
@@ -13,7 +13,7 @@
 
 .divider-personal {
     height: 15em;
-    background: url('../../../assets/IMG_5711.JPG') no-repeat center;
+    background: url('../assets/IMG_5711.JPG') no-repeat center;
     background-size: 100%;
     color: white;
 }
