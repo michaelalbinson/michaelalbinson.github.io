@@ -77,6 +77,8 @@ article.card {
     padding-left: 2.5rem;
     border-bottom: solid green 2px;
     margin-bottom: 0;
+    font-family: 'patrick-hand', sans-serif;
+    font-size: 1.5rem;
 }
 
 .mech h5::before {
@@ -106,6 +108,7 @@ article.card {
 .teach {
     background-color: white;
     color: black;
+    box-shadow: 0 2px 2px 0 gray;
 }
 
 .teach ul {
@@ -128,6 +131,8 @@ article.card {
     padding-left: 2.5rem;
     border-bottom: solid blue 2px;
     margin-bottom: 0;
+    font-family: 'patrick-hand', sans-serif;
+    font-size: 1.5rem;
 }
 
 .teach h5::before {

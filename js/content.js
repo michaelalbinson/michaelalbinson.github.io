@@ -57,7 +57,7 @@ const interests = [
 	{ title: 'Environmental Issues', snack: '' },
 	{ title: 'Photography', snack: '' },
 	{ title: 'Painting', snack: '' },
-	{ title: 'Game Design', snack: '(you can check out some of my work here)', href: '../../moreAboutMe/' },
+	{ title: 'Game Design', snack: '(you can check out some of my work here)', href: '../../more-about-me/' },
 	{ title: 'Running', snack: '(I am also a triathelete)' },
 	{ title: 'Baseball', snack: 'I used to play on the Queen\'s Varsity Team' },
 ];
