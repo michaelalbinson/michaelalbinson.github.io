@@ -88,7 +88,8 @@ TechSection.cardStyles = {
 	EDU: 'edu',
 	CS: 'cs',
 	MECH: 'mech',
-	TEACH: 'teach'
+	TEACH: 'teach',
+	VOLUNTEER: 'vol'
 };
 
 customElements.define('tech-section', TechSection);

@@ -44,10 +44,6 @@ article.card {
     }
 }
 
-.paper-clip-icon {
-    display: none;
-}
-
 .show-brief {
     width: 100%;
 }
@@ -57,7 +53,37 @@ article.card {
 }
 
 .mech {
-    background-color: #c87c6f;
+    background-color: #eedfc0;
+    color: black;
+}
+
+.mech ul {
+    line-height: 1.5rem;
+
+    background-image: -moz-linear-gradient(top, transparent, transparent calc(1.5rem - 1px), green 0px);
+    background-image: -webkit-linear-gradient(top, transparent, transparent calc(1.5rem - 1px), green 0px);
+
+    -webkit-background-size: 100% 1.5rem;
+    background-size: 100% 1.5rem;
+}
+
+.mech li {
+    padding-bottom: 1.5rem;
+    border-left: solid 1px red;
+    padding-left: 0.5rem;
+}
+
+.mech h5 {
+    padding-left: 2.5rem;
+    border-bottom: solid green 2px;
+    margin-bottom: 0;
+}
+
+.mech h5::before {
+    content: '';
+    border-left: solid 1px red;
+    font-size: 1.75rem;
+    padding-right: 0.5rem;
 }
 
 .mech img {
@@ -78,7 +104,37 @@ article.card {
 }
 
 .teach {
-    background-color: linen;
+    background-color: white;
+    color: black;
+}
+
+.teach ul {
+    line-height: 1.5rem;
+
+    background-image: -moz-linear-gradient(top, transparent, transparent calc(1.5rem - 1px), lightblue 0px);
+    background-image: -webkit-linear-gradient(top, transparent, transparent calc(1.5rem - 1px), lightblue 0px);
+
+    -webkit-background-size: 100% 1.5rem;
+    background-size: 100% 1.5rem;
+}
+
+.teach li {
+    padding-bottom: 1.5rem;
+    border-left: solid 1px red;
+    padding-left: 0.5rem;
+}
+
+.teach h5 {
+    padding-left: 2.5rem;
+    border-bottom: solid blue 2px;
+    margin-bottom: 0;
+}
+
+.teach h5::before {
+    content: '';
+    border-left: solid 1px red;
+    font-size: 1.75rem;
+    padding-right: 0.5rem;
 }
 
 .brief {
@@ -93,4 +149,15 @@ article.card {
     border: 2px solid gray;
     border-radius: 5px;
     padding: 0 10px 0 10px;
+}
+
+.edu {
+    background-color: linen;
+}
+
+.edu h5 {
+    font-family: 'diplomaregular', serif;
+    border-bottom: solid #9d1b3a 2px;
+    font-size: 1.5rem;
+    text-align: center;
 }

@@ -27,17 +27,17 @@ const icons = [
 const workExperience = [
 	{ text: 'Software Engineering', link: '#swe' },
 	{ text: 'Mechatronics Engineering', link: '#mech' },
-	{ text: 'Projects', link: '#projects' },
+	// { text: 'Projects', link: '#projects' },
 	{ text: 'Teaching', link: '#teaching' },
-	{ text: 'Education', link: '#education' },
-	{ text: 'Volunteering', link: '#volunteering' }
+	{ text: 'Education', link: '#education' }
 ];
 
 const personalExperience = [
 	{ text: 'About Me', link: '#about' },
-	{ text: 'Interests', link: '#interests' },
-	{ text: 'Strength and Weaknesses', link: '#strengths' },
-	{ text: 'How I Can Contribute to Your Team', link: '#contribute' }
+	{ text: 'Volunteering', link: '#volunteering' }
+	// { text: 'Interests', link: '#interests' },
+	// { text: 'Strength and Weaknesses', link: '#strengths' },
+	// { text: 'How I Can Contribute to Your Team', link: '#contribute' }
 ];
 
 const technicalSkills = [

@@ -40,7 +40,14 @@ class ExperienceCard extends _BaseDOM {
 		dateDOM.innerText = dates;
 		jobDiv.appendChild(dateDOM);
 
+		if (this.cardStyle === 'teach') {
+			const paperclip = createElement(elements.DIV);
+			paperclip.classList.add('paper-clip-icon');
+			jobDiv.appendChild(paperclip);
+		}
+
 		jobDiv.appendChild(this.getBriefButton());
+
 		jobDiv.appendChild(this.getBrief());
 		container.appendChild(jobDiv);
 		this.root.appendChild(container);
@@ -89,6 +96,7 @@ class ExperienceCard extends _BaseDOM {
 		button.setAttribute(CLASS, 'brief-btn btn');
 		button.addEventListener('click', this.showBrief.bind(this));
 		const caratBtn = createElement(elements.IMG);
+		button.setAttribute('aria-expanded', false);
 		caratBtn.setAttribute(SRC, '../../assets/down_arrow.png');
 		caratBtn.setAttribute(ALT, 'Down button');
 		button.appendChild(caratBtn);
@@ -103,12 +111,14 @@ class ExperienceCard extends _BaseDOM {
 		let paperclip = this.parentNode.querySelector('.paper-clip-icon');
 
 		if (this.button.style.transform) {
+			this.button.setAttribute('aria-expanded', false);
 			this.button.style.transform = "";
 			this.brief.style.display = NONE;
 			if (paperclip)
 				paperclip.style.display = NONE;
 
 		} else {
+			this.button.setAttribute('aria-expanded', true);
 			this.button.style.transform = ROTATE;
 			this.brief.style.display = BLOCK;
 			if (paperclip)
