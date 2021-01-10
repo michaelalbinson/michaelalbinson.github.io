@@ -163,11 +163,8 @@ const ta143Exp = {
 	dates: 'January 2015 - December 2018',
 	image: apsciLogo,
 	bullets: [
-		"Managed a small team in a major year-long design project designed to improve the engineering experience at Queen's",
-		"Architected and contributed to a web app that utilized NodeJS, HTML, CSS, JavaScript and Bootstrap technologies",
-		"Wrote primarily server-side code, but also contributed to the front-end",
-		"Educated on core web technologies and their role in the system",
-		"Responsible for reviewing team code and making suggestions for future improvement"
+		"Taught core programming concepts of the C programming language to first year students.",
+		"Responsible for answering questions, overseeing labs with other TAs and marking papers."
 	]
 };
 
