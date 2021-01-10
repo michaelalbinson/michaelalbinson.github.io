@@ -1,6 +1,3 @@
 [submodule "cirque-make"]
 	path = cirque-make
 	url = https://github.com/michaelalbinson/cirque-make
-[submodule "cirque"]
-	path = cirque
-	url = https://github.com/michaelalbinson/cirque

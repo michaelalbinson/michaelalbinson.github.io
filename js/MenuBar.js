@@ -11,11 +11,11 @@ class MenuBar extends _BaseDOM {
 		const container = createElement(elements.DIV);
 		container.setAttribute(CLASS, 'row centered menu-bar-container');
 		container.appendChild(
-			MenuBar.getMenuBarCol('Work Experience', '#experience', workExperience)
+			MenuBar.getMenuBarCol('Work Experience', '#experience', workExperience, true)
 		);
 
 		container.appendChild(
-			MenuBar.getMenuBarCol('Personal Experience', '#personal', personalExperience)
+			MenuBar.getMenuBarCol('Personal Experience', '#personal', personalExperience, false)
 		);
 
 		container.appendChild(MenuBar.getIconCol());
@@ -28,12 +28,13 @@ class MenuBar extends _BaseDOM {
 	 * @param title {string}
 	 * @param titleLink {string}
 	 * @param items {array}
+	 * @param isFirst {boolean}
 	 * @returns {HTMLElement}
 	 */
-	static getMenuBarCol(title, titleLink, items) {
+	static getMenuBarCol(title, titleLink, items, isFirst) {
 		const container = createElement(elements.DIV);
 		container.setAttribute(CLASS, 'col-sm');
-		container.appendChild(new DropdownMenu(title, titleLink, items));
+		container.appendChild(new DropdownMenu(title, titleLink, items, isFirst));
 		return container;
 	}
 

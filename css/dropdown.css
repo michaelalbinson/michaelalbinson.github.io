@@ -30,3 +30,7 @@
 .dropdown:active .dropdown-content{
     display: block;
 }
+
+.first {
+    margin-left: -1.9rem !important;
+}

@@ -1,7 +1,7 @@
 'use strict';
 
 class DropdownMenu extends _BaseDOM {
-	constructor(title, titleLink, listItems) {
+	constructor(title, titleLink, listItems, isFirst) {
 		super();
 
 		this.styles.push('css/dropdown.css');
@@ -13,6 +13,9 @@ class DropdownMenu extends _BaseDOM {
 
 		let dropdownContent = createElement(elements.DIV);
 		dropdownContent.setAttribute(CLASS, 'dropdown-content');
+		if (isFirst)
+			dropdownContent.classList.add('first');
+
 		DropdownMenu.getListItems(dropdownContent, listItems);
 		dropdown.appendChild(dropdownContent);
 
