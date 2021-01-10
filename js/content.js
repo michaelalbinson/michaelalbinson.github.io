@@ -42,9 +42,11 @@ const personalExperience = [
 ];
 
 const technicalSkills = [
-	'Javascript', 'React', 'Angular', 'Accessible Website Design',
+	'Javascript', 'Node.js', 'React', 'Angular', 'Accessible Website Design',
+	'AWS EC2', 'AWS RDS',
 	'HTML', 'CSS', 'Java', 'Arduino', 'Data Analysis', 'Python', 'Matlab', 'C',
-	'Solid Edge', 'Ruby'];
+	'Solid Edge', 'Ruby'
+];
 
 const professionalSkills = [
 	'Leadership', 'Technical Report Writing', 'Teaching', 'Teamwork', 'AGILE Development',
@@ -85,7 +87,7 @@ const careerGoals = [
 const tickerItems = technicalSkills.concat(professionalSkills);
 
 const bio = "My name is Michael Albinson dual degree Biomechanical Engineering and Computing student from Queen's " +
-	"University, currently working as a Software Engineer for ServiceNow. I thrive when working in teams, " +
+	"University, currently working as a full-stack Software Engineer for ServiceNow. I thrive when working in teams, " +
 	"am very self directed, and am a fast learner. I am willing to put my nose to the grindstone in order to excel and " +
 	"deliver. Challenges that other people shy away from are my bread and butter. I love to take on the new, " +
 	"the demanding, and the seemingly impossible. I've worked on ideas big and small, " +
