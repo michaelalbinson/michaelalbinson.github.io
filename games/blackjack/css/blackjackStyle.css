@@ -2,16 +2,12 @@ body{
 	color:linen;
 	text-align: center;
 	border-radius: 5px;
-	background-image: url("../assets/path.jpg");
 	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background: url("../assets/path.jpg") no-repeat fixed center;
 }
 
 div.dealerDeck{
 	position: relative;
-	float:center;
 	background-color: rgba(135, 134, 64, .75);
 	height: 200px;
 	width: 100%;
@@ -19,7 +15,6 @@ div.dealerDeck{
 }
 div.playerDeck{
 	position: relative;
-	float:center;
 	background-color: rgba(135, 134, 64, .75);
 	height: 200px;
 	width: 100%;
@@ -32,8 +27,7 @@ div.card{
 	height: 178px;
 	width: 128px;
 	background-color: linen;
-	border-width: 10px;
-	border-color: black;
+	border: 10px black;
 	display: inline-block;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	margin: 10px;
@@ -79,7 +73,6 @@ input{
 
 #resultBox{
 	border-radius: 10px;
-	border = 0;
 	background-color: linen;
 	color: black;
 	font-weight: bold;
@@ -89,7 +82,6 @@ input{
 }
 
 h2{
-	float: middle;
 	margin: auto;
 	background-color: rgba(10, 35, 58, .75);
 	border-radius: 10px;

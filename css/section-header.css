@@ -1,0 +1,24 @@
+.divider {
+    height: 15em;
+    background: url("../assets/IMG_5235.JPG") no-repeat center;
+    background-size: 100%;
+    color: white;
+}
+
+.divider-blur {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.divider-personal {
+    height: 15em;
+    background: url('../assets/IMG_5711.JPG') no-repeat center;
+    background-size: 100%;
+    color: white;
+}
+
+h2 {
+    padding: 0 5%;
+    font-size: 2.5rem;
+}

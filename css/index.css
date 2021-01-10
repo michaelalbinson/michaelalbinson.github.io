@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'diplomaregular';
+    src: url('../assets/fonts/diploma-webfont.woff2') format('woff2'),
+    url('../assets/fonts/diploma-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'patrick-hand';
+    src: url('../assets/fonts/Patrick_Hand/PatrickHand-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding-bottom: 0;
+}

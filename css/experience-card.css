@@ -1,0 +1,173 @@
+.brief-btn {
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+.brief-btn img {
+    height: 2rem;
+}
+
+.company-logo {
+    max-width: 250px;
+    max-height: 150px;
+}
+
+p.date-dom {
+    font-weight: lighter;
+    font-style: italic;
+}
+
+article.card {
+    color: black;
+    margin: 0 10px 10px 10px;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 10px;
+    animation-name: linear;
+    animation-duration: 5s;
+}
+
+.card h3 {
+    display: block;
+}
+
+.job-div {
+    padding: 10px;
+}
+
+.job-div a {
+    line-height: 150px;
+}
+
+@keyframes spin { 100% {
+        transform: rotate(360deg);
+    }
+}
+
+.show-brief {
+    width: 100%;
+}
+
+.show-brief img {
+    height: 2rem;
+}
+
+.mech {
+    background-color: #eedfc0;
+    color: black;
+}
+
+.mech ul {
+    line-height: 1.5rem;
+
+    background-image: -moz-linear-gradient(top, transparent, transparent calc(1.5rem - 1px), green 0px);
+    background-image: -webkit-linear-gradient(top, transparent, transparent calc(1.5rem - 1px), green 0px);
+
+    -webkit-background-size: 100% 1.5rem;
+    background-size: 100% 1.5rem;
+}
+
+.mech li {
+    padding-bottom: 1.5rem;
+    border-left: solid 1px red;
+    padding-left: 0.5rem;
+}
+
+.mech h5 {
+    padding-left: 2.5rem;
+    border-bottom: solid green 2px;
+    margin-bottom: 0;
+    font-family: 'patrick-hand', sans-serif;
+    font-size: 1.5rem;
+}
+
+.mech h5::before {
+    content: '';
+    border-left: solid 1px red;
+    font-size: 1.75rem;
+    padding-right: 0.5rem;
+}
+
+.mech img {
+    width: 2.5em;
+    position: absolute;
+    right: 15px;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+}
+
+.design-div {
+    text-align: center;
+}
+
+.design-div .brief {
+    background-color: #c87c6f;
+}
+
+.teach {
+    background-color: white;
+    color: black;
+    box-shadow: 0 2px 2px 0 gray;
+}
+
+.teach ul {
+    line-height: 1.5rem;
+
+    background-image: -moz-linear-gradient(top, transparent, transparent calc(1.5rem - 1px), lightblue 0px);
+    background-image: -webkit-linear-gradient(top, transparent, transparent calc(1.5rem - 1px), lightblue 0px);
+
+    -webkit-background-size: 100% 1.5rem;
+    background-size: 100% 1.5rem;
+}
+
+.teach li {
+    padding-bottom: 1.5rem;
+    border-left: solid 1px red;
+    padding-left: 0.5rem;
+}
+
+.teach h5 {
+    padding-left: 2.5rem;
+    border-bottom: solid blue 2px;
+    margin-bottom: 0;
+    font-family: 'patrick-hand', sans-serif;
+    font-size: 1.5rem;
+}
+
+.teach h5::before {
+    content: '';
+    border-left: solid 1px red;
+    font-size: 1.75rem;
+    padding-right: 0.5rem;
+}
+
+.brief {
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+}
+
+.cs {
+    background-color: black;
+    color: lime;
+    font-family: Inconsolata, sans-serif;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 10px 0 10px;
+}
+
+.cs h5 {
+    margin-top: 0.5rem;
+}
+
+.edu {
+    background-color: linen;
+}
+
+.edu h5 {
+    font-family: 'diplomaregular', serif;
+    border-bottom: solid #9d1b3a 2px;
+    font-size: 1.5rem;
+    text-align: center;
+}

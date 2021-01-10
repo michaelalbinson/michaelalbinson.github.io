@@ -45,11 +45,11 @@ function ErrorPropogationManager() {
 	}
 
 	this.ensureAllElementsPresent = function(){
-		
+
 	}
 
 	this.executeMath = function() {
-		
+
 	}
 
 	this.collectElements = function() {
@@ -73,7 +73,7 @@ function ErrorElementGenerator() {
 			return;
 
 		for (var i in variableList) {
-			if(i == variableList.length - 1) 
+			if(i == variableList.length - 1)
 				createVariablePair(variableList[i], true);
 			else
 				createVariablePair(variableList[i], false);
@@ -85,7 +85,7 @@ function ErrorElementGenerator() {
 		if(!varName)
 			return;
 
-		var element = '<div id="'+ varName + '">'+ varName +' <input type="text" class="expressionOutput"></input></div><br><br>';
+		var element = '<div id="'+ varName + '">'+ varName +' <input type="text" class="expressionOutput"></input></div><br /><br />';
 		$(variableContainer).append(element);
 	}
 
@@ -93,7 +93,7 @@ function ErrorElementGenerator() {
 		var element = '<div id="'+ varName + '">'+ varName +' <input type="text" class="var"></input></div>';
 		var deltaElement = '<div id="'+ varName +'Delta">&delta;'+ varName +' <input type="text" class="varDelta"></input></div>';
 		if (!endOfVariables)
-			deltaElement += '<br><br>'
+			deltaElement += '<br /><br />'
 
 		$(variableContainer).append(element + deltaElement);
 	}
@@ -113,7 +113,7 @@ function ErrorElementGenerator() {
 			if ($(this).is("br"))
 				return;
 
-			obj[$(this).prop('id')] = {"value":$(this).children().val(), 
+			obj[$(this).prop('id')] = {"value":$(this).children().val(),
 										"delta": del}; //TODO: replace del with delta for each var
 		});
 	}
@@ -124,7 +124,7 @@ function ErrorElementGenerator() {
 			if ($(this).prop('nodeName') != "BR")
 				continue;
 
-			obj[$(this).prop('id')] = {"value":$(this).children().val(), 
+			obj[$(this).prop('id')] = {"value":$(this).children().val(),
 										"delta", del}; //TODO: replace del with delta for each var
 		});
 	}
@@ -178,7 +178,7 @@ function EquationProcessor(equation) {
 	function removeTheseElements(str, elementsToRemove) {
 		var workingStr = str;
 		for (var i in elementsToRemove)
-			workingStr = workingStr.replace(new RegExp(elementsToRemove[i], 'g'), ' '); 
+			workingStr = workingStr.replace(new RegExp(elementsToRemove[i], 'g'), ' ');
 
 		return workingStr;
 	}
@@ -190,7 +190,7 @@ function EquationProcessor(equation) {
 
 	//removes duplicates from an array
 	function removeDuplicates(arr) {
-		arr = arr.filter (function (value, index, array) { 
+		arr = arr.filter (function (value, index, array) {
 			return array.indexOf(value) == index;
 		});
 		return arr;
@@ -274,7 +274,7 @@ function PropogationExecutor() {
 function EquationAnalyzer() {
 	var pe = new PropogationExecutor();
 
-	function findFunctions(expression) {	
+	function findFunctions(expression) {
 		var allowedFunctions = ['ln(', 'log('];
 		// determine if function exists
 		// find index
