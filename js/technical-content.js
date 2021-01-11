@@ -73,18 +73,12 @@ const serviceNowExperience = {
 	dates: 'May 2016 - Present',
 	image: serviceNowLogo,
 	bullets: [
-		"Delivered software as a service (SaaS) based products to internal customers in real time",
-		"Worked in a scrum team staffed with highly talented software developers, quality engineers, " +
-			"and product owners focused on delivering a high quality feature",
-		"Collaborated with senior engineers to consistently achieve frequent deadlines set under Scrum Agile development",
-		"Wrote production code that met the strict coding standards and adhered to our ServiceNow’s world class established coding guidelines",
-		"Worked in a team to develop a must-ship feature of the company's latest software version",
-		"Responsible for tasks including debugging code, helping to execute core software development as needed, and " +
-			"manually testing core functionality of features",
+		'Worked closely with management and developers on his team to define technical requirements from user needs and develop world-class full-stack software used by Fortune 500 companies globally.',
+		'Lead developer and architect of security-critical project. Leveraged industry-standard  cryptographic methods for the secure transmission of data between micro-services. Co-author on patent filing for the technology.',
+		'Developed JavaScript test infrastructure for evaluating code coverage and reducing test execution time by 100x. Organizational adoption is in progress.',
 		"Created and was responsible for a large amount of automated testing (JUnit, Selenium) around the core " +
 			"functionality of various platform features",
-		"Helped to triage failing automated tests in the core of the ServiceNow's Platform",
-		"Extensive work with Java, Javascript, Jelly, XML, and HTML"
+		'Extensive work in JavaScript (Node.js), Java, React, API Design, web components, MySQL, NPM and Maven build systems.'
 	]
 };
 
@@ -93,10 +87,9 @@ const ucsfRLExperience = {
 	dates: 'February 2017 - Present',
 	image: ucsfLogo,
 	bullets: [
-		"Architected and executed a full-stack application for an experimental medical diagnostic device.",
-		"The application, while still under non-disclosure, utilizes big-data analyses to improve the well-being of " +
-			"both amateur and professional athletes.",
-		"Developed a website, mobile app and backend architecture which used Node.js, MySQL, HTML, CSS, and Swift."
+		'Architected and executed a full-stack application for the research and remote usage of an experimental medical diagnostic device.',
+		'The application, while still under non-disclosure, utilized big-data analyses to improve the well-being of both amateur and professional athletes.',
+		'Developed an AWS-based web application, iOS mobile application and backend architecture utilizing AWS S3, EC2, RDS and Route 53, as well as Node.js, MySQL, HTML, CSS and Swift.'
 	]
 };
 
@@ -187,10 +180,10 @@ const queensEdu = {
 	dates: 'September 2014 - May 2019',
 	image: queensULogo,
 	bullets: [
-		"Dual Degrees in Biomechanical Engineering (BASc.) and Computing (Bcmp.)",
-		"Participated in and managed the Queen's Fuel Cell Team (Mechanical and Electrical Divisions), the Club " +
-			"Varsity Baseball Team, Robogals Queen's Chapter, Qhacks and was a Freshman Orientation Leader, " +
-			"Queen's Engineering Society Software Development Team (ESSDev)."
+		'BASc Mechanical Engineering - Biomechanical option [2014-2018], received an entrance scholarship for academic achievement, graduated with First Class Honors. H.G. Conn Award for distinguished extracurricular achievement.',
+		'BComp Computer Science [2018-2019], graduated with honors.',
+		'Activities: Engineering Society Software Development Team, Queen’s Fuel Cell team, Varsity Baseball Team, QHacks, Robogals, Queen’s University Engineering Conference on Industry and Resources (CIRQUE), Queen’s Space Conference (QSC).',
+		'Dean’s List for Academic excellence 2014-2018 academic years.'
 	]
 };
 
