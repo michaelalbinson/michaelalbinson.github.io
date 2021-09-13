@@ -1,2 +1,3 @@
 # michaelalbinson.github.io
-hosting my website files on github because #studentlife
+
+See [michael.albinson.ca](https://michael.albinson.ca)
