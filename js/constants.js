@@ -10,3 +10,4 @@ const ALT = 'alt';
 const ID = 'id';
 
 const createElement = elType => document.createElement(elType);
+const getElement = elId => document.getElementById(elId);

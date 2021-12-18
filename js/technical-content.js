@@ -69,7 +69,7 @@ const momagerLogo = {
 
 /** Experiences **/
 const serviceNowExperience = {
-	title: 'ServiceNow Platform Software Engineer',
+	title: 'ServiceNow Platform Sr. Software Engineer',
 	dates: 'May 2016 - Present',
 	image: serviceNowLogo,
 	bullets: [
@@ -84,7 +84,7 @@ const serviceNowExperience = {
 
 const ucsfRLExperience = {
 	title: 'HeadPulse Systems Platform Architect',
-	dates: 'February 2017 - Present',
+	dates: 'February 2017 - February 2021',
 	image: ucsfLogo,
 	bullets: [
 		'Architected and executed a full-stack application for the research and remote usage of an experimental medical diagnostic device.',

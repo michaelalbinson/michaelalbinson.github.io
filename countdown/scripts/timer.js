@@ -23,10 +23,11 @@ const heart =
                   @@@                    \n\
                    @                     </pre>";
 
-const dino = "<pre>     _          __________                                      \n\
-   _|_|_       /          \\                                                     \n\
-  .~q`, ------- I love you!|                                                     \n\
- {__,  \\       \\__________/                                                    \n\
+const dino = "<pre>\
+     _            __________                                      \n\
+   _|_|_        /            \                                                     \n\
+  .~q`, -------|| I love you! |                                                     \n\
+ {__,  \\       \\___________/                                                    \n\
     \\  \\                                                                       \n\
      \\  \\                                                                      \n\
       \\  \\                                                                     \n\
@@ -44,10 +45,22 @@ const dino = "<pre>     _          __________                                   
                  |   |/             _\\   \\         ~-.__________.-~~~~~~~~~'''   \n\
                .o'___/            .o______}                                      </pre>";
 
-const headers = ["Hey, guess what? I love you", "Guess how many days left :)))", "&hearts;", "Hi. Hi. Hey. Hey you. Guess what? Chickenbutt ;)",
-            "I missssss youuuuu", ":P", "Hey guess where I wanna be right now? Oh yeah, that's right, with you", "I love you",
-            "I wanna cuddle with you right now", "I wanna kiss you all over ;)", "I love you a lot", "Hey remember that one time when we did that thing? Me too :)",
-            heart, dino];
+const headers = [
+    "Hey, guess what? I love you",
+    "Guess how many days left :)))",
+    "&hearts;",
+    "Hi. Hi. Hey. Hey you. Guess what? Chickenbutt ;)",
+    "I missssss youuuuu",
+    ":P",
+    "Hey guess where I wanna be right now? Oh yeah, that's right, with you",
+    "I love you",
+    "I wanna cuddle with you right now",
+    "I wanna kiss you all over ;)",
+    "I love you a lot",
+    "Hey remember that one time when we did that thing? Me too :)",
+    heart,
+    dino
+];
 
 const imageSources = [
     "./assets/onion_bike.jpg",
@@ -87,10 +100,12 @@ function getAndSetCurrentTime(moment) {
 }
 
 $(cuteHeader).html(newHeader);
-getAndSetCurrentTime(now);
-setInterval(function() {
-	getAndSetCurrentTime(now)}, 1000);
 
+// start the count down
+getAndSetCurrentTime(now);
+setInterval(function() { getAndSetCurrentTime(now) }, 1000);
+
+// set up the image/gif
 setTimeout(function() { getURL(); }, 100)
 
 function getURL() {
