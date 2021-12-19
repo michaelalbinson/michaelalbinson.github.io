@@ -5,8 +5,9 @@
         getElement('intro-content').innerHTML = bio;
         generateCardsFor(sweExperience, getElement('swe-target'));
         generateCardsFor(mechanicalExperiences, getElement('mech-target'));
-        generateCardsFor(teachingExperiences, getElement('teach-target'))
-        generateCardsFor(educationExperiences, getElement('edu-target'))
+        generateCardsFor(teachingExperiences, getElement('teach-target'));
+        generateCardsFor(educationExperiences, getElement('edu-target'));
+        generateCardsFor(volunteerExperiences, getElement('vol-target'));
     };
 
     function generateCardsFor(techExperience, targetEl) {

@@ -53,6 +53,8 @@
 
         #intro div {
             background-color: white;
+            padding: 0.5rem 0.5rem;
+            text-align: left;
         }
 
         div.row section {
@@ -101,12 +103,29 @@
         .exp-card {
             margin: 0 0.5rem;
         }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        footer a img {
+            height: 3rem;
+            width: 3rem;
+            filter: invert(1);
+        }
     </style>
 </head>
 <body>
     <section id="intro">
         <h1>Michael Albinson</h1>
+        <div>
+            Hey, looks like you found my site! Welcome!
+        </div>
         <div id="intro-content"></div>
+        <div>
+            This is the retro version of my resume. <a href="../">Click here to see the modern version</a>.
+        </div>
     </section>
 
     <section id="swe">
@@ -128,6 +147,17 @@
         <h2>Education</h2>
         <div class="row justify-content-center" id="edu-target"></div>
     </section>
+
+    <section id="vol">
+        <h2>Volunteering</h2>
+        <div class="row justify-content-center" id="vol-target"></div>
+    </section>
+
+    <footer>
+        <a href="../"><img src="../assets/home.png" alt="Home icon" /></a>
+        <a href="https://www.linkedin.com/in/michaelalbinson" target="_blank"><img src="../assets/linkedin.png" class="header-img" alt="Linkedin logo" style="padding: 0.25rem"></a>
+        <a href="https://github.com/michaelalbinson" target="_blank"><img src="../assets/github_cat.png" class="header-img" alt="Github logo"></a>
+    </footer>
 
     <script src="js/index.js" type="text/javascript"></script>
 </body>

@@ -86,7 +86,7 @@ const careerGoals = [
 
 const tickerItems = technicalSkills.concat(professionalSkills);
 
-const bio = "My name is Michael Albinson dual degree Biomechanical Engineering and Computing student from Queen's " +
+const bio = "My name is Michael Albinson. I'm a dual degree Biomechanical Engineering and Computing student from Queen's " +
 	"University, currently working as a full-stack Software Engineer for ServiceNow. I thrive when working in teams, " +
 	"am very self directed, and am a fast learner. I am willing to put my nose to the grindstone in order to excel and " +
 	"deliver. Challenges that other people shy away from are my bread and butter. I love to take on the new, " +
