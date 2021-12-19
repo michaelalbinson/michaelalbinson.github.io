@@ -12,10 +12,11 @@
     function generateCardsFor(techExperience, targetEl) {
         for (let i in techExperience) {
             const exp = techExperience[i];
-            const section = new ElementFactory(elements.SECTION, 'col-6');
-            section.appendChild(new ElementFactory(elements.H3, '', exp.title));
-            section.appendChild(new ElementFactory(elements.SPAN, '', exp.dates));
-            section.appendChild(new ElementFactory(elements.HR));
+            const section = new ElementFactory(elements.SECTION, 'col-lg-6');
+            const div = new ElementFactory(elements.DIV, 'exp-card');
+            div.appendChild(new ElementFactory(elements.H3, '', exp.title));
+            div.appendChild(new ElementFactory(elements.SPAN, '', exp.dates));
+            div.appendChild(new ElementFactory(elements.HR));
 
             const list = new ElementFactory(elements.UL, 'hidden');
             const button = new ElementFactory(elements.BUTTON, 'see-more');
@@ -34,7 +35,7 @@
                     span.innerText = 'See More';
                 }
             });
-            section.appendChild(button);
+            div.appendChild(button);
 
             for (let j in exp.bullets) {
                 const li = createElement(elements.LI);
@@ -42,7 +43,8 @@
                 list.appendChild(li);
             }
 
-            section.appendChild(list);
+            div.appendChild(list);
+            section.appendChild(div);
             targetEl.appendChild(section);
         }
     }
