@@ -1,6 +1,12 @@
 'use strict';
 
 /** Images **/
+const shopifyLogo = {
+	alt: 'Shopify logo',
+	href: 'https://www.shopify.com/',
+	src: 'assets/shopify.png'
+};
+
 const ucsfLogo = {
 	alt: 'University of California: San Francisco logo',
 	href: 'https://ucsf-research.link',
@@ -68,9 +74,19 @@ const momagerLogo = {
 };
 
 /** Experiences **/
+const shopifyExperience = {
+	title: 'Shopify Staff Software Engineer',
+	dates: 'May 2022 - Present',
+	image: shopifyLogo,
+	bullets: [
+		"Checkout team staff software engineer",
+		"Extensive experience in Ruby on Rails, React and JavaScript"
+	]
+};
+
 const serviceNowExperience = {
-	title: 'ServiceNow Platform Sr. Software Engineer',
-	dates: 'May 2016 - Present',
+	title: 'ServiceNow Staff Platform Software Engineer',
+	dates: 'May 2016 - May 2022',
 	image: serviceNowLogo,
 	bullets: [
 		'Worked closely with management and developers on his team to define technical requirements from user needs and develop world-class full-stack software used by Fortune 500 companies globally.',
@@ -244,6 +260,7 @@ const waykeProject = {
 
 /** Experience Summations **/
 const sweExperience = [
+	shopifyExperience,
 	serviceNowExperience,
 	ucsfRLExperience,
 	essdevExperience
