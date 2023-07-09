@@ -93,3 +93,12 @@ am very self-directed, and am a fast learner. I am willing to put my nose to the
 deliver. Challenges that other people shy away from are my bread and butter. I love to take on the new,
 the demanding, and the seemingly impossible. I've worked on ideas big and small,
 projects in software, electronics and mechatronics. Got an idea? <a href='${LINKEDIN}'> Let's Talk</a>`;
+
+const legacyBio = `
+My name is Michael Albinson. I'm a dual degree Biomechanical Engineering and Computing student from Queen's University, 
+currently working as a full-stack Software Engineer for ServiceNow. I thrive when working in teams, am very self directed, 
+and am a fast learner. I am willing to put my nose to the grindstone in order to excel and deliver. Challenges that 
+other people shy away from are my bread and butter. I love to take on the new, the demanding, and the seemingly 
+impossible. I've worked on ideas big and small, projects in software, electronics and mechatronics. 
+Got an idea? <a href='${LINKEDIN}'> Let's Talk</a>
+`
