@@ -74,27 +74,43 @@ const momagerLogo = {
 };
 
 /** Experiences **/
-const shopifyExperience = {
-	title: 'Shopify Staff Software Engineer',
-	dates: 'May 2022 - Present',
-	image: shopifyLogo,
+const serviceNowExperience2 = {
+	title: 'ServiceNow Sr. Staff Security Software Engineer',
+	dates: 'September 2023 - Present',
+	image: serviceNowLogo,
 	bullets: [
-		"Checkout team staff software engineer",
-		"Extensive experience in Ruby on Rails, React and JavaScript"
+		"Starting September 2023 :)"
 	]
 };
 
-const serviceNowExperience = {
+const shopifyExperience = {
+	title: 'Shopify Staff Software Engineer',
+	dates: 'May 2022 - May 2023',
+	image: shopifyLogo,
+	bullets: [
+		"Quickly ramped up on the checkout performance and scale team to deliver features and performance improvements to checkout, which is trusted by consumers and merchants globally. Enabled the largest flash sellers in the world to make millions of dollars in sales in minutes.",
+		"Lead developer on project to unify checkout conversion instrumentation across the checkout organization. Gathered information from teams across Shopify, distilled key information for senior leadership and created a prototype implementation of the eventing framework.",
+		"Lead developer on card testing attack prevention project. Led team to rapidly develop and deploy extensible captcha-based protections for merchants in close collaboration with other teams and senior leadership.",
+		"Delivered a ChatGPT-based Slack app for triaging and responding to help channel questions based on team documentation, greatly reducing toil for developers staffing the channels. Made feature available company-wide.",
+		"Triaged and rapidly remediated incidents with CTO-level visibility including card testing, checkout bot attacks, checkout outages, and service availability. Developed and executed plans to reduce risks of future incidents.",
+		"Built out team rituals and processes that improved team engagement, leadership visibility and productivity.",
+		"Extensive work with Ruby, Rails, React, GraphQL, MySQL, Redis, Memcached, TypeScript and API design."
+	]
+};
+
+const serviceNowExperience1 = {
 	title: 'ServiceNow Staff Platform Software Engineer',
 	dates: 'May 2016 - May 2022',
 	image: serviceNowLogo,
 	bullets: [
-		'Worked closely with management and developers on his team to define technical requirements from user needs and develop world-class full-stack software used by Fortune 500 companies globally.',
-		'Lead developer and architect of security-critical project. Leveraged industry-standard  cryptographic methods for the secure transmission of data between micro-services. Co-author on patent filing for the technology.',
-		'Developed JavaScript test infrastructure for evaluating code coverage and reducing test execution time by 100x. Organizational adoption is in progress.',
-		"Created and was responsible for a large amount of automated testing (JUnit, Selenium) around the core " +
-			"functionality of various platform features",
-		'Extensive work in JavaScript (Node.js), Java, React, API Design, web components, MySQL, NPM and Maven build systems.'
+		"Lead developer for re-platforming the code base of an acquired microservice-based technology company into the ServiceNow ecosystem. Led team strategy on key areas of focus required to deliver and deploy the service to customers on a 6-month timeline, including project architecture and security.",
+		"Lead developer of security-critical project. Leveraged industry-standard cryptographic methods for the secure transmission of data between micro-services. Co-author on US patent (no. 11,626,998) for the technology.",
+		"Developed JavaScript test infrastructure for evaluating code coverage and reducing test execution time by 100x. Adopted as a new standard for testing across the platform engineering organization.",
+		"Refactored, modernized, and owned a legacy React app to meet company code quality and release standards.",
+		"At Knowledge 2020 (annual customer conference), presented features to customers with demos and a live Q&A.",
+		"Interviewed, hired and mentored new employees and interns.",
+		"Worked closely with management and developers on his team to define technical requirements from user needs and develop world-class full-stack software used by Fortune 500 companies globally.",
+		"Extensive work with JavaScript (Node.js), Java, React, API Design, web components, MySQL, NPM and Maven."
 	]
 };
 
@@ -260,8 +276,9 @@ const waykeProject = {
 
 /** Experience Summations **/
 const sweExperience = [
+	serviceNowExperience2,
 	shopifyExperience,
-	serviceNowExperience,
+	serviceNowExperience1,
 	ucsfRLExperience,
 	essdevExperience
 ];

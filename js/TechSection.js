@@ -43,7 +43,6 @@ class TechSection extends _BaseDOM {
 			return row;
 		};
 
-		let isSecond = false;
 		const container = createElement(elements.DIV);
 
 		let row = getNewRow();
@@ -68,17 +67,12 @@ class TechSection extends _BaseDOM {
 
 			row.appendChild(cardContainer);
 
-			if (isSecond) {
+			if (cardIndex % 2 === 1) {
 				container.appendChild(row);
 				row = getNewRow();
-				// isSecond = false;
 			} else
-				isSecond = true
+				container.appendChild(row);
 		}
-
-		// in case we only have one card in a row, make sure we append it
-		if (isSecond)
-			container.appendChild(row);
 
 		return container;
 	}

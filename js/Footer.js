@@ -24,7 +24,7 @@ class Footer extends _BaseDOM {
 
 	static getCopyright() {
 		const text = createElement(elements.DIV);
-		text.innerText = "© Michael Albinson 2019-2020";
+		text.innerText = "© Michael Albinson 2019-" + new Date().getFullYear();
 		return text;
 	}
 
