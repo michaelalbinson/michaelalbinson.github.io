@@ -75,16 +75,16 @@ const momagerLogo = {
 
 /** Experiences **/
 const serviceNowExperience2 = {
-	title: 'ServiceNow Sr. Staff Security Software Engineer',
-	dates: 'September 2023 - Present',
+	title: 'Principal Security Software Engineer',
+	dates: 'July 2023 - Present',
 	image: serviceNowLogo,
 	bullets: [
-		"Starting September 2023 :)"
+		"AI Platform security architect"
 	]
 };
 
 const shopifyExperience = {
-	title: 'Shopify Staff Software Engineer',
+	title: 'Staff Software Engineer',
 	dates: 'May 2022 - May 2023',
 	image: shopifyLogo,
 	bullets: [
@@ -99,7 +99,7 @@ const shopifyExperience = {
 };
 
 const serviceNowExperience1 = {
-	title: 'ServiceNow Staff Platform Software Engineer',
+	title: 'Staff Platform Software Engineer',
 	dates: 'May 2016 - May 2022',
 	image: serviceNowLogo,
 	bullets: [
